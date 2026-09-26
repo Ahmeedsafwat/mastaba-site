@@ -8,33 +8,60 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23E8A33D'/%3E%3Ccircle cx='21' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='32' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='43' cy='25' r='5' fill='%231B1A2E'/%3E%3Crect x='13' y='33' width='38' height='5' rx='1.5' fill='%231B1A2E'/%3E%3Crect x='18' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3Crect x='42' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;800&family=IBM+Plex+Mono:wght@500&family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
 <style>
-  :root{--night:#1B1A2E;--night3:#34334F;--lamp:#E8A33D;--stone:#F2E6CF;--mist:#A9A2BC}
+  :root{--night:#1B1A2E;--night2:#26253D;--night3:#34334F;--lamp:#E8A33D;--stone:#F2E6CF;--mist:#A9A2BC;
+    --kufi:"Reem Kufi","Alexandria",system-ui,sans-serif;--sans:"Alexandria","Segoe UI",Tahoma,system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--night);color:var(--stone);font-family:"Alexandria","Segoe UI",Tahoma,system-ui,sans-serif;font-size:17px;line-height:1.75}
-  a{color:var(--lamp);text-underline-offset:3px}
-  a:focus-visible{outline:2px solid var(--lamp);outline-offset:3px}
-  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
-  .top{padding:28px 0;border-bottom:1px solid var(--night3)}
-  .top a{font-family:"Reem Kufi",sans-serif;font-weight:700;font-size:28px;color:var(--stone);text-decoration:none}
-  h1{font-family:"Reem Kufi",sans-serif;font-weight:700;font-size:40px;line-height:1.2;margin:40px 0 6px}
-  .updated{color:var(--mist);margin:0 0 28px}
-  .ar p{margin:0 0 12px}
-  .en{direction:ltr;text-align:left;border-top:1px solid var(--night3);margin-top:36px;padding-top:8px}
-  .en h2{font-size:24px;font-weight:800;margin:32px 0 10px}
-  .en h3{font-size:18px;font-weight:800;margin:26px 0 4px}
-  .en p,.en li{max-width:68ch}
-  .en p{margin:0 0 12px}
-  .en ul{padding-left:22px;margin:0 0 12px}
-  footer{border-top:1px solid var(--night3);margin-top:56px;padding:24px 0 40px;color:var(--mist);font-size:15px}
-  footer nav{display:flex;gap:22px;flex-wrap:wrap}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--night);color:var(--stone);font-family:var(--sans);font-size:17px;line-height:1.8}
+  a{color:var(--lamp);text-underline-offset:4px;overflow-wrap:anywhere}
+  a:focus-visible{outline:2px solid var(--lamp);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .mono{font-family:var(--mono);font-weight:500;direction:ltr;unicode-bidi:isolate}
+  .bench-ico{display:block;flex:none}
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding-block:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--kufi);font-weight:700;font-size:24px;line-height:1;color:var(--stone);text-decoration:none;min-height:44px}
+  .brand .bench-ico{width:34px;height:26px}
+  .back{color:var(--mist);text-decoration:none;font-size:15px;font-weight:500;padding-block:12px}
+  .back:hover{color:var(--stone)}
+  .page-hero{background:radial-gradient(70% 90% at 50% 0%,rgba(232,163,61,.13),rgba(232,163,61,0) 70%),var(--night);border-bottom:1px solid var(--night3)}
+  .doc{max-width:760px;margin:0 auto;padding:0 20px 24px}
+  .doc h1{font-weight:900;font-size:clamp(36px,8.6vw,54px);line-height:1.3;margin:28px 0 6px}
+  .doc .updated{color:var(--mist);margin:0 0 30px;font-size:15px}
+  .doc .ar{background:var(--night2);border:1px solid var(--night3);border-radius:20px;padding:22px 22px 12px;margin:0 0 8px;font-size:17.5px}
+  .doc .ar p{margin:0 0 12px}
+  .doc .en{direction:ltr;text-align:left;margin-top:40px;padding-top:6px}
+  .doc .en h2{font-family:var(--sans);font-size:clamp(26px,5.4vw,34px);font-weight:800;letter-spacing:-.01em;line-height:1.25;margin:0 0 14px;padding-bottom:16px;border-bottom:1px solid var(--night3)}
+  .doc .en h3{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lamp);margin:34px 0 6px;line-height:1.5}
+  .doc .en p,.doc .en li{max-width:66ch;font-size:16.5px;line-height:1.75}
+  .doc .en p{margin:0 0 12px}
+  .doc .en ul{padding-left:0;margin:0 0 12px;list-style:none}
+  .doc .en li{position:relative;padding-left:22px;margin-bottom:8px}
+  .doc .en li::before{content:"";position:absolute;left:2px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--lamp)}
+  footer{border-top:1px solid var(--night3);margin-top:64px;padding:40px 0 48px;color:var(--mist);font-size:15px}
+  .foot{display:flex;flex-direction:column;gap:22px}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  .foot-brand .bench-ico{width:40px;height:30px}
+  .foot-brand .w{font-family:var(--kufi);font-weight:700;font-size:26px;color:var(--stone);line-height:1}
+  .foot-brand .mono{color:var(--lamp);font-size:14px;margin-inline-start:4px}
+  .foot nav{display:flex;flex-wrap:wrap;gap:4px 26px}
+  .foot nav a{color:var(--stone);text-decoration:none;padding-block:10px}
+  .foot nav a:hover,.foot nav a[aria-current]{color:var(--lamp)}
+  .foot small{font-size:13.5px}
+  @media (min-width:760px){.foot{flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top"><a href="index.html">المصطبة</a></header>
-<main>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="bench" viewBox="0 0 120 90"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></symbol></svg>
+<header class="page-hero">
+  <div class="wrap topbar">
+    <a class="brand" href="index.html"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg>المصطبة</a>
+    <a class="back" href="index.html">→ الرئيسية</a>
+  </div>
+</header>
+<main class="doc">
 
 <h1>سياسة الخصوصية</h1>
 <p class="updated">آخر تحديث: ٢٤ سبتمبر ٢٠٢٦</p>
@@ -72,7 +99,16 @@
 <p>We'll update the date at the top of this page when this policy changes. Questions: <a href="mailto:hello@mastaba.fm">hello@mastaba.fm</a>. mastaba.fm is operated from Cairo, Egypt.</p>
 </section>
 </main>
-<footer><nav aria-label="روابط"><a href="index.html">الرئيسية · Home</a><a href="privacy.html">الخصوصية · Privacy</a><a href="terms.html">الشروط · Terms</a><a href="mailto:hello@mastaba.fm">hello@mastaba.fm</a></nav></footer>
-</div>
+<footer>
+  <div class="wrap foot">
+    <div class="foot-brand"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span class="w">المصطبة</span><span class="mono">mastaba.fm</span></div>
+    <nav aria-label="روابط">
+      <a href="privacy.html" aria-current="page">الخصوصية · Privacy</a>
+      <a href="terms.html">الشروط · Terms</a>
+      <a href="mailto:hello@mastaba.fm" class="mono">hello@mastaba.fm</a>
+    </nav>
+    <small>© ٢٠٢٦ المصطبة · من القاهرة</small>
+  </div>
+</footer>
 </body>
 </html>
