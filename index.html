@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المصطبة · تشارت البودكاست العربي</title>
+<meta name="description" content="المصطبة: تشارت أسبوعي للبودكاست العربي على يوتيوب. The weekly chart of Arabic podcasts on YouTube.">
+<meta name="theme-color" content="#1B1A2E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23E8A33D'/%3E%3Ccircle cx='21' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='32' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='43' cy='25' r='5' fill='%231B1A2E'/%3E%3Crect x='13' y='33' width='38' height='5' rx='1.5' fill='%231B1A2E'/%3E%3Crect x='18' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3Crect x='42' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;800;900&family=IBM+Plex+Mono:wght@500&family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#1B1A2E; --night2:#26253D; --night3:#34334F;
+    --lamp:#E8A33D; --stone:#F2E6CF; --mist:#A9A2BC;
+    --up:#7FD1B9; --down:#EF8A74;
+    --kufi:"Reem Kufi", "Alexandria", system-ui, sans-serif;
+    --sans:"Alexandria", "Segoe UI", Tahoma, system-ui, sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--night);color:var(--stone);font-family:var(--sans);font-size:18px;line-height:1.75}
+  a{color:var(--lamp);text-underline-offset:3px}
+  a:focus-visible{outline:2px solid var(--lamp);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  /* hero: the wordmark sits on the bench */
+  .hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-block:72px 56px}
+  .seat{display:inline-flex;flex-direction:column;align-items:stretch}
+  .wordmark{font-family:var(--kufi);font-weight:700;font-size:clamp(72px,17vw,168px);line-height:1;margin:0;padding:0 .08em;animation:sit .8s cubic-bezier(.2,.8,.2,1) .15s both}
+  .bench{position:relative;height:clamp(10px,1.6vw,16px);background:var(--lamp);border-radius:3px;margin-top:.08em}
+  .bench::before,.bench::after{content:"";position:absolute;top:100%;width:clamp(12px,2vw,20px);height:clamp(28px,4.4vw,44px);background:var(--lamp)}
+  .bench::before{right:9%} .bench::after{left:9%}
+  .domain{font-family:var(--mono);font-weight:500;color:var(--lamp);letter-spacing:.18em;font-size:clamp(15px,2vw,20px);margin:clamp(52px,7vw,72px) 0 0;direction:ltr}
+  .tagline{font-size:clamp(22px,3.2vw,30px);font-weight:800;margin:28px 0 6px}
+  .soon{color:var(--mist);margin:0;font-size:clamp(17px,2.2vw,20px)}
+  @keyframes sit{from{transform:translateY(-.28em);opacity:0}to{transform:none;opacity:1}}
+  @media (prefers-reduced-motion:reduce){.wordmark{animation:none}}
+
+  /* how we count + sample */
+  .count{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding-block:24px 96px;border-top:1px solid var(--night3)}
+  h2{font-family:var(--kufi);font-weight:700;font-size:clamp(32px,4vw,44px);line-height:1.2;margin:48px 0 24px}
+  .rules{margin:0}
+  .rules dt{font-weight:800;margin-top:22px}
+  .rules dt:first-child{margin-top:0}
+  .rules dd{margin:2px 0 0;color:var(--mist)}
+
+  .card{background:var(--night);border:1px solid var(--night3);border-radius:18px;padding:22px 22px 18px;margin-top:48px}
+  .card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  .card-brand{font-family:var(--kufi);font-weight:700;font-size:24px;display:flex;align-items:center;gap:10px}
+  .pill{background:var(--lamp);color:var(--night);font-weight:800;font-size:14px;border-radius:999px;padding:3px 14px}
+  .week{color:var(--mist);font-size:14px;margin:0 0 10px}
+  .row{display:grid;grid-template-columns:44px 26px 1fr;align-items:center;gap:10px;padding:11px 0;border-top:1px solid var(--night3)}
+  .rank{font-weight:900;font-size:34px;line-height:1;text-align:center}
+  .row.lead .rank{color:var(--lamp)}
+  .move{font-size:12px;font-weight:800;line-height:1.1;text-align:center}
+  .up{color:var(--up)} .down{color:var(--down)} .same{color:var(--mist)}
+  .new{font-size:11px;font-weight:800;color:var(--lamp);border:1px solid var(--lamp);border-radius:5px;padding:0 3px;line-height:1.6}
+  .name{font-weight:800;font-size:19px;line-height:1.35}
+  .name span{font-weight:400;color:var(--mist);font-size:16px}
+  .stat{color:var(--mist);font-size:13px;line-height:1.4}
+  .card-foot{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--night3);padding-top:12px;margin-top:2px;color:var(--mist);font-size:12px}
+  .card-foot .mono{font-family:var(--mono);color:var(--lamp);font-size:13px;direction:ltr}
+  .caption{color:var(--mist);font-size:14px;margin:10px 4px 0}
+
+  /* english, for reviewers and partners */
+  .en{direction:ltr;text-align:left;border-top:1px solid var(--night3);padding-block:8px 88px}
+  .en h2{font-family:var(--sans);font-weight:800;font-size:28px;margin:48px 0 16px}
+  .en p{max-width:68ch;color:var(--stone);margin:0 0 14px}
+  .en p.dim{color:var(--mist)}
+
+  footer{border-top:1px solid var(--night3);padding:28px 0 40px;color:var(--mist);font-size:15px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:center}
+  footer nav{display:flex;gap:22px;flex-wrap:wrap}
+  footer .mono{font-family:var(--mono);color:var(--lamp);direction:ltr}
+
+  @media (max-width:820px){
+    .count{grid-template-columns:1fr;gap:0}
+    .hero{min-height:78vh}
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap hero">
+  <div class="seat" aria-label="المصطبة">
+    <h1 class="wordmark">المصطبة</h1>
+    <div class="bench" aria-hidden="true"></div>
+  </div>
+  <p class="domain">mastaba.fm</p>
+  <p class="tagline">تشارت البودكاست العربي</p>
+  <p class="soon">مين على المصطبة الأسبوع ده؟ أول تشارت قريب.</p>
+</header>
+
+<main>
+  <section class="wrap count" aria-labelledby="how">
+    <div>
+      <h2 id="how">إزاي بنعد</h2>
+      <dl class="rules">
+        <dt>كل يوم</dt>
+        <dd>بنتابع حلقات أكتر من ٢٥٠ بودكاست عربي على يوتيوب، ومصر في الأول.</dd>
+        <dt>التوب ٢٠</dt>
+        <dd>البرامج اللي حلقاتها جابت أكتر مشاهدات الأسبوع ده، من الحلقات اللي نزلت في آخر ٩٠ يوم.</dd>
+        <dt>الصاعدون</dt>
+        <dd>البرامج اللي عملت أحسن بكتير من العادي بتاعها.</dd>
+        <dt>مين يدخل التشارت</dt>
+        <dd>حوار بين اتنين أو أكتر، الحلقة ٢٠ دقيقة أو أكتر، و٣ حلقات على الأقل في آخر ٩٠ يوم.</dd>
+        <dt>مفيش فلوس في الترتيب</dt>
+        <dd>محدش يقدر يدفع عشان يطلع في التشارت أو يطلع أعلى.</dd>
+        <dt>الأرقام من يوتيوب</dt>
+        <dd>المشاهدات من يوتيوب، والترتيب حسابنا إحنا.</dd>
+      </dl>
+    </div>
+
+    <figure style="margin:0">
+      <div class="card" role="img" aria-label="مثال لتشارت المصطبة بأسماء وهمية">
+        <div class="card-head">
+          <div class="card-brand">
+            <svg width="30" height="22" viewBox="0 0 30 22" aria-hidden="true"><circle cx="8" cy="4.5" r="3.5" fill="#E8A33D"/><circle cx="15" cy="4.5" r="3.5" fill="#E8A33D"/><circle cx="22" cy="4.5" r="3.5" fill="#E8A33D"/><rect x="1" y="10" width="28" height="3.5" rx="1" fill="#E8A33D"/><rect x="4.5" y="13" width="3" height="8" fill="#E8A33D"/><rect x="22.5" y="13" width="3" height="8" fill="#E8A33D"/></svg>
+            المصطبة
+          </div>
+          <span class="pill">توب ٢٠</span>
+        </div>
+        <p class="week">أسبوع ٤ - ١٠ ديسمبر ٢٠٢٦</p>
+
+        <div class="row lead"><div class="rank">١</div><div class="move up">▲<br>٣</div>
+          <div><div class="name">عالبحري <span>· حكايات مع كريم ومنة</span></div><div class="stat">+٨٤٠ ألف مشاهدة · قاعد ٥ أسابيع</div></div></div>
+        <div class="row"><div class="rank">٢</div><div class="move same">–</div>
+          <div><div class="name">صباح الفل يا مدير</div><div class="stat">+٧١٢ ألف مشاهدة · قاعد ٥ أسابيع</div></div></div>
+        <div class="row"><div class="rank">٣</div><div class="move down">▼<br>٢</div>
+          <div><div class="name">الكنبة الزرقا <span>· مع شريف وهالة ونادر</span></div><div class="stat">+٦٥٠ ألف مشاهدة · قاعد ٥ أسابيع</div></div></div>
+        <div class="row"><div class="rank">٤</div><div class="move"><span class="new">جديد</span></div>
+          <div><div class="name">قعدة عالرصيف</div><div class="stat">+٥٩٨ ألف مشاهدة · أول مرة على المصطبة</div></div></div>
+        <div class="row"><div class="rank">٥</div><div class="move up">▲<br>٤</div>
+          <div><div class="name">مش فاضيين <span>· بودكاست عن الشغل والفلوس</span></div><div class="stat">+٤١٠ ألف مشاهدة · قاعد ٣ أسابيع</div></div></div>
+
+        <div class="card-foot"><span>بنعد مشاهدات الأسبوع على الحلقات اللي نزلت في آخر ٩٠ يوم على يوتيوب</span><span class="mono">mastaba.fm</span></div>
+      </div>
+      <figcaption class="caption">مثال بأسماء وأرقام وهمية. التشارت الحقيقي لسه ما نزلش.</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap en" lang="en" aria-labelledby="about-en">
+    <h2 id="about-en">About المصطبة</h2>
+    <p>المصطبة (mastaba.fm) is a weekly public chart of Arabic-language podcasts published on YouTube, starting with Egypt. The name means the bench outside a village house where people gather in the evening to talk.</p>
+    <p>We use the YouTube Data API to read public information about podcast channels and episodes: titles, durations, publish dates, and view, like and comment counts. From daily readings we calculate how many views each show's recent episodes gained during the week, and publish a ranked chart. Every entry links back to the show on YouTube.</p>
+    <p>View counts come from YouTube. Rankings, weekly gains and scores are our own calculations and are not YouTube metrics. المصطبة is not affiliated with or endorsed by YouTube. No one can pay to appear on the chart or to rank higher.</p>
+    <p class="dim">We don't offer accounts or sign-in, and we don't collect personal data from visitors. The first chart has not been published yet; the example above uses fictional names and numbers.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">mastaba.fm</span>
+    <nav aria-label="روابط">
+      <a href="privacy.html">الخصوصية · Privacy</a>
+      <a href="terms.html">الشروط · Terms</a>
+      <a href="mailto:hello@mastaba.fm">hello@mastaba.fm</a>
+    </nav>
+    <span>البيانات من يوتيوب. المصطبة مش تابعة ليوتيوب.</span>
+  </div>
+</footer>
+
+</body>
+</html>
