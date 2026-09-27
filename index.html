@@ -4,13 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>المصطبة · تشارت البودكاست العربي</title>
-<meta name="description" content="المصطبة: تشارت أسبوعي للبودكاست العربي على يوتيوب. بنعد كل يوم، ومحدش بيدفع عشان يطلع. A weekly chart of Arabic podcasts on YouTube.">
+<meta name="description" content="المصطبة: تشارت كل أسبوع للبودكاست العربي على يوتيوب. A weekly chart of Arabic podcasts on YouTube.">
 <meta name="theme-color" content="#1B1A2E">
 <meta property="og:title" content="المصطبة · تشارت البودكاست العربي">
-<meta property="og:description" content="مين على المصطبة الأسبوع ده؟ تشارت أسبوعي للبودكاست العربي على يوتيوب.">
+<meta property="og:description" content="مين على المصطبة الأسبوع ده؟ تشارت كل أسبوع للبودكاست العربي على يوتيوب.">
 <meta property="og:url" content="https://mastaba.fm/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_EG">
+<meta property="og:image" content="https://mastaba.fm/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="المصطبة: تشارت البودكاست العربي">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23E8A33D'/%3E%3Ccircle cx='21' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='32' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='43' cy='25' r='5' fill='%231B1A2E'/%3E%3Crect x='13' y='33' width='38' height='5' rx='1.5' fill='%231B1A2E'/%3E%3Crect x='18' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3Crect x='42' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +55,7 @@
   .hero{position:relative;overflow:hidden;background:
       radial-gradient(60% 42% at 50% 46%, rgba(232,163,61,.17), rgba(232,163,61,0) 70%),
       var(--night)}
-  .hero-in{display:flex;flex-direction:column;align-items:center;text-align:center;padding-block:36px 76px}
+  .hero-in{display:flex;flex-direction:column;align-items:center;text-align:center;padding-block:64px 76px}
   .status{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500;color:var(--mist);border:1px solid var(--night3);background:rgba(38,37,61,.7);border-radius:999px;padding:6px 16px;margin:0 0 44px}
   .status b{color:var(--stone);font-weight:700}
   .pulse{width:8px;height:8px;border-radius:50%;background:var(--up);flex:none;animation:pulse 2.2s ease-out infinite}
@@ -70,6 +75,8 @@
   .btn.primary{background:var(--lamp);color:var(--night)}
   .btn.ghost{border:1.5px solid var(--night3);color:var(--stone)}
   .btn.ghost:hover{border-color:var(--lamp)}
+  .follow{margin:22px 0 0;font-size:14.5px;color:var(--mist)}
+  .follow a{font-weight:700}
   @keyframes sit{from{transform:translateY(-.3em);opacity:0}to{transform:none;opacity:1}}
 
   /* ---------- ticker ---------- */
@@ -331,18 +338,18 @@
   </div>
 
   <div class="wrap hero-in" id="top">
-    <p class="status"><span class="pulse" aria-hidden="true"></span><span>بنعد من <b>١٩ سبتمبر ٢٠٢٦</b><span id="daycount"></span></span></p>
     <div class="seat">
       <h1 class="wordmark">المصطبة</h1>
       <div class="bench" aria-hidden="true"></div>
     </div>
     <p class="domain mono">mastaba.fm</p>
     <p class="q">مين على المصطبة الأسبوع ده؟</p>
-    <p class="lede">تشارت أسبوعي للبودكاست العربي على يوتيوب. كل يوم بنسجّل أرقام أكتر من ٢٠٠ بودكاست، وأول تشارت هينزل أول ما يجهز.</p>
+    <p class="lede">تشارت كل أسبوع للبودكاست العربي على يوتيوب. لسه بنجمع الأرقام، وأول تشارت هينزل قريب.</p>
     <div class="ctas">
       <a class="btn primary" href="#how">إزاي بنعد</a>
       <a class="btn ghost" href="#podcasters">عندك بودكاست؟</a>
     </div>
+    <p class="follow">تابعنا عشان تشوف أول تشارت: <a href="https://www.instagram.com/mastabafm/" rel="me">إنستجرام</a> و<a href="https://www.tiktok.com/@mastabafm" rel="me">تيك توك</a></p>
   </div>
 </header>
 
@@ -358,10 +365,9 @@
   <!-- ===== showcase ===== -->
   <section class="showcase" aria-labelledby="show-h">
     <div class="wrap">
-      <p class="eyebrow">التشارت في الشغل</p>
-      <h2 id="show-h">كل أسبوع، ٣ حاجات</h2>
-      <p class="intro">كاروسيل للتوب ٢٠، شارة لصاحب رقم ١، وكارت لكل برنامج يطلع على المصطبة ينزّله ستوري.</p>
-      <p class="sample-note">مثال: الأسماء والأرقام اللي تحت وهمية. التشارت الحقيقي لسه ما نزلش.</p>
+      <h2 id="show-h">شكل التشارت</h2>
+      <p class="intro">كل أسبوع هينزل بوست فيه التوب ٢٠. اللي يطلع رقم ١ ياخد شارة، وكل برنامج في التوب ٢٠ ياخد كارت خاص بيه.</p>
+      <p class="sample-note">الأسماء والأرقام هنا متألفة. التشارت الحقيقي لسه ما نزلش.</p>
 
       <div class="show-grid">
 
@@ -390,7 +396,7 @@
               <div class="post-foot"><span>بنعد مشاهدات الأسبوع على الحلقات اللي نزلت في آخر ٩٠ يوم على يوتيوب</span><span class="mono">mastaba.fm</span></div>
             </div>
           </div>
-          <figcaption><strong>كاروسيل التوب ٢٠</strong><span>٢٠ برنامج، طالع ونازل وجديد، كل أسبوع على إنستجرام وتيك توك.</span></figcaption>
+          <figcaption><strong>بوست التوب ٢٠</strong><span>على إنستجرام وتيك توك، وكل برنامج فيه معمول له تاج.</span></figcaption>
         </figure>
 
         <figure class="piece p2 rv">
@@ -404,7 +410,7 @@
               <div class="mono">mastaba.fm</div>
             </div>
           </div>
-          <figcaption><strong>شارة «رقم ١ على المصطبة»</strong><span>لصاحب أكبر زيادة في المشاهدات الأسبوع ده. تتحط على الثامبنيل أو في البوست.</span></figcaption>
+          <figcaption><strong>شارة رقم ١</strong><span>للبرنامج اللي مشاهداته زادت أكتر من أي برنامج تاني الأسبوع ده.</span></figcaption>
         </figure>
 
         <figure class="piece p3 rv">
@@ -433,7 +439,7 @@
               <div class="s-foot"><span class="mono">mastaba.fm</span></div>
             </div>
           </div>
-          <figcaption><strong>كارت «إنت على المصطبة»</strong><span>لكل برنامج يدخل التوب ٢٠، جاهز ينزل ستوري.</span></figcaption>
+          <figcaption><strong>الكارت بتاعك</strong><span>بنبعته لكل برنامج في التوب ٢٠، ينزّله ستوري لو حب.</span></figcaption>
         </figure>
 
       </div>
@@ -443,20 +449,19 @@
   <!-- ===== vocabulary ===== -->
   <section aria-labelledby="vocab-h">
     <div class="wrap">
-      <p class="eyebrow">قاموس المصطبة</p>
-      <h2 id="vocab-h">هتسمع الكلام ده كتير</h2>
-      <p class="intro">لو قعدت على المصطبة، يبقى دخلت التشارت. والباقي بسيط.</p>
+      <h2 id="vocab-h">الكلام اللي هتشوفه</h2>
+      <p class="intro">«على المصطبة» يعني في التشارت. والباقي كده:</p>
       <div class="vocab">
         <div class="term feature rv">
           <svg class="bench-ico" fill="#1B1A2E" aria-hidden="true"><use href="#bench"/></svg>
-          <div><div class="tok">رقم ١ على المصطبة</div><p>البرنامج اللي حلقاته زادت أكتر مشاهدات الأسبوع ده.</p></div>
+          <div><div class="tok">رقم ١ على المصطبة</div><p>البرنامج اللي مشاهداته زادت أكتر من أي برنامج تاني الأسبوع ده.</p></div>
         </div>
-        <div class="term rv"><div class="tok">على المصطبة</div><p>دخل التوب ٢٠ الأسبوع ده.</p></div>
-        <div class="term rv"><div class="tok"><span class="new">جديد</span> أول مرة على المصطبة</div><p>أول أسبوع يدخل فيه البرنامج التشارت.</p></div>
-        <div class="term rv"><div class="tok">قاعد ٥ أسابيع</div><p>بقاله كام أسبوع على المصطبة.</p></div>
+        <div class="term rv"><div class="tok">على المصطبة</div><p>في التوب ٢٠ الأسبوع ده.</p></div>
+        <div class="term rv"><div class="tok"><span class="new">جديد</span> أول مرة على المصطبة</div><p>أول أسبوع للبرنامج في التشارت.</p></div>
+        <div class="term rv"><div class="tok">قاعد ٥ أسابيع</div><p>بقاله ٥ أسابيع في التشارت.</p></div>
         <div class="term rv"><div class="tok up"><svg class="arrow" fill="currentColor" aria-hidden="true"><use href="#tri-up"/></svg>طالع ٣</div><p>طلع ٣ مراكز عن الأسبوع اللي فات.</p></div>
-        <div class="term rv"><div class="tok down"><svg class="arrow" fill="currentColor" aria-hidden="true"><use href="#tri-down"/></svg>نازل ٢</div><p>نزل مركزين. بيحصل، والأسبوع الجاي لسه جاي.</p></div>
-        <div class="term risers rv"><div class="tok">الصاعدون</div><p>البرامج اللي عملت أحسن بكتير من العادي بتاعها، مهما كان حجمها. هنا البرنامج الصغير ممكن يسبق الكبير.</p></div>
+        <div class="term rv"><div class="tok down"><svg class="arrow" fill="currentColor" aria-hidden="true"><use href="#tri-down"/></svg>نازل ٢</div><p>نزل مركزين عن الأسبوع اللي فات.</p></div>
+        <div class="term risers rv"><div class="tok">الصاعدون</div><p>البرامج اللي عملت أحسن من العادي بتاعها بكتير، حتى لو برامج صغيرة.</p></div>
       </div>
     </div>
   </section>
@@ -464,28 +469,27 @@
   <!-- ===== how we count ===== -->
   <section class="how" id="how" aria-labelledby="how-h">
     <div class="wrap">
-      <p class="eyebrow">المنهجية، من غير ألغاز</p>
       <h2 id="how-h">إزاي بنعد</h2>
-      <p class="intro">المشاهدات أرقام يوتيوب العامة، والترتيب حسابنا إحنا. ودي القواعد كلها، مكتوبة قدامك.</p>
+      <p class="intro">المشاهدات من يوتيوب، والترتيب إحنا اللي بنحسبه. ودي كل القواعد.</p>
 
       <div class="facts rv">
-        <div><b>+٢٠٠</b><span>بودكاست بنتابعه</span></div>
-        <div><b>يوميًا</b><span>بنسجّل أرقام كل حلقة</span></div>
-        <div><b>٩٠ يوم</b><span>نافذة الحساب</span></div>
-        <div><b>٠</b><span>مراكز مدفوعة</span></div>
+        <div><b>+٣٠٠</b><span>بودكاست بنتابعه</span></div>
+        <div><b>كل يوم</b><span>بنسجّل الأرقام</span></div>
+        <div><b>٩٠ يوم</b><span>عمر الحلقات اللي بنحسبها</span></div>
+        <div><b>٠</b><span>ترتيب مدفوع</span></div>
       </div>
 
       <ol class="steps">
-        <li class="rv"><span class="n" aria-hidden="true">١</span><div><h3>كل يوم بنسجّل</h3><p>بنقرا أرقام يوتيوب العامة لكل حلقة: المشاهدات والإعجابات والتعليقات. يوتيوب بيوريك رقم النهارده بس، وإحنا بنحتفظ بالتاريخ.</p></div></li>
-        <li class="rv"><span class="n" aria-hidden="true">٢</span><div><h3>آخر الأسبوع بنطرح</h3><p>بنشوف كل حلقة زادت كام مشاهدة خلال الأسبوع، مش هي عندها كام من الأول.</p></div></li>
-        <li class="rv"><span class="n" aria-hidden="true">٣</span><div><h3>وبعدين بنرتّب</h3><p>على لوحتين، كل واحدة بتجاوب على سؤال مختلف.</p></div></li>
+        <li class="rv"><span class="n" aria-hidden="true">١</span><div><h3>كل يوم</h3><p>بنسجّل المشاهدات والإعجابات والتعليقات لكل حلقة. يوتيوب بيوريك رقم النهارده بس، وإحنا بنحتفظ بالأرقام القديمة.</p></div></li>
+        <li class="rv"><span class="n" aria-hidden="true">٢</span><div><h3>آخر الأسبوع</h3><p>بنحسب كل حلقة زادت كام مشاهدة في الأسبوع.</p></div></li>
+        <li class="rv"><span class="n" aria-hidden="true">٣</span><div><h3>الترتيب</h3><p>بنطلّع من الأرقام دي لوحتين: التوب ٢٠ والصاعدون.</p></div></li>
       </ol>
 
       <div class="boards">
         <article class="board rv">
           <h3>التوب ٢٠ <span class="pill">مين زاد أكتر</span></h3>
-          <p>البرامج مترتبة حسب <strong>المشاهدات اللي زادت الأسبوع ده</strong> على حلقاتها الكاملة (٢٠ دقيقة وأكتر) <strong>اللي نزلت في آخر ٩٠ يوم</strong>. الكليبات مش محسوبة.</p>
-          <p>ولما حلقة تعدّي ٩٠ يوم، بتخرج من الحساب. عشان كده ممكن برنامج ينزل في التشارت من غير ما حاجة تتغير عنده: ده قاعدة، مش غلطة.</p>
+          <p>بنرتّب البرامج حسب <strong>المشاهدات اللي زادت الأسبوع ده</strong> على حلقاتها الكاملة (٢٠ دقيقة وأكتر) <strong>اللي نزلت في آخر ٩٠ يوم</strong>. الكليبات مش بتتحسب.</p>
+          <p>الحلقة اللي تعدّي ٩٠ يوم بتخرج من الحساب، فممكن برنامج ينزل في الترتيب حتى لو أرقامه ما قلّتش.</p>
           <div class="viz" role="img" aria-label="رسم توضيحي: الحلقات اللي نزلت في آخر ٩٠ يوم بس هي اللي بتتحسب">
             <div class="win" aria-hidden="true">
               <span class="lbl today">النهارده</span>
@@ -502,9 +506,9 @@
         </article>
 
         <article class="board rv">
-          <h3>الصاعدون <span class="pill">مين كبر عن نفسه</span></h3>
-          <p>هنا كل برنامج <strong>بيتقارن بنفسه</strong>: أسبوعه ده قصاد المعدل الطبيعي بتاعه. فالبرنامج الصغير اللي عمل أحسن أسبوع ليه ممكن يسبق برنامج كبير عمل أسبوع عادي.</p>
-          <p>دي اللوحة الوحيدة اللي بتقارن كده. التوب ٢٠ بيعد المشاهدات زي ما هي.</p>
+          <h3>الصاعدون <span class="pill">مقارنة بنفسه</span></h3>
+          <p>هنا بنقارن كل برنامج <strong>بنفسه</strong>: الأسبوع ده قصاد المعتاد بتاعه. برنامج صغير عمل أحسن أسبوع ليه ممكن يسبق برنامج كبير أسبوعه عادي.</p>
+          <p>التوب ٢٠ مش كده، هو بيعد المشاهدات زي ما هي.</p>
           <div class="viz" role="img" aria-label="رسم توضيحي: برنامج صغير عمل ٣ أضعاف العادي، وبرنامج كبير عمل أسبوع عادي">
             <div class="bars" aria-hidden="true">
               <div>
@@ -519,7 +523,7 @@
               </div>
               <div class="k"><span><i></i>العادي بتاعه</span><span><i class="w"></i>الأسبوع ده</span></div>
             </div>
-            <p class="viz-cap">في التوب ٢٠ الكبير فوق. في الصاعدون، الصغير هو اللي على المصطبة.</p>
+            <p class="viz-cap">في التوب ٢٠ الكبير هيبقى فوق. في الصاعدون الصغير.</p>
           </div>
         </article>
       </div>
@@ -528,15 +532,15 @@
         <div>
           <h3>مين يدخل التشارت</h3>
           <ul class="checks">
-            <li class="rv"><span class="ck" aria-hidden="true"><svg><use href="#check"/></svg></span><div><b>حوار بين اتنين أو أكتر</b><span>مش مونولوج ولا محاضرة ولا حكي لشخص واحد.</span></div></li>
-            <li class="rv"><span class="ck" aria-hidden="true"><svg><use href="#check"/></svg></span><div><b>الحلقة ٢٠ دقيقة أو أكتر</b><span>الحلقات الكاملة بس. الكليبات مش بتتعد.</span></div></li>
-            <li class="rv"><span class="ck" aria-hidden="true"><svg><use href="#check"/></svg></span><div><b>٣ حلقات على الأقل في آخر ٩٠ يوم</b><span>يعني برنامج شغّال دلوقتي، مش أرشيف.</span></div></li>
+            <li class="rv"><span class="ck" aria-hidden="true"><svg><use href="#check"/></svg></span><div><b>حوار بين اتنين أو أكتر</b><span>مش شخص واحد بيتكلم لوحده.</span></div></li>
+            <li class="rv"><span class="ck" aria-hidden="true"><svg><use href="#check"/></svg></span><div><b>الحلقة ٢٠ دقيقة أو أكتر</b><span>الحلقة الكاملة بس، مش الكليبات.</span></div></li>
+            <li class="rv"><span class="ck" aria-hidden="true"><svg><use href="#check"/></svg></span><div><b>٣ حلقات على الأقل في آخر ٩٠ يوم</b><span>يعني البرنامج لسه شغال.</span></div></li>
           </ul>
         </div>
         <div class="promises">
-          <div class="promise big rv"><b>مفيش فلوس في الترتيب. أبدًا.</b><p>محدش يقدر يدفع عشان يدخل التشارت أو يطلع مركز واحد.</p></div>
-          <div class="promise rv"><b>بنقول اللي بنقيسه بس</b><p>مش بنقول مين «الأكتر سماعًا». بنقول مين زادت مشاهداته على يوتيوب، وبالأرقام. البرنامج اللي حلقاته الكاملة مش على يوتيوب مش هيظهر، وده مقصود.</p></div>
-          <div class="promise rv"><b>أي تغيير هيبقى علني</b><p>لو غيّرنا قاعدة، هنكتبها هنا ونقول قبلها.</p></div>
+          <div class="promise big rv"><b>مفيش ترتيب مدفوع</b><p>محدش يقدر يدفع عشان يدخل التشارت أو يطلع لفوق.</p></div>
+          <div class="promise rv"><b>بنقول اللي بنعده بس</b><p>إحنا بنعد مشاهدات يوتيوب، ومش بنقول مين الأكتر سماعًا. البرنامج اللي مش منزّل حلقاته الكاملة على يوتيوب مش هيظهر في التشارت.</p></div>
+          <div class="promise rv"><b>لو غيّرنا قاعدة هنقول</b><p>هنكتب التغيير هنا قبل ما نطبّقه.</p></div>
         </div>
       </div>
     </div>
@@ -545,21 +549,20 @@
   <!-- ===== podcasters ===== -->
   <section class="pods" id="podcasters" aria-labelledby="pods-h">
     <div class="wrap">
-      <p class="eyebrow">للبودكاستات</p>
-      <h2 id="pods-h">عايز تقعد على المصطبة؟</h2>
-      <p class="intro">مفيش تسجيل ولا فورم ولا فلوس. لو برنامجك على يوتيوب وبيحقق الشروط، هو بيتعد لوحده.</p>
+      <h2 id="pods-h">عندك بودكاست؟</h2>
+      <p class="intro">مش محتاج تسجّل ولا تدفع حاجة. لو برنامجك على يوتيوب وبيحقق الشروط، هيتعد زي أي برنامج.</p>
       <div class="pods-grid">
         <ol class="road">
-          <li class="rv"><h3>اتأكد إن برنامجك بيحقق الشروط</h3><p>حوار بين اتنين أو أكتر، حلقات ٢٠ دقيقة وأكتر، و٣ حلقات على الأقل في آخر ٩٠ يوم. <a href="#how">القواعد كاملة</a></p></li>
-          <li class="rv"><h3>لو مش في قايمتنا، قولنا</h3><p>بنتابع أكتر من ٢٠٠ بودكاست، وأكيد في برامج فاتتنا. ابعت اسم البرنامج ولينك القناة.</p></li>
-          <li class="rv"><h3>والباقي على الأرقام</h3><p>كل أسبوع البرنامج بيتعد زي غيره بالظبط. ولما يدخل التوب ٢٠، هيبقى ليه كارت جاهز ينزّله.</p></li>
+          <li class="rv"><h3>شوف الشروط</h3><p>اتنين أو أكتر بيتكلموا، الحلقة ٢٠ دقيقة أو أكتر، و٣ حلقات على الأقل في آخر ٩٠ يوم. <a href="#how">التفاصيل</a></p></li>
+          <li class="rv"><h3>لو مش عندنا، ابعتلنا</h3><p>بنتابع أكتر من ٣٠٠ بودكاست، ولسه في برامج ما وصلناش لها.</p></li>
+          <li class="rv"><h3>لو طلعت في التوب ٢٠</h3><p>هنعملك تاج في البوست ونبعتلك الكارت بتاعك على <a href="https://www.instagram.com/mastabafm/">إنستجرام</a>.</p></li>
         </ol>
         <div class="suggest rv">
-          <h3>تعرف برنامج مكانه على المصطبة؟</h3>
-          <p>ابعتلنا اسمه ولينك قناته على يوتيوب. لو بيحقق الشروط، هنضيفه لقايمة المتابعة.</p>
+          <h3>تعرف برنامج المفروض يبقى هنا؟</h3>
+          <p>ابعت اسمه ولينك قناته على يوتيوب. لو بيحقق الشروط هنضيفه.</p>
           <a class="btn primary" href="mailto:hello@mastaba.fm?subject=%D8%A7%D9%82%D8%AA%D8%B1%D8%A7%D8%AD%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC&amp;body=%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%3A%0A%D9%84%D9%8A%D9%86%D9%83%20%D8%A7%D9%84%D9%82%D9%86%D8%A7%D8%A9%20%D8%B9%D9%84%D9%89%20%D9%8A%D9%88%D8%AA%D9%8A%D9%88%D8%A8%3A%0A">اقترح برنامج</a>
           <p class="alt"><a href="mailto:hello@mastaba.fm" class="mono">hello@mastaba.fm</a></p>
-          <p class="fine">الاقتراح مش بيضمن مكان في التشارت: الأرقام هي اللي بتحكم. وعندك سؤال عن ترتيبك؟ نفس الإيميل.</p>
+          <p class="fine">الاقتراح مش بيضمن مكان في التشارت، الأرقام بس هي اللي بتقرر. ولو عندك سؤال عن ترتيبك، ابعت على نفس الإيميل.</p>
         </div>
       </div>
     </div>
@@ -575,7 +578,7 @@
           <p><span class="ar" lang="ar">المصطبة</span> (el-mastaba) is the stone bench outside a village house in Egypt, where people sit in the evening and talk. That's what a podcast is, so that's what we named the chart.</p>
           <p>mastaba.fm is a weekly chart of Arabic podcasts on YouTube, starting with Egypt. Every day we read public data about podcast channels and episodes through the YouTube Data API: titles, durations, publish dates, and view, like and comment counts. From those daily readings we work out how many views each show's recent episodes gained during the week, and rank the shows.</p>
           <p>The view counts come from YouTube. The rankings, weekly gains and any scores are our own calculations, not YouTube metrics. We're independent: mastaba.fm is not affiliated with or endorsed by YouTube or Google, we don't produce or own any show, and no one can pay to appear on the chart or to move up it.</p>
-          <p>There's nothing to sign up for. The site has no accounts or sign-in and doesn't collect personal data from visitors. We've been collecting data since 19 September 2026 and track more than 200 shows. The chart itself isn't public yet, so the examples on this page use fictional names and numbers.</p>
+          <p>There's nothing to sign up for. The site has no accounts or sign-in and doesn't collect personal data from visitors. We've been collecting data since 19 September 2026 and track more than 300 shows. The chart itself isn't public yet, so the examples on this page use fictional names and numbers.</p>
         </div>
         <dl class="glance">
           <div><dt>What</dt><dd>A weekly chart of Arabic podcasts on YouTube, Egypt first</dd></div>
@@ -583,7 +586,7 @@
           <div><dt>Rankings</dt><dd>Our own calculations, not YouTube metrics</dd></div>
           <div><dt>Independence</dt><dd>Not affiliated with YouTube or Google. No paid placement.</dd></div>
           <div><dt>Visitors</dt><dd>No accounts, no sign-in, no personal data collected</dd></div>
-          <div><dt>Contact</dt><dd><a href="mailto:hello@mastaba.fm">hello@mastaba.fm</a></dd></div>
+          <div><dt>Contact</dt><dd><a href="mailto:hello@mastaba.fm">hello@mastaba.fm</a><br>@mastabafm on <a href="https://www.instagram.com/mastabafm/">Instagram</a> and <a href="https://www.tiktok.com/@mastabafm">TikTok</a></dd></div>
         </dl>
       </div>
     </div>
@@ -597,6 +600,8 @@
     <nav aria-label="روابط">
       <a href="privacy.html">الخصوصية · Privacy</a>
       <a href="terms.html">الشروط · Terms</a>
+      <a href="https://www.instagram.com/mastabafm/" rel="me">إنستجرام</a>
+      <a href="https://www.tiktok.com/@mastabafm" rel="me">تيك توك</a>
       <a href="mailto:hello@mastaba.fm" class="mono">hello@mastaba.fm</a>
     </nav>
     <small>© ٢٠٢٦ المصطبة · من القاهرة</small>
@@ -606,16 +611,6 @@
 <script>
 (function(){
   var d = document.documentElement;
-  // Day counter: day 1 = 19 Sep 2026, Cairo time (UTC+3).
-  try{
-    var start = Date.UTC(2026,8,18,21,0,0);
-    var n = Math.floor((Date.now() - start) / 86400000) + 1;
-    var el = document.getElementById('daycount');
-    if (el && n >= 1 && n < 10000){
-      var ar = String(n).replace(/\d/g, function(c){ return '٠١٢٣٤٥٦٧٨٩'[c]; });
-      el.textContent = ' · اليوم ' + ar;
-    }
-  }catch(e){}
   // Gentle reveal on scroll. Content stays visible without JS.
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduce && 'IntersectionObserver' in window){
