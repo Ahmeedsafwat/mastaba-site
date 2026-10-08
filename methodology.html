@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>إزاي بنعدّ · المصطبة</title>
+<meta name="description" content="قواعد تشارت المصطبة: إزاي بنرتّب البودكاستات العربية كل أسبوع من أرقام يوتيوب العامة.">
+<meta name="theme-color" content="#1B1A2E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23E8A33D'/%3E%3Ccircle cx='21' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='32' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='43' cy='25' r='5' fill='%231B1A2E'/%3E%3Crect x='13' y='33' width='38' height='5' rx='1.5' fill='%231B1A2E'/%3E%3Crect x='18' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3Crect x='42' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{--night:#1B1A2E;--night2:#26253D;--night3:#34334F;--lamp:#E8A33D;--stone:#F2E6CF;--mist:#A9A2BC;
+    --kufi:"Reem Kufi","Alexandria",system-ui,sans-serif;--sans:"Alexandria","Segoe UI",Tahoma,system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--night);color:var(--stone);font-family:var(--sans);font-size:17px;line-height:1.8}
+  a{color:var(--lamp);text-underline-offset:4px;overflow-wrap:anywhere}
+  a:focus-visible{outline:2px solid var(--lamp);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .mono{font-family:var(--mono);font-weight:500;direction:ltr;unicode-bidi:isolate}
+  .bench-ico{display:block;flex:none}
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding-block:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--kufi);font-weight:700;font-size:24px;line-height:1;color:var(--stone);text-decoration:none;min-height:44px}
+  .brand .bench-ico{width:34px;height:26px}
+  .back{color:var(--mist);text-decoration:none;font-size:15px;font-weight:500;padding-block:12px}
+  .back:hover{color:var(--stone)}
+  .page-hero{background:radial-gradient(70% 90% at 50% 0%,rgba(232,163,61,.13),rgba(232,163,61,0) 70%),var(--night);border-bottom:1px solid var(--night3)}
+  .doc{max-width:760px;margin:0 auto;padding:0 20px 24px}
+  .doc h1{font-weight:900;font-size:clamp(36px,8.6vw,54px);line-height:1.3;margin:28px 0 6px}
+  .doc .updated{color:var(--mist);margin:0 0 30px;font-size:15px}
+  .doc .ar{background:var(--night2);border:1px solid var(--night3);border-radius:20px;padding:22px 22px 12px;margin:0 0 8px;font-size:17.5px}
+  .doc .ar p{margin:0 0 12px}
+  .doc .en{direction:ltr;text-align:left;margin-top:40px;padding-top:6px}
+  .doc .en h2{font-family:var(--sans);font-size:clamp(26px,5.4vw,34px);font-weight:800;letter-spacing:-.01em;line-height:1.25;margin:0 0 14px;padding-bottom:16px;border-bottom:1px solid var(--night3)}
+  .doc .en h3{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lamp);margin:34px 0 6px;line-height:1.5}
+  .doc .en p,.doc .en li{max-width:66ch;font-size:16.5px;line-height:1.75}
+  .doc .en p{margin:0 0 12px}
+  .doc .en ul{padding-left:0;margin:0 0 12px;list-style:none}
+  .doc .en li{position:relative;padding-left:22px;margin-bottom:8px}
+  .doc .en li::before{content:"";position:absolute;left:2px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--lamp)}
+  footer{border-top:1px solid var(--night3);margin-top:64px;padding:40px 0 48px;color:var(--mist);font-size:15px}
+  .foot{display:flex;flex-direction:column;gap:22px}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  .foot-brand .bench-ico{width:40px;height:30px}
+  .foot-brand .w{font-family:var(--kufi);font-weight:700;font-size:26px;color:var(--stone);line-height:1}
+  .foot-brand .mono{color:var(--lamp);font-size:14px;margin-inline-start:4px}
+  .foot nav{display:flex;flex-wrap:wrap;gap:4px 26px}
+  .foot nav a{color:var(--stone);text-decoration:none;padding-block:10px}
+  .foot nav a:hover,.foot nav a[aria-current]{color:var(--lamp)}
+  .foot small{font-size:13.5px}
+  @media (min-width:760px){.foot{flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap}}
+  .doc .lead{font-size:19px;margin:0 0 8px}
+  .doc h2{font-weight:800;font-size:clamp(22px,5vw,26px);line-height:1.4;margin:40px 0 10px}
+  .doc h2::before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--lamp);margin-bottom:14px}
+  .doc p{margin:0 0 12px}
+  .doc main-ul,.doc .list{padding:0;margin:0 0 12px;list-style:none}
+  .doc .list li{position:relative;padding-inline-start:22px;margin-bottom:8px}
+  .doc .list li::before{content:"";position:absolute;inset-inline-start:2px;top:.75em;width:7px;height:7px;border-radius:50%;background:var(--lamp)}
+  .doc .box{background:var(--night2);border:1px solid var(--night3);border-radius:20px;padding:20px 22px 10px;margin:14px 0}
+  .doc .rule{color:var(--lamp);font-weight:800}
+  .doc .tags{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 14px;padding:0;list-style:none}
+  .doc .tags li{background:var(--night2);border:1px solid var(--night3);border-radius:999px;padding:4px 14px}
+  .doc .up{color:#7FD1B9}.doc .down{color:#EF8A74}
+  .doc .cta{display:inline-block;background:var(--lamp);color:var(--night);font-weight:800;text-decoration:none;border-radius:999px;padding:12px 26px;min-height:44px}
+  .doc .log li{color:var(--mist)} .doc .log b{color:var(--stone)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="bench" viewBox="0 0 120 90"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></symbol></svg>
+<header class="page-hero">
+  <div class="wrap topbar">
+    <a class="brand" href="index.html"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg>المصطبة</a>
+    <a class="back" href="index.html">→ الرئيسية</a>
+  </div>
+</header>
+<main class="doc">
+
+
+<h1>إزاي بنعدّ؟</h1>
+<p class="updated">آخر تحديث: ٨ أكتوبر ٢٠٢٦</p>
+<p class="lead">المصطبة تشارت أسبوعي للبودكاست العربي على يوتيوب. هنا كل القواعد اللي بنرتّب بيها، من غير أسرار. لو قاعدة اتغيرت، هنكتب هنا إيه اللي اتغير وإمتى.</p>
+
+<h2>الفكرة في سطر</h2>
+<div class="box">
+<p>كل أسبوع بنحسب <span class="rule">المشاهدات اللي كسبتها حلقات كل بودكاست على يوتيوب في الأسبوع ده</span>، ونرتّب البودكاستات على الأساس ده. مش مهم مين الأكبر. المهم مين اتسمع أكتر الأسبوع ده.</p>
+</div>
+
+<h2>منين بنجيب الأرقام؟</h2>
+<p>من أرقام يوتيوب العامة بس: عدد المشاهدات والإعجابات والتعليقات اللي أي حد يقدر يشوفها تحت الفيديو. بنقراها كل يوم عن طريق الـ API الرسمي بتاع يوتيوب. مش بنستخدم أي بيانات خاصة، ومش بنطلب من حد يدخل بحسابه.</p>
+<p>الترتيب مبني على <b>المشاهدات</b>. الإعجابات والتعليقات بنستخدمها بس في فحص الجودة (شوف تحت).</p>
+
+<h2>أسبوع التشارت</h2>
+<ul class="list">
+<li>الأسبوع بيبدأ يوم <b>الجمعة</b> وبيخلص الجمعة اللي بعدها.</li>
+<li>بناخد قراءة لكل حلقة يوم الجمعة الصبح، وقراءة تانية الجمعة اللي بعدها. الفرق بينهم هو مشاهدات الأسبوع.</li>
+<li>التشارت بينزل يوم <b>الأحد</b> اللي بعده.</li>
+</ul>
+
+<h2>مين يدخل التشارت؟</h2>
+<p>البودكاست لازم يكون:</p>
+<ul class="list">
+<li><b>حوار</b> بين اتنين أو أكتر، بمقدم ثابت. المحاضرات والمونولوج والقراءة والسرد مش بيدخلوا.</li>
+<li>منشور على <b>يوتيوب</b>، بحلقات كاملة.</li>
+<li>نزّل <b>٣ حلقات كاملة على الأقل في آخر ٩٠ يوم</b>.</li>
+</ul>
+<p>البودكاست اللي بينشر حلقاته الكاملة على منصات صوتية بس مش هيظهر عندنا، وده مقصود: إحنا بنعدّ يوتيوب بس، وبنقول كده بوضوح.</p>
+
+<h2>إيه اللي بيتحسب؟</h2>
+<ul class="list">
+<li><b>الحلقات الكاملة بس</b>: ٢٠ دقيقة أو أكتر.</li>
+<li>الحلقات المنشورة في <b>آخر ٩٠ يوم</b>.</li>
+<li>الحلقة اللي نزلت في نص الأسبوع بتتحسب من الصفر.</li>
+<li>البث المباشر بيتحسب لو كان حلقة حوار من البودكاست وخلص.</li>
+</ul>
+
+<h2>إيه اللي مش بيتحسب؟</h2>
+<ul class="list">
+<li>الشورتس والكليبات وأي فيديو أقل من ٢٠ دقيقة.</li>
+<li><b>إعادة الرفع</b>: لو نفس الحلقة اترفعت مرتين، بتتحسب مرة واحدة بس. ولو قناة تانية رفعت نسخة من حلقة، النسخة الأصلية بس هي اللي بتتحسب.</li>
+<li><b>التجميعات</b> زي "أجمل اللحظات" و"مختارات".</li>
+<li>الفيديوهات اللي مش حلقات، زي البث المباشر لماتش أو الفلوجز.</li>
+</ul>
+
+<h2>القنوات اللي فيها أكتر من بودكاست</h2>
+<p>لو قناة واحدة بتنشر كذا بودكاست، <b>كل بودكاست بيتحسب لوحده</b> وبياخد ترتيبه هو. القناة نفسها مش بتدخل التشارت.</p>
+
+<h2>فحص الجودة</h2>
+<p>أحيانًا حلقة بتجيب مشاهدات أعلى بكتير جدًا من الطبيعي بتاع البودكاست، وفي نفس الوقت التعليقات عليها أقل بكتير من العادي. ده غالبًا معناه مشاهدات جاية من إعلانات مدفوعة، مش من جمهور بيتفاعل.</p>
+<p>في الحالة دي <b>مش بنشيل الحلقة</b>، ومش بنتهم حد بحاجة. بس بنحسب مشاهداتها لحد سقف معقول مقارنة بالطبيعي بتاع البودكاست، والزيادة اللي فوقه مش بتتحسب. الحلقات اللي بتنجح بجد بيبان عليها التفاعل، فمش بتتأثر.</p>
+
+<h2>البودكاستات الجديدة على المصطبة</h2>
+<p>أي بودكاست بنضيفه بيدخل التشارت من أول أسبوع كامل بنكون متابعينه فيه من أوله لآخره، عشان الحسبة تبقى عادلة.</p>
+
+<h2>لوحات التشارت</h2>
+<div class="box">
+<p><b>توب ٢٠</b>: أكتر ٢٠ بودكاست كسبوا مشاهدات الأسبوع ده.</p>
+<p><b>الصاعدون</b>: البودكاستات اللي أسبوعها كان أعلى بكتير من متوسطها في آخر ٤ أسابيع. يعني مين بيكبر، مش مين الأكبر.</p>
+<p><b>حلقة الأسبوع</b>: الحلقة اللي جابت أكتر مشاهدات في أول ٧ أيام من نزولها، من الحلقات اللي نزلت الأسبوع اللي فات.</p>
+</div>
+<p>جنب كل بودكاست في التوب ٢٠:</p>
+<ul class="tags">
+<li class="up">▲ طالع</li>
+<li class="down">▼ نازل</li>
+<li>جديد</li>
+<li>عودة</li>
+<li>قاعد كام أسبوع</li>
+</ul>
+
+<h2>الفلوس والترتيب</h2>
+<div class="box">
+<p><span class="rule">محدش يقدر يدفع عشان يطلع في التشارت أو يغيّر ترتيبه. أبدًا.</span> لو في يوم بقى عندنا رعاة أو إعلانات، ده مش هيلمس الترتيب.</p>
+</div>
+
+<h2>اللي إحنا مش بنقوله</h2>
+<p>المصطبة مش بتقول مين "الأكثر استماعًا" أو "الأشهر". إحنا بنقيس حاجة واحدة واضحة: مشاهدات يوتيوب العامة في أسبوع. البودكاست ممكن يكون ليه جمهور كبير على سبوتيفاي أو أبل بودكاست، ودي حاجة إحنا مش بنشوفها.</p>
+
+<h2>لو لقيت غلطة</h2>
+<p>ممكن نغلط. لو حلقة اتحسبت غلط، أو بودكاست اتحط في المكان الغلط، ابعتلنا على <a href="mailto:hello@mastaba.fm" class="mono">hello@mastaba.fm</a>. لو الغلطة اتأكدت هنصلحها ونقول ده علنًا.</p>
+
+<h2>عندك بودكاست؟</h2>
+<p>لو بودكاستك على يوتيوب ومطابق للشروط اللي فوق ومش لاقيه عندنا، رشّحه:</p>
+<p><a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfzca70vh5PorwZOfwQu7xdxq8d9N9qb4y_RkxQC0uxKgO-Jg/viewform">رشّح بودكاستك</a></p>
+
+<h2>سجل التغييرات</h2>
+<ul class="list log">
+<li><b>٨ أكتوبر ٢٠٢٦</b>: أول نسخة من القواعد.</li>
+</ul>
+
+<section class="en" lang="en">
+<h2>Methodology</h2>
+<p>Summary in English. Last updated 8 October 2026.</p>
+<p>المصطبة (mastaba.fm) is a weekly chart of Arabic podcasts on YouTube. Shows are ranked by the public YouTube views their full episodes gained during the chart week (Friday to Friday, published Sunday), using the official YouTube Data API.</p>
+<ul>
+<li>Eligible: conversations between two or more people with a consistent host, published on YouTube, with at least 3 full episodes in the last 90 days.</li>
+<li>Counted: full episodes of 20 minutes or more, published in the last 90 days. Episodes published mid-week start from zero. Completed live conversation episodes count.</li>
+<li>Not counted: Shorts and clips, re-uploads (only the original counts), compilations, and non-episode videos.</li>
+<li>Channels carrying several podcasts: each podcast is ranked on its own; the channel is not ranked.</li>
+<li>Quality check: when an episode's views are far above the show's normal level while its comments are far below, its counted gain is capped. Nothing is removed and no one is accused.</li>
+<li>No pay-to-rank, ever. Sponsorship never affects placement.</li>
+<li>We measure public YouTube views only, not total listening. Rule changes are dated in the changelog above. Corrections: <a href="mailto:hello@mastaba.fm">hello@mastaba.fm</a>.</li>
+</ul>
+</section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <div class="foot-brand"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span class="w">المصطبة</span><span class="mono">mastaba.fm</span></div>
+    <nav aria-label="روابط">
+      <a href="methodology.html" aria-current="page">إزاي بنعدّ · Methodology</a>
+      <a href="privacy.html">الخصوصية · Privacy</a>
+      <a href="terms.html">الشروط · Terms</a>
+      <a href="https://www.instagram.com/mastabafm/" rel="me">إنستجرام</a>
+      <a href="https://www.tiktok.com/@mastabafm" rel="me">تيك توك</a>
+      <a href="mailto:hello@mastaba.fm" class="mono">hello@mastaba.fm</a>
+    </nav>
+    <small>© ٢٠٢٦ المصطبة · من القاهرة</small>
+  </div>
+</footer>
+</body>
+</html>
