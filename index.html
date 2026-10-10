@@ -50,6 +50,8 @@
   .nav a{color:var(--mist);text-decoration:none;padding-block:12px}
   .nav a:hover{color:var(--stone)}
   @media (min-width:560px){.brand span{display:inline}.nav{gap:28px;font-size:15px}}
+  @media (max-width:559px){.nav{gap:13px;font-size:13px}.nav a{white-space:nowrap}}
+  @media (max-width:399px){.nav .nav-en{display:none}}
 
   /* ---------- hero ---------- */
   .hero{position:relative;overflow:hidden;background:
@@ -347,10 +349,11 @@
   <div class="wrap topbar">
     <a class="brand" href="#top" aria-label="المصطبة"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span>المصطبة</span></a>
     <nav class="nav" aria-label="أقسام الصفحة">
+      
       <a href="#how">إزاي بنعد</a>
       <a href="methodology.html">القواعد</a>
       <a href="#podcasters">للبودكاستات</a>
-      <a href="#about" lang="en">English</a>
+      <a class="nav-en" href="#about" lang="en">English</a>
     </nav>
   </div>
 
@@ -616,6 +619,7 @@
     <div class="foot-brand"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span class="w">المصطبة</span><span class="mono">mastaba.fm</span></div>
     <nav aria-label="روابط">
       <a href="methodology.html">إزاي بنعدّ · Methodology</a>
+      
       <a href="privacy.html">الخصوصية · Privacy</a>
       <a href="terms.html">الشروط · Terms</a>
       <a href="https://www.instagram.com/mastabafm/" rel="me">إنستجرام</a>
