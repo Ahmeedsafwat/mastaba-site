@@ -54,6 +54,18 @@
   @media (max-width:399px){.nav .nav-en{display:none}}
 
   /* ---------- hero ---------- */
+  /* home only: the nav stays on screen; the bench icon alone while the big
+     logo is in view, the wordmark fades in (opacity only, its space kept)
+     once the big logo has scrolled away */
+  html{scroll-padding-top:84px}
+  .navwrap{position:fixed;top:0;left:0;right:0;z-index:20;border-bottom:1px solid transparent;transition:background-color .2s,border-color .2s}
+  .hero{padding-top:75px}
+  @media (min-width:560px){.hero{padding-top:79px}}
+  .brand span{transition:opacity .2s}
+  html.brand-js .brand span{opacity:0}
+  html.brand-js.past-hero .brand span{opacity:1}
+  html.past-hero .navwrap{background:rgba(27,26,46,.94);border-bottom-color:var(--night3);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  @media (prefers-reduced-motion:reduce){.brand span,.navwrap{transition:none}}
   .hero{position:relative;overflow:hidden;background:
       radial-gradient(60% 42% at 50% 46%, rgba(232,163,61,.17), rgba(232,163,61,0) 70%),
       var(--night)}
@@ -318,6 +330,7 @@
     .btn{transition:none}
   }
 </style>
+<script>if('IntersectionObserver' in window)document.documentElement.classList.add('brand-js')</script>
 <link rel="canonical" href="https://mastaba.fm/">
 <script type="application/ld+json">
 {
@@ -346,8 +359,9 @@
 </svg>
 
 <header class="hero">
+  <div class="navwrap">
   <div class="wrap topbar">
-    <a class="brand" href="#top" aria-label="المصطبة"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span>المصطبة</span></a>
+    <a class="brand" href="/" aria-label="المصطبة"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span>المصطبة</span></a>
     <nav class="nav" aria-label="أقسام الصفحة">
       
       <a href="#how">إزاي بنعد</a>
@@ -355,6 +369,7 @@
       <a href="#podcasters">للبودكاستات</a>
       <a class="nav-en" href="#about" lang="en">English</a>
     </nav>
+  </div>
   </div>
 
   <div class="wrap hero-in" id="top">
@@ -631,6 +646,14 @@
 </footer>
 
 <script>
+(function(){
+  // the nav wordmark returns once the big logo is out of view
+  var d = document.documentElement, seat = document.querySelector('.seat');
+  if (!seat || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(es){
+    d.classList.toggle('past-hero', !es[0].isIntersecting);
+  }).observe(seat);
+})();
 (function(){
   var d = document.documentElement;
   // Gentle reveal on scroll. Content stays visible without JS.
