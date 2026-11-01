@@ -41,31 +41,7 @@
   .skip:focus{top:12px}
   .bench-ico{display:block;flex:none}
 
-  /* ---------- top bar ---------- */
-  .topbar{display:flex;justify-content:space-between;align-items:center;padding-block:14px;position:relative;z-index:2}
-  .brand{display:flex;align-items:center;gap:10px;font-family:var(--kufi);font-weight:700;font-size:24px;line-height:1;color:var(--stone);text-decoration:none;min-height:44px}
-  .brand .bench-ico{width:34px;height:26px}
-  .brand span{display:none}
-  .nav{display:flex;gap:18px;font-size:14px;font-weight:500}
-  .nav a{color:var(--mist);text-decoration:none;padding-block:12px}
-  .nav a:hover{color:var(--stone)}
-  @media (min-width:560px){.brand span{display:inline}.nav{gap:28px;font-size:15px}}
-  @media (max-width:559px){.nav{gap:13px;font-size:13px}.nav a{white-space:nowrap}}
-  @media (max-width:399px){.nav .nav-en{display:none}}
-
   /* ---------- hero ---------- */
-  /* home only: the nav stays on screen; the bench icon alone while the big
-     logo is in view, the wordmark fades in (opacity only, its space kept)
-     once the big logo has scrolled away */
-  html{scroll-padding-top:84px}
-  .navwrap{position:fixed;top:0;left:0;right:0;z-index:20;border-bottom:1px solid transparent;transition:background-color .2s,border-color .2s}
-  .hero{padding-top:75px}
-  @media (min-width:560px){.hero{padding-top:79px}}
-  .brand span{transition:opacity .2s}
-  html.brand-js .brand span{opacity:0}
-  html.brand-js.past-hero .brand span{opacity:1}
-  html.past-hero .navwrap{background:rgba(27,26,46,.94);border-bottom-color:var(--night3);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-  @media (prefers-reduced-motion:reduce){.brand span,.navwrap{transition:none}}
   .hero{position:relative;overflow:hidden;background:
       radial-gradient(60% 42% at 50% 46%, rgba(232,163,61,.17), rgba(232,163,61,0) 70%),
       var(--night)}
@@ -330,7 +306,6 @@
     .btn{transition:none}
   }
 </style>
-<script>if('IntersectionObserver' in window)document.documentElement.classList.add('brand-js')</script>
 <link rel="canonical" href="https://mastaba.fm/">
 <script type="application/ld+json">
 {
@@ -398,20 +373,40 @@
   <symbol id="check" viewBox="0 0 16 16"><path d="M2.5 8.5 6.3 12 13.5 4" fill="none" stroke="#E8A33D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
-<header class="hero">
-  <div class="navwrap">
-  <div class="wrap topbar">
-    <a class="brand" href="/" aria-label="المصطبة"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span>المصطبة</span></a>
-    <nav class="nav" aria-label="أقسام الصفحة">
-      <a href="/charts/">التشارتات</a>
-      <a href="#how">إزاي بنعد</a>
-      <a href="methodology.html">القواعد</a>
-      <a href="#podcasters">للبودكاستات</a>
-      <a class="nav-en" href="#about" lang="en">English</a>
-    </nav>
-  </div>
-  </div>
+<style>
+  html{scroll-padding-top:76px}
+  .sitehead{position:sticky;top:0;z-index:30;background:rgba(27,26,46,.96);border-bottom:1px solid var(--night3);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .sh-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+  .sh-brand{display:flex;align-items:center;gap:10px;font-family:var(--kufi);font-weight:700;font-size:24px;line-height:1;color:var(--stone);text-decoration:none;min-height:44px;white-space:nowrap}
+  .sh-brand .bench-ico{display:block;flex:none;width:34px;height:26px}
+  .sh-links{display:flex;gap:28px;font-size:15px;font-weight:500}
+  .sh-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--mist);text-decoration:none;white-space:nowrap}
+  .sh-links a:hover{color:var(--stone)}
+  .sh-links a[aria-current],.sh-panel a[aria-current]{color:var(--lamp)}
+  .sh-mob{display:none;align-items:center;gap:8px}
+  .sh-chart{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--lamp);color:var(--night);font-weight:800;font-size:15px;text-decoration:none;white-space:nowrap}
+  .sh-menu{display:none;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid var(--night3);border-radius:12px;background:transparent;color:var(--stone);font-size:22px;line-height:1;cursor:pointer}
+  .sh-menu[aria-expanded="true"]{border-color:var(--lamp);color:var(--lamp)}
+  .sh-panel{background:#1B1A2E;border-top:1px solid var(--night3)}
+  .sh-panel[hidden]{display:none}
+  .sh-panel a{display:flex;align-items:center;min-height:52px;padding:0 20px;border-bottom:1px solid var(--night3);color:var(--stone);font-size:17px;font-weight:600;text-decoration:none}
+  @media (max-width:719px){.sh-links{display:none}.sh-mob{display:flex}html.menu-js .sh-menu{display:inline-flex}}
+  @media (min-width:720px){.sh-panel{display:none!important}}
+</style>
+<header class="sitehead"><div class="wrap sh-bar"><a class="sh-brand" href="/"><svg class="bench-ico" viewBox="0 0 120 90" fill="#E8A33D" aria-hidden="true"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></svg><span>المصطبة</span></a><nav class="sh-links" aria-label="الموقع"><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav><div class="sh-mob"><a class="sh-chart" href="/chart/2026-11-01/">التشارت</a><button class="sh-menu" type="button" aria-expanded="false" aria-controls="sh-panel" aria-label="القائمة">☰</button></div></div><nav class="sh-panel" id="sh-panel" aria-label="القائمة" hidden><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav></header>
+<script>
+(function(){
+  document.documentElement.classList.add('menu-js');
+  var b = document.querySelector('.sh-menu'), p = document.getElementById('sh-panel');
+  if (!b || !p) return;
+  function set(open){ p.hidden = !open; b.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  b.addEventListener('click', function(e){ e.stopPropagation(); set(p.hidden); });
+  document.addEventListener('click', function(e){ if (!p.hidden && !p.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') set(false); });
+})();
+</script>
 
+<header class="hero">
   <div class="wrap hero-in" id="top">
     <div class="seat">
       <h1 class="wordmark">المصطبة</h1>
@@ -601,14 +596,6 @@
 </footer>
 
 <script>
-(function(){
-  // the nav wordmark returns once the big logo is out of view
-  var d = document.documentElement, seat = document.querySelector('.seat');
-  if (!seat || !('IntersectionObserver' in window)) return;
-  new IntersectionObserver(function(es){
-    d.classList.toggle('past-hero', !es[0].isIntersecting);
-  }).observe(seat);
-})();
 (function(){
   var d = document.documentElement;
   // Gentle reveal on scroll. Content stays visible without JS.
