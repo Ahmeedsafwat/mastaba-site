@@ -136,6 +136,9 @@
   .sh-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
   .sh-brand{display:flex;align-items:center;gap:10px;font-family:var(--kufi);font-weight:700;font-size:24px;line-height:1;color:var(--stone);text-decoration:none;min-height:44px;white-space:nowrap}
   .sh-brand .bench-ico{display:block;flex:none;width:34px;height:26px}
+  .sh-brand span{transition:opacity .25s}
+  html.brand-js .sh-brand span{opacity:0}
+  html.brand-js.past-hero .sh-brand span{opacity:1}
   .sh-links{display:flex;gap:28px;font-size:15px;font-weight:500}
   .sh-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--mist);text-decoration:none;white-space:nowrap}
   .sh-links a:hover{color:var(--stone)}
@@ -153,7 +156,17 @@
 <header class="sitehead"><div class="wrap sh-bar"><a class="sh-brand" href="/"><svg class="bench-ico" viewBox="0 0 120 90" fill="#E8A33D" aria-hidden="true"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></svg><span>المصطبة</span></a><nav class="sh-links" aria-label="الموقع"><a href="/charts/" aria-current="page">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav><div class="sh-mob"><a class="sh-chart" href="/chart/2026-11-01/">التشارت</a><button class="sh-menu" type="button" aria-expanded="false" aria-controls="sh-panel" aria-label="القائمة">☰</button></div></div><nav class="sh-panel" id="sh-panel" aria-label="القائمة" hidden><a href="/charts/" aria-current="page">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav></header>
 <script>
 (function(){
-  document.documentElement.classList.add('menu-js');
+  var d = document.documentElement;
+  d.classList.add('menu-js');
+  // home: the wordmark waits until the big logo is out of view
+  if (document.querySelector('.sitehead.home') && 'IntersectionObserver' in window){
+    d.classList.add('brand-js');
+    document.addEventListener('DOMContentLoaded', function(){
+      var seat = document.querySelector('.seat');
+      if (!seat) return d.classList.remove('brand-js');
+      new IntersectionObserver(function(es){ d.classList.toggle('past-hero', !es[0].isIntersecting); }).observe(seat);
+    });
+  }
   var b = document.querySelector('.sh-menu'), p = document.getElementById('sh-panel');
   if (!b || !p) return;
   function set(open){ p.hidden = !open; b.setAttribute('aria-expanded', open ? 'true' : 'false'); }
