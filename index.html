@@ -11,10 +11,10 @@
 <meta property="og:url" content="https://mastaba.fm/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_EG">
-<meta property="og:image" content="https://mastaba.fm/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="المصطبة: تشارت البودكاست العربي">
+<meta property="og:image" content="https://mastaba.fm/chart/2026-11-01/cover.png">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1350">
+<meta property="og:image:alt" content="الأسبوع رقم ١: رقم ١ السبت الممتاز">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23E8A33D'/%3E%3Ccircle cx='21' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='32' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='43' cy='25' r='5' fill='%231B1A2E'/%3E%3Crect x='13' y='33' width='38' height='5' rx='1.5' fill='%231B1A2E'/%3E%3Crect x='18' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3Crect x='42' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -347,6 +347,46 @@
  ]
 }
 </script>
+<style>
+  .hc-now{display:inline-flex;align-items:center;gap:10px;margin:22px 0 0;padding:10px 18px;border-radius:999px;background:var(--night2);border:1px solid var(--lamp);color:var(--stone);text-decoration:none;font-weight:700}
+  .hc-now .k{color:var(--lamp);font-weight:500;font-size:15px}
+  .hc-now:hover{background:var(--night3)}
+  .latest{background:var(--night2);padding-block:72px}
+  .latest h2{margin-top:0}
+  .hc-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
+  .hc-card{background:var(--night);border:1px solid var(--night3);border-radius:22px;padding:22px 20px;min-width:0}
+  .hc-card h3{margin:0 0 10px;font-size:20px}
+  .hc-card .sub{color:var(--mist);font-size:14px;margin:-6px 0 8px}
+  .hc-one{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;border-color:rgba(232,163,61,.45);background:linear-gradient(180deg,rgba(232,163,61,.10),var(--night))}
+  .hc-one .k{color:var(--lamp);font-weight:700}
+  .hc-one .pic.big{width:160px;height:160px;border-radius:50%;object-fit:cover;background:var(--night2)}
+  .hc-one .pic.big.wide{width:240px;height:135px;border-radius:16px}
+  .hc-one .n{font-family:var(--kufi);font-size:clamp(30px,5vw,40px);line-height:1.3;margin:0}
+  .hc-one .n a{color:var(--stone);text-decoration:none}
+  .hc-one .sec{display:block;font-family:var(--sans);font-size:16px;color:var(--mist)}
+  .hc-one .mv{color:var(--lamp);font-weight:700}
+  .hc-list{list-style:none;padding:0;margin:0}
+  .hc-list li{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--night3)}
+  .hc-list .rank{width:30px;flex:none;text-align:center;font-family:var(--kufi);font-weight:700;font-size:22px;line-height:1}
+  .hc-list li.lead .rank{color:var(--lamp)}
+  .hc-list .mv{width:44px;flex:none;text-align:center;font-weight:700;font-size:12.5px;color:var(--mist)}
+  .hc-list .mv.up{color:var(--up)} .hc-list .mv.down{color:var(--down)} .hc-list .mv.new{color:var(--lamp)}
+  .hc-list .pic{width:40px;height:40px;flex:none;border-radius:50%;object-fit:cover;background:var(--night2)}
+  .hc-list .pic.wide{width:62px;height:35px;border-radius:7px}
+  .hc-list .pic.none{display:inline-block}
+  .hc-list .who{flex:1;min-width:0;line-height:1.45;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
+  .hc-list .who a{color:var(--stone);text-decoration:none;font-weight:700}
+  .hc-list .who a:hover{color:var(--lamp)}
+  .hc-list .sec{color:var(--mist);font-weight:400}
+  .hc-list .ratio{flex:none;color:var(--up);font-weight:800}
+  .hc-card .more{display:inline-block;margin-top:12px;font-weight:700;text-decoration:none}
+  .hc-ep .ep-thumb{display:block;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--night2);margin-bottom:12px}
+  .hc-ep .ep-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+  .hc-ep .t{display:block;font-weight:800;font-size:19px;line-height:1.5;color:var(--stone);text-decoration:none}
+  .hc-ep .from{color:var(--mist);margin:6px 0 0}
+  .hc-ep .from a{color:var(--stone)}
+  .hc-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">اطلع على المحتوى</a>
@@ -363,7 +403,7 @@
   <div class="wrap topbar">
     <a class="brand" href="/" aria-label="المصطبة"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span>المصطبة</span></a>
     <nav class="nav" aria-label="أقسام الصفحة">
-      
+      <a href="/charts/">التشارتات</a>
       <a href="#how">إزاي بنعد</a>
       <a href="methodology.html">القواعد</a>
       <a href="#podcasters">للبودكاستات</a>
@@ -379,107 +419,22 @@
     </div>
     <p class="domain mono">mastaba.fm</p>
     <p class="q">مين على المصطبة الأسبوع ده؟</p>
-    <p class="lede">تشارت كل أسبوع للبودكاست العربي على يوتيوب. لسه بنجمع الأرقام، وأول تشارت هينزل قريب.</p>
+    <p class="lede">تشارت كل أسبوع للبودكاست العربي على يوتيوب. التشارت الجديد بينزل كل يوم أحد.</p>
     <div class="ctas">
-      
+      <a class="btn primary" href="chart/2026-11-01/">التشارت الجديد</a>
       <a class="btn primary" href="#how">إزاي بنعد</a>
       <a class="btn ghost" href="#podcasters">عندك بودكاست؟</a>
     </div>
-    <p class="follow">تابعنا عشان تشوف أول تشارت: <a href="https://www.instagram.com/mastabafm/" rel="me">إنستجرام</a> و<a href="https://www.tiktok.com/@mastabafm" rel="me">تيك توك</a></p>
+    <a class="hc-now" href="/chart/2026-11-01/"><span class="k">رقم ١ الأسبوع ده</span><bdi class="n">السبت الممتاز</bdi><span aria-hidden="true">←</span></a>
+    <p class="follow">تابعنا عشان تشوف التشارت كل أحد: <a href="https://www.instagram.com/mastabafm/" rel="me">إنستجرام</a> و<a href="https://www.tiktok.com/@mastabafm" rel="me">تيك توك</a></p>
   </div>
 </header>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <div class="ticker-group"><span>رقم ١ على المصطبة</span><span>طالع ▲</span><span>أول مرة على المصطبة</span><span>قاعد ٥ أسابيع</span><span>الصاعدون</span><span>نازل ▼</span><span>أكتر ٢٠</span></div>
-    <div class="ticker-group"><span>رقم ١ على المصطبة</span><span>طالع ▲</span><span>أول مرة على المصطبة</span><span>قاعد ٥ أسابيع</span><span>الصاعدون</span><span>نازل ▼</span><span>أكتر ٢٠</span></div>
-  </div>
-</div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><div class="ticker-group"><span>١ <bdi>السبت الممتاز</bdi></span><span>٢ <bdi>ABtalks</bdi></span><span>٣ <bdi>إنعكاس</bdi></span><span>٤ <bdi>مع كامل احتياطي!</bdi></span><span>٥ <bdi>بودكاست بدون ورق</bdi></span><span>٦ <bdi>نقرا الفاتحة؟</bdi></span><span>٧ <bdi>قصتي</bdi></span><span>٨ <bdi>بودكاست سوالف تجارة</bdi></span><span>٩ <bdi>نوركاست</bdi></span><span>١٠ <bdi>بودكاست مرتدة</bdi></span></div><div class="ticker-group"><span>١ <bdi>السبت الممتاز</bdi></span><span>٢ <bdi>ABtalks</bdi></span><span>٣ <bdi>إنعكاس</bdi></span><span>٤ <bdi>مع كامل احتياطي!</bdi></span><span>٥ <bdi>بودكاست بدون ورق</bdi></span><span>٦ <bdi>نقرا الفاتحة؟</bdi></span><span>٧ <bdi>قصتي</bdi></span><span>٨ <bdi>بودكاست سوالف تجارة</bdi></span><span>٩ <bdi>نوركاست</bdi></span><span>١٠ <bdi>بودكاست مرتدة</bdi></span></div></div></div>
 
 <main id="main">
 
-  <!-- ===== showcase ===== -->
-  <section class="showcase" aria-labelledby="show-h">
-    <div class="wrap">
-      <h2 id="show-h">شكل التشارت</h2>
-      <p class="intro">كل أسبوع هينزل بوست فيه التشارت. اللي يطلع رقم ١ ياخد شارة، وكل برنامج في التشارت ياخد كارت خاص بيه.</p>
-      <p class="sample-note">الأسماء والأرقام هنا متألفة. التشارت الحقيقي لسه ما نزلش.</p>
-
-      <div class="show-grid">
-
-        <figure class="piece p1 rv">
-          <div class="frame">
-            <span class="tag">مثال</span>
-            <div class="post" role="img" aria-label="مثال لبوست التشارت بأسماء وأرقام وهمية">
-              <div class="post-head">
-                <div class="post-brand"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg>المصطبة</div>
-                <span class="pill">أكتر ٢٠</span>
-              </div>
-              <p class="post-title">من ١ لـ ٥</p>
-              <p class="post-sub">الأسبوع ده · سلايد ١ من ٤</p>
-
-              <div class="row lead"><div class="rank">١</div><div class="move up"><svg fill="currentColor"><use href="#tri-up"/></svg>٣</div>
-                <div><div class="name">عالبحري <small>· حكايات مع كريم ومنة</small></div><div class="stat">قاعد ٥ أسابيع</div></div></div>
-              <div class="row"><div class="rank">٢</div><div class="move"><span class="same-bar"></span></div>
-                <div><div class="name">صباح الفل يا مدير</div><div class="stat">قاعد ٥ أسابيع</div></div></div>
-              <div class="row"><div class="rank">٣</div><div class="move down"><svg fill="currentColor"><use href="#tri-down"/></svg>٢</div>
-                <div><div class="name">الكنبة الزرقا <small>· مع شريف وهالة ونادر</small></div><div class="stat">قاعد ٥ أسابيع</div></div></div>
-              <div class="row"><div class="rank">٤</div><div class="move"><span class="new">جديد</span></div>
-                <div><div class="name">قعدة عالرصيف</div><div class="stat">قاعد أسبوع</div></div></div>
-              <div class="row"><div class="rank">٥</div><div class="move up"><svg fill="currentColor"><use href="#tri-up"/></svg>٤</div>
-                <div><div class="name">مش فاضيين <small>· بودكاست عن الشغل والفلوس</small></div><div class="stat">قاعد ٣ أسابيع</div></div></div>
-
-              <div class="post-foot"><span>بنعد مشاهدات الأسبوع على الحلقات اللي نزلت في آخر ٩٠ يوم على يوتيوب</span><span class="mono">mastaba.fm</span></div>
-            </div>
-          </div>
-          <figcaption><strong>بوست التشارت</strong><span>على إنستجرام وتيك توك، وكل برنامج فيه معمول له تاج.</span></figcaption>
-        </figure>
-
-        <figure class="piece p2 rv">
-          <div class="frame">
-            <span class="tag">مثال</span>
-            <div class="badge" role="img" aria-label="شارة رقم ١ على المصطبة">
-              <svg class="bench-ico" fill="#1B1A2E" aria-hidden="true"><use href="#bench"/></svg>
-              <div class="b1">رقم ١</div>
-              <div class="b2">على المصطبة</div>
-              <div class="rule"></div>
-              <div class="mono">mastaba.fm</div>
-            </div>
-          </div>
-          <figcaption><strong>شارة رقم ١</strong><span>للبرنامج اللي مشاهداته زادت أكتر من أي برنامج تاني الأسبوع ده.</span></figcaption>
-        </figure>
-
-        <figure class="piece p3 rv">
-          <div class="frame">
-            <span class="tag">مثال</span>
-            <div class="story" role="img" aria-label="مثال لكارت ستوري لبرنامج وهمي طلع رقم ٨ على المصطبة">
-              <div class="post-head">
-                <div class="post-brand"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg>المصطبة</div>
-                <span class="pill">أكتر ٢٠</span>
-              </div>
-              <div class="s-big">
-                <span class="s-week">الأسبوع ده</span>
-                <span class="s-rank-lbl">رقم</span>
-                <span class="s-rank">٨</span>
-                <span class="s-on">على المصطبة</span>
-              </div>
-              <div class="s-show">
-                <div class="thumb" aria-hidden="true">م</div>
-                <div><div class="n">مش فاضيين</div><div class="d">بودكاست عن الشغل والفلوس</div></div>
-              </div>
-              <div class="s-stats">
-                <div><b class="up"><svg fill="currentColor"><use href="#tri-up"/></svg>٤</b><span>طالع ٤ مراكز</span></div>
-                <div><b>٣</b><span>أسابيع على المصطبة</span></div>
-              </div>
-              <div class="s-foot"><span class="mono">mastaba.fm</span></div>
-            </div>
-          </div>
-          <figcaption><strong>الكارت بتاعك</strong><span>بنبعته لكل برنامج في التشارت، ينزّله ستوري لو حب.</span></figcaption>
-        </figure>
-
-      </div>
-    </div>
-  </section>
+  <section class="latest" aria-labelledby="latest-h"><div class="wrap"><h2 id="latest-h">تشارت المصطبة رقم&nbsp;١</h2><p class="intro">أسبوع ٢٣ - ٢٩ أكتوبر ٢٠٢٦ · اتنشر ١ نوفمبر ٢٠٢٦. ده أول تشارت، فكل البرامج أول مرة على المصطبة.</p><div class="hc-grid"><article class="hc-card hc-one"><span class="k">رقم ١ الأسبوع ده</span><img class="pic big" src="https://yt3.ggpht.com/avXojlXIjbm8g8LTLcXn84-3b1pa3EpP8ufpZE3t41UZ8l7KEhVUWy7JQn0uTiAsTPX4VCMO=s800-c-k-c0x00ffffff-no-rj" alt="" loading="lazy" referrerpolicy="no-referrer"><p class="n"><a href="https://www.youtube.com/@Mogzz" rel="noopener"><bdi>السبت الممتاز</bdi></a></p><span class="mv new" title="أول مرة على المصطبة">جديد</span></article><article class="hc-card hc-top"><h3>أكتر ٢٠ · من ١ لـ ١٠</h3><ol class="hc-list"><li class="lead"><span class="rank">١</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic" src="https://yt3.ggpht.com/avXojlXIjbm8g8LTLcXn84-3b1pa3EpP8ufpZE3t41UZ8l7KEhVUWy7JQn0uTiAsTPX4VCMO=s800-c-k-c0x00ffffff-no-rj" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@Mogzz" rel="noopener"><bdi>السبت الممتاز</bdi></a></span></li><li><span class="rank">٢</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/YxPQs_zKGkE/maxresdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="ltr"><a href="https://www.youtube.com/channel/UCUgpEOv92-iovYJWZi7tT6A" rel="noopener"><bdi>ABtalks</bdi></a></span></li><li><span class="rank">٣</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic" src="https://yt3.ggpht.com/rN8PMyd6Uxa5ZR3akIMrAwAecJkrx5wCSHP5Z9IzbbdrHiIauMSJrvYUE34y39KbpCcedkCK=s800-c-k-c0x00ffffff-no-rj" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@podcastin3ikas" rel="noopener"><bdi>إنعكاس</bdi></a></span></li><li><span class="rank">٤</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic" src="https://yt3.ggpht.com/cjH_GJF90fKGItKjYZopJ4B1aBeb7E5uV4mnjjTNBNBq7PWdDvw5jkxrFuUcZ-uf4b6UH8ae1Q=s800-c-k-c0x00ffffff-no-rj" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@m3kamele7tiaty" rel="noopener"><bdi>مع كامل احتياطي!</bdi></a></span></li><li><span class="rank">٥</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic" src="https://yt3.ggpht.com/0-Zfkk-eQom9oa07PUtWemXngKsS9FprWdXMamMJJY5m0PRA0XGkoD0l0MGWV-rzOEjwcaLmYQ=s800-c-k-c0x00ffffff-no-rj" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@BidonWaraq" rel="noopener"><bdi>بودكاست بدون ورق</bdi></a></span></li><li><span class="rank">٦</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/-etvpfionhk/maxresdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@InTheBlackHole" rel="noopener"><bdi>نقرا الفاتحة؟</bdi></a></span></li><li><span class="rank">٧</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/o5_eh5MZk2s/maxresdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/playlist?list=PLKSHOeKct275tHzCn9E4i1HTIWgyM4OLy" rel="noopener"><bdi>قصتي</bdi></a></span></li><li><span class="rank">٨</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/qxR4aq6APQw/maxresdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/playlist?list=PLcD8bQVbSm3g" rel="noopener"><bdi>بودكاست سوالف تجارة</bdi></a></span></li><li><span class="rank">٩</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic" src="https://yt3.ggpht.com/L5ai2rI98RA5afze-H0MklgloONBAwKCZb16CkB3qKJdxCZLDH5BvNylptCbUVsFiKKYw5-ex0Q=s800-c-k-c0x00ffffff-no-rj" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@NOORCAST-DEEN" rel="noopener"><bdi>نوركاست</bdi></a></span></li><li><span class="rank">١٠</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/7zY2YBp3W0c/maxresdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/channel/UCj-2hfXdYPPNcLqcBeW3y8g" rel="noopener"><bdi>بودكاست مرتدة</bdi></a></span></li></ol><a class="more" href="/chart/2026-11-01/">الـ٢٠ كاملين ←</a></article><article class="hc-card hc-rise"><h3>الصاعدون</h3><p class="sub">أسبوعهم أعلى بكتير من معدلهم</p><ol class="hc-list"><li><span class="rank">١</span><img class="pic" src="https://yt3.ggpht.com/H8WZiF88QLwm6q7tRSh2zp1C6WeQyUiMvvywd_LdZdFZYrCbNx1Tk1j4flPMPxKFxmxNwMjj=s800-c-k-c0x00ffffff-no-rj" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="ltr"><a href="https://www.youtube.com/@DinaGhabbourOfficial" rel="noopener"><bdi>Dina Ghabbour</bdi></a></span><span class="ratio">×١٢٫٩</span></li><li><span class="rank">٢</span><img class="pic wide" src="https://i.ytimg.com/vi/sXlLvTpuYsw/maxresdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/channel/UCBcLf1KYcb5h2j2GszqtihA" rel="noopener"><bdi>بودكاست صلة</bdi></a></span><span class="ratio">×٧٫٠</span></li><li><span class="rank">٣</span><img class="pic" src="https://yt3.ggpht.com/42fUfEeyOiMiuiXD-qgu_kHszhWQhTyS5h2BMijeCqmICsBKeqK17ZWWUQfJx0LUeyYn-vPebwg=s800-c-k-c0x00ffffff-no-rj" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/channel/UCjsfi_JuEDYbsIF8sykTLTA" rel="noopener"><bdi>بودكاست ثبات</bdi></a></span><span class="ratio">×٦٫٥</span></li><li><span class="rank">٤</span><img class="pic wide" src="https://i.ytimg.com/vi/7OYKciDqIhQ/maxresdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/channel/UCj-2hfXdYPPNcLqcBeW3y8g" rel="noopener"><bdi>استديو الجماهير</bdi></a></span><span class="ratio">×٣٫٨</span></li><li><span class="rank">٥</span><img class="pic wide" src="https://i.ytimg.com/vi/P2U-0c9vVNw/maxresdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="ltr"><a href="https://www.youtube.com/playlist?list=PLGxK9f_BsOtiis_q8-h5JLuZT-PdzHsMc" rel="noopener"><bdi>Business With Mo Podcast 2026</bdi></a></span><span class="ratio">×٣٫٦</span></li></ol><a class="more" href="/chart/2026-11-01/">الصاعدون كاملين ←</a></article><article class="hc-card hc-ep"><h3>حلقة الأسبوع</h3><a class="ep-thumb" href="https://www.youtube.com/watch?v=rAmr84lpt6o" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://i.ytimg.com/vi/rAmr84lpt6o/maxresdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer"></a><a class="t" href="https://www.youtube.com/watch?v=rAmr84lpt6o" rel="noopener"><bdi>العصر الذهبي | مع عصام كاريكا</bdi></a><p class="from">من برنامج <bdi>السبت الممتاز</bdi></p></article></div><div class="hc-links"><a class="btn primary" href="/chart/2026-11-01/">التشارت كامل</a><a class="btn ghost" href="/charts/">كل التشارتات</a></div></div></section>
 
   <!-- ===== vocabulary ===== -->
   <section aria-labelledby="vocab-h">
@@ -613,7 +568,7 @@
           <p><span class="ar" lang="ar">المصطبة</span> (el-mastaba) is the stone bench outside a village house in Egypt, where people sit in the evening and talk. That's what a podcast is, so that's what we named the chart.</p>
           <p>mastaba.fm is a weekly chart of Arabic podcasts on YouTube, starting with Egypt. Every day we read public data about podcast channels and episodes through the YouTube Data API: titles, durations, publish dates, and view, like and comment counts. From those daily readings we work out how many views each show's recent episodes gained during the week, and rank the shows.</p>
           <p>The view counts come from YouTube. The rankings, weekly gains and any scores are our own calculations, not YouTube metrics. We're independent: mastaba.fm is not affiliated with or endorsed by YouTube or Google, we don't produce or own any show, and no one can pay to appear on the chart or to move up it.</p>
-          <p>There's nothing to sign up for. The site has no accounts or sign-in and doesn't collect personal data from visitors. We've been collecting data since 19 September 2026 and track more than 300 shows. The chart itself isn't public yet, so the examples on this page use fictional names and numbers.</p>
+          <p>There's nothing to sign up for. The site has no accounts or sign-in and doesn't collect personal data from visitors. We've been collecting data since 19 September 2026 and track more than 300 shows. The latest chart is at <a href="/chart/2026-11-01/">mastaba.fm/chart/2026-11-01/</a>, and every chart is listed at <a href="/charts/">mastaba.fm/charts/</a>.</p>
         </div>
         <dl class="glance">
           <div><dt>What</dt><dd>A weekly chart of Arabic podcasts on YouTube, Egypt first</dd></div>
@@ -634,7 +589,7 @@
     <div class="foot-brand"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span class="w">المصطبة</span><span class="mono">mastaba.fm</span></div>
     <nav aria-label="روابط">
       <a href="methodology.html">إزاي بنعدّ · Methodology</a>
-      
+      <a href="/charts/">التشارتات · Charts</a>
       <a href="privacy.html">الخصوصية · Privacy</a>
       <a href="terms.html">الشروط · Terms</a>
       <a href="https://www.instagram.com/mastabafm/" rel="me">إنستجرام</a>
