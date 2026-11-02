@@ -329,7 +329,18 @@
   .hc-now:hover{background:var(--night3)}
   .latest{background:var(--night2);padding-block:72px}
   .latest h2{margin-top:0}
-  .hc-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
+  .hc-grid{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);align-items:start}
+  /* desktop: رقم ١ over الصاعدون beside the Top 10, حلقة الأسبوع across the bottom */
+  @media (min-width:720px){
+    .hc-one{grid-area:one} .hc-top{grid-area:top} .hc-rise{grid-area:rise} .hc-ep{grid-area:ep}
+    .hc-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-areas:"one top" "rise top" "ep ep"}
+    .hc-grid:not(:has(.hc-rise)){grid-template-areas:"one top" "ep top"}
+    .hc-top{align-self:stretch;display:flex;flex-direction:column}
+    .hc-grid .hc-top .more{margin-top:auto;padding-top:12px;align-self:flex-start}
+    .hc-grid:has(.hc-rise) .hc-ep{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);column-gap:24px;grid-template-rows:auto auto 1fr;align-items:start}
+    .hc-grid:has(.hc-rise) .hc-ep>:not(.ep-thumb){grid-column:1}
+    .hc-grid:has(.hc-rise) .hc-ep .ep-thumb{grid-column:2;grid-row:1/span 3;margin:0}
+  }
   .hc-card{background:var(--night);border:1px solid var(--night3);border-radius:22px;padding:22px 20px;min-width:0}
   .hc-card h3{margin:0 0 10px;font-size:20px}
   .hc-card .sub{color:var(--mist);font-size:14px;margin:-6px 0 8px}
