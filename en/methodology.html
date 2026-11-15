@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How we count · mastaba.fm</title>
+<meta name="description" content="The rules of the المصطبة chart: how we rank Arabic podcasts every week from public YouTube numbers.">
+<meta name="theme-color" content="#1B1A2E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23E8A33D'/%3E%3Ccircle cx='21' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='32' cy='25' r='5' fill='%231B1A2E'/%3E%3Ccircle cx='43' cy='25' r='5' fill='%231B1A2E'/%3E%3Crect x='13' y='33' width='38' height='5' rx='1.5' fill='%231B1A2E'/%3E%3Crect x='18' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3Crect x='42' y='37' width='4' height='10' fill='%231B1A2E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@500&family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{--night:#1B1A2E;--night2:#26253D;--night3:#34334F;--lamp:#E8A33D;--stone:#F2E6CF;--mist:#A9A2BC;
+    --kufi:"Reem Kufi","Alexandria",system-ui,sans-serif;--sans:"Alexandria","Segoe UI",Tahoma,system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--night);color:var(--stone);font-family:var(--sans);font-size:17px;line-height:1.8}
+  a{color:var(--lamp);text-underline-offset:4px;overflow-wrap:anywhere}
+  a:focus-visible{outline:2px solid var(--lamp);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .mono{font-family:var(--mono);font-weight:500;direction:ltr;unicode-bidi:isolate}
+  .bench-ico{display:block;flex:none}
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding-block:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--kufi);font-weight:700;font-size:24px;line-height:1;color:var(--stone);text-decoration:none;min-height:44px}
+  .brand .bench-ico{width:34px;height:26px}
+  .back{color:var(--mist);text-decoration:none;font-size:15px;font-weight:500;padding-block:12px}
+  .back:hover{color:var(--stone)}
+  .topnav{display:flex;gap:22px}
+  .page-hero{background:radial-gradient(70% 90% at 50% 0%,rgba(232,163,61,.13),rgba(232,163,61,0) 70%),var(--night);border-bottom:1px solid var(--night3)}
+  .doc{max-width:760px;margin:0 auto;padding:0 20px 24px}
+  .doc h1{font-weight:900;font-size:clamp(36px,8.6vw,54px);line-height:1.3;margin:28px 0 6px}
+  .doc .updated{color:var(--mist);margin:0 0 30px;font-size:15px}
+  .doc .ar{background:var(--night2);border:1px solid var(--night3);border-radius:20px;padding:22px 22px 12px;margin:0 0 8px;font-size:17.5px}
+  .doc .ar p{margin:0 0 12px}
+  .doc .en{direction:ltr;text-align:left;margin-top:40px;padding-top:6px}
+  .doc .en h2{font-family:var(--sans);font-size:clamp(26px,5.4vw,34px);font-weight:800;letter-spacing:-.01em;line-height:1.25;margin:0 0 14px;padding-bottom:16px;border-bottom:1px solid var(--night3)}
+  .doc .en h3{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lamp);margin:34px 0 6px;line-height:1.5}
+  .doc .en p,.doc .en li{max-width:66ch;font-size:16.5px;line-height:1.75}
+  .doc .en p{margin:0 0 12px}
+  .doc .en ul{padding-left:0;margin:0 0 12px;list-style:none}
+  .doc .en li{position:relative;padding-left:22px;margin-bottom:8px}
+  .doc .en li::before{content:"";position:absolute;left:2px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--lamp)}
+  footer{border-top:1px solid var(--night3);margin-top:64px;padding:40px 0 48px;color:var(--mist);font-size:15px}
+  .foot{display:flex;flex-direction:column;gap:22px}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  .foot-brand .bench-ico{width:40px;height:30px}
+  .foot-brand .w{font-family:var(--kufi);font-weight:700;font-size:26px;color:var(--stone);line-height:1}
+  .foot-brand .mono{color:var(--lamp);font-size:14px;margin-inline-start:4px}
+  .foot nav{display:flex;flex-wrap:wrap;gap:4px 26px}
+  .foot nav a{color:var(--stone);text-decoration:none;padding-block:10px}
+  .foot nav a:hover,.foot nav a[aria-current]{color:var(--lamp)}
+  .foot small{font-size:13.5px}
+  @media (min-width:760px){.foot{flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap}}
+  .doc .lead{font-size:19px;margin:0 0 8px}
+  .doc h2{font-weight:800;font-size:clamp(22px,5vw,26px);line-height:1.4;margin:40px 0 10px}
+  .doc h2::before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--lamp);margin-bottom:14px}
+  .doc p{margin:0 0 12px}
+  .doc main-ul,.doc .list{padding:0;margin:0 0 12px;list-style:none}
+  .doc .list li{position:relative;padding-inline-start:22px;margin-bottom:8px}
+  .doc .list li::before{content:"";position:absolute;inset-inline-start:2px;top:.75em;width:7px;height:7px;border-radius:50%;background:var(--lamp)}
+  .doc .box{background:var(--night2);border:1px solid var(--night3);border-radius:20px;padding:20px 22px 10px;margin:14px 0}
+  .doc .rule{color:var(--lamp);font-weight:800}
+  .doc .tags{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 14px;padding:0;list-style:none}
+  .doc .tags li{background:var(--night2);border:1px solid var(--night3);border-radius:999px;padding:4px 14px}
+  .doc .up{color:#7FD1B9}.doc .down{color:#EF8A74}.doc .tags .same{color:rgba(242,230,207,.55)}.doc .tags .streak{color:var(--lamp)}
+  .doc .cta{display:inline-block;background:var(--lamp);color:var(--night);font-weight:800;text-decoration:none;border-radius:999px;padding:12px 26px;min-height:44px}
+  .doc .log li{color:var(--mist)} .doc .log b{color:var(--stone)}
+</style>
+<meta property="og:title" content="How we count · mastaba.fm">
+<meta property="og:description" content="The rules of the المصطبة chart: how we rank Arabic podcasts every week from public YouTube numbers.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<style>
+  html[lang=en] .hc-list .who{text-align:left}
+  html[lang=en] .hc-list .rank{font-family:var(--sans)}
+  html[lang=en] .ticker-track{animation-name:tick-en}
+  @keyframes tick-en{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  html[lang=en] .win .lbl.edge{transform:translateX(-50%)}
+  html[lang=en] .road li::before{content:counter(r)}
+  html[lang=en] .doc>.en{margin-top:0}
+</style>
+<link rel="canonical" href="https://mastaba.fm/en/methodology.html">
+<link rel="alternate" hreflang="ar" href="https://mastaba.fm/methodology.html">
+<link rel="alternate" hreflang="en" href="https://mastaba.fm/en/methodology.html">
+<link rel="alternate" hreflang="x-default" href="https://mastaba.fm/methodology.html">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "المصطبة",
+ "alternateName": "Mastaba",
+ "url": "https://mastaba.fm/",
+ "logo": "https://mastaba.fm/logo.png",
+ "sameAs": [
+  "https://www.instagram.com/mastabafm/",
+  "https://x.com/mastabafm",
+  "https://www.tiktok.com/@mastabafm",
+  "https://www.linkedin.com/company/mastabafm"
+ ]
+}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="bench" viewBox="0 0 120 90"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></symbol></svg>
+<style>
+  /* shared by every page (the header goes on every page): movement colours */
+  :root{--up:#7FD1B9;--down:#EF8A74}
+  html{scroll-padding-top:76px}
+  .sitehead{position:sticky;top:0;z-index:30;background:rgba(27,26,46,.96);border-bottom:1px solid var(--night3);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .sh-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+  .sh-brand{display:flex;align-items:center;gap:10px;font-family:var(--kufi);font-weight:700;font-size:24px;line-height:1;color:var(--stone);text-decoration:none;min-height:44px;white-space:nowrap}
+  .sh-brand .bench-ico{display:block;flex:none;width:34px;height:26px}
+  .sh-brand span{transition:opacity .25s}
+  html.brand-js .sh-brand span{opacity:0}
+  html.brand-js.past-hero .sh-brand span{opacity:1}
+  .sh-links{display:flex;gap:28px;font-size:15px;font-weight:500}
+  .sh-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--mist);text-decoration:none;white-space:nowrap}
+  .sh-links a:hover{color:var(--stone)}
+  .sh-links a[aria-current],.sh-panel a[aria-current]{color:var(--lamp)}
+  .sh-mob{display:none;align-items:center;gap:8px}
+  .sh-chart{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--lamp);color:var(--night);font-weight:800;font-size:15px;text-decoration:none;white-space:nowrap}
+  .sh-menu{display:none;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid var(--night3);border-radius:12px;background:transparent;color:var(--stone);font-size:22px;line-height:1;cursor:pointer}
+  .sh-menu[aria-expanded="true"]{border-color:var(--lamp);color:var(--lamp)}
+  .sh-panel{background:#1B1A2E;border-top:1px solid var(--night3)}
+  .sh-panel[hidden]{display:none}
+  .sh-panel a{display:flex;align-items:center;min-height:52px;padding:0 20px;border-bottom:1px solid var(--night3);color:var(--stone);font-size:17px;font-weight:600;text-decoration:none}
+  @media (max-width:719px){.sh-links{display:none}.sh-mob{display:flex}html.menu-js .sh-menu{display:inline-flex}}
+  @media (min-width:720px){.sh-panel{display:none!important}}
+</style>
+<header class="sitehead"><div class="wrap sh-bar"><a class="sh-brand" href="/en/"><svg class="bench-ico" viewBox="0 0 120 90" fill="#E8A33D" aria-hidden="true"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></svg><span lang="ar">المصطبة</span></a><nav class="sh-links" aria-label="Site"><a href="/en/charts/">Charts</a><a href="/en/#how">How we count</a><a href="/en/methodology.html" aria-current="page">Rules</a><a href="/en/#podcasters">For podcasters</a><a href="/methodology.html" lang="ar" hreflang="ar">عربي</a></nav><div class="sh-mob"><a class="sh-chart" href="/en/chart/2026-11-15/">The Chart</a><button class="sh-menu" type="button" aria-expanded="false" aria-controls="sh-panel" aria-label="Menu">☰</button></div></div><nav class="sh-panel" id="sh-panel" aria-label="Menu" hidden><a href="/en/charts/">Charts</a><a href="/en/#how">How we count</a><a href="/en/methodology.html" aria-current="page">Rules</a><a href="/en/#podcasters">For podcasters</a><a href="/methodology.html" lang="ar" hreflang="ar">عربي</a></nav></header>
+<script>
+(function(){
+  var d = document.documentElement;
+  d.classList.add('menu-js');
+  // home: the wordmark waits until the big logo is out of view
+  if (document.querySelector('.sitehead.home') && 'IntersectionObserver' in window){
+    d.classList.add('brand-js');
+    document.addEventListener('DOMContentLoaded', function(){
+      var seat = document.querySelector('.seat');
+      if (!seat) return d.classList.remove('brand-js');
+      new IntersectionObserver(function(es){ d.classList.toggle('past-hero', !es[0].isIntersecting); }).observe(seat);
+    });
+  }
+  var b = document.querySelector('.sh-menu'), p = document.getElementById('sh-panel');
+  if (!b || !p) return;
+  function set(open){ p.hidden = !open; b.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  b.addEventListener('click', function(e){ e.stopPropagation(); set(p.hidden); });
+  document.addEventListener('click', function(e){ if (!p.hidden && !p.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') set(false); });
+})();
+(function(){
+  // a [data-fit1] line (the رقم ١ streak) shrinks, down to data-fit1 px,
+  // before it wraps to a second line
+  function lines(e){ var r = document.createRange(), t = {}; r.selectNodeContents(e);
+    [].forEach.call(r.getClientRects(), function(q){ if (q.width > .1) t[Math.round(q.top)] = 1; });
+    return Object.keys(t).length; }
+  function fit(){ document.querySelectorAll('[data-fit1]').forEach(function(e){
+    e.style.fontSize = '';
+    var s = parseFloat(getComputedStyle(e).fontSize), m = +e.dataset.fit1;
+    while (lines(e) > 1 && s > m) { s -= .5; e.style.fontSize = s + 'px'; } }); }
+  document.addEventListener('DOMContentLoaded', function(){
+    (document.fonts && document.fonts.ready || Promise.resolve()).then(fit); });
+  window.addEventListener('resize', fit);
+})();
+</script>
+<main class="doc">
+<h1>How do we count?</h1>
+<p class="updated">Last updated: 8 November 2026</p>
+<p class="lead">Mastaba (المصطبة) is a weekly chart of Arabic podcasts on YouTube. These are all the rules we rank by, with no secrets. If a rule changes, we'll write here what changed and when.</p>
+
+<h2>The idea in one line</h2>
+<div class="box">
+<p>Every week we count <span class="rule">the views each podcast's episodes gained on YouTube during that week</span>, and rank the podcasts by that. It doesn't matter who is biggest. What matters is who was watched most this week.</p>
+</div>
+
+<h2>Where do the numbers come from?</h2>
+<p>Only from YouTube's public numbers: the view, like and comment counts anyone can see under a video. We read them every day through YouTube's official API. We don't use any private data, and we never ask anyone to sign in.</p>
+<p>The ranking is built on <b>views</b>. Likes and comments are used only in the quality check (see below).</p>
+
+<h2>The chart week</h2>
+<ul class="list">
+<li>The week starts on <b>Friday</b> and ends the following Friday.</li>
+<li>We take a reading of every episode on Friday morning, and another the next Friday. The difference between them is the week's views.</li>
+<li>The chart is published on the <b>Sunday</b> after.</li>
+</ul>
+
+<h2>Who gets on the chart?</h2>
+<p>A podcast has to be:</p>
+<ul class="list">
+<li>A <b>conversation</b> between two or more people, with a consistent host. Lectures, monologues, readings and narration don't qualify.</li>
+<li>Published on <b>YouTube</b>, with full episodes.</li>
+<li>At least <b>3 full episodes in the last 90 days</b>.</li>
+</ul>
+<p>A podcast that publishes its full episodes only on audio platforms won't appear here, and that's deliberate: we count YouTube only, and we say so plainly.</p>
+
+<h2>What counts?</h2>
+<ul class="list">
+<li><b>Full episodes only</b>: 20 minutes or more.</li>
+<li>Episodes published in the <b>last 90 days</b>.</li>
+<li>An episode published mid-week counts from zero.</li>
+<li>A live stream counts if it was a conversation episode of the podcast and it has ended.</li>
+</ul>
+
+<h2>What doesn't count?</h2>
+<ul class="list">
+<li>Shorts, clips and any video under 20 minutes.</li>
+<li><b>Re-uploads</b>: if the same episode was uploaded twice, it counts only once. And if another channel uploaded a copy of an episode, only the original counts.</li>
+<li><b>Compilations</b> such as "best moments" and "highlights".</li>
+<li>Episodes whose engagement is far below normal (fewer than 1 comment per 10,000 views and fewer than 5 likes per 1,000) are not counted, since that usually means views from paid ads.</li>
+<li>Videos that aren't episodes, such as a live stream of a match, or vlogs.</li>
+</ul>
+
+<h2>Channels with more than one podcast</h2>
+<p>If one channel publishes several podcasts, <b>each podcast counts on its own</b> and gets its own place. The channel itself is not on the chart.</p>
+
+<h2>The quality check</h2>
+<p>Sometimes an episode gets far more views than the podcast's normal level, while its comments are far below the usual. That usually means views coming from paid ads, not from an audience that engages.</p>
+<p>In that case <b>we don't remove the episode</b>, and we don't accuse anyone of anything. We count its views only up to a reasonable ceiling compared with the podcast's normal level, and the excess above it isn't counted. Episodes that genuinely take off show the engagement to match, so they aren't affected.</p>
+
+<h2>New podcasts on المصطبة</h2>
+<p>Any podcast we add joins the chart from the first full week we've followed it from start to finish, so the count is fair.</p>
+
+<h2>The chart's sections</h2>
+<div class="box">
+<p><b>Top 20</b>: the 20 podcasts that gained the most views this week.</p>
+<p><b>Rising</b>: the podcasts whose week was far above their own average over the last 4 weeks. Who is growing, not who is biggest. So that the board introduces new names, shows in this week's Top 20 don't enter it. And a show's average over the past four weeks must be at least five thousand views a week, so that a very small show can't top the board with a jump from small numbers.</p>
+<p><b>Episode of the Week</b>: the episode with the most views in its first 7 days, among the episodes published the week before.</p>
+</div>
+<p>Next to every podcast in the Top 20:</p>
+<ul class="tags">
+<li class="up">▲ Up</li>
+<li class="down">▼ Down</li>
+<li><span class="same">–</span> No change</li>
+<li>NEW</li>
+<li>BACK</li>
+<li>Weeks on chart</li>
+<li class="streak">🔥 consecutive weeks at No. 1</li>
+</ul>
+
+<h2>Money and the ranking</h2>
+<div class="box">
+<p><span class="rule">No one can pay to appear on the chart or to change their place. Ever.</span> If one day we have sponsors or ads, that will never touch the ranking.</p>
+</div>
+
+<h2>What we don't claim</h2>
+<p>المصطبة doesn't say who is "most listened to" or "most popular". We measure one clear thing: public YouTube views in one week. A podcast may have a large audience on Spotify or Apple Podcasts, and that's something we don't see.</p>
+
+<h2>If you find a mistake</h2>
+<p>We can make mistakes. If an episode was counted wrongly, or a podcast was put in the wrong place, write to us at <a href="mailto:hello@mastaba.fm" class="mono">hello@mastaba.fm</a>. If the mistake is confirmed, we'll fix it and say so publicly.</p>
+
+<h2>Have a podcast?</h2>
+<p>If your podcast is on YouTube, meets the rules above and you can't find it here, suggest it:</p>
+<p><a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSfzca70vh5PorwZOfwQu7xdxq8d9N9qb4y_RkxQC0uxKgO-Jg/viewform">Suggest your podcast</a></p>
+
+<h2>Changelog</h2>
+<ul class="list log">
+<li><b>8 November 2026</b>: episodes whose engagement is far below normal are not counted, from chart #2.</li>
+<li><b>23 October 2026</b>: Rising: shows in the Top 20 don't enter it, and the average over the past four weeks must be at least five thousand views a week.</li>
+<li><b>8 October 2026</b>: the first version of the rules.</li>
+</ul>
+
+</main>
+<footer>
+  <div class="wrap foot">
+    <div class="foot-brand"><svg class="bench-ico" fill="#E8A33D" aria-hidden="true"><use href="#bench"/></svg><span class="w" lang="ar">المصطبة</span><span class="mono">mastaba.fm</span></div>
+    <nav aria-label="Links">
+      <a href="/en/methodology.html" aria-current="page">Methodology</a>
+      <a href="/en/charts/">Charts</a>
+      <a href="/en/privacy.html">Privacy</a>
+      <a href="/en/terms.html">Terms</a>
+      <a href="https://www.instagram.com/mastabafm/" rel="me">Instagram</a>
+      <a href="https://www.tiktok.com/@mastabafm" rel="me">TikTok</a>
+      <a href="https://www.linkedin.com/company/mastabafm" rel="me">LinkedIn</a>
+      <a href="mailto:hello@mastaba.fm" class="mono">hello@mastaba.fm</a>
+    </nav>
+    <small>© 2026 <span lang="ar">المصطبة</span> · Cairo</small>
+  </div>
+</footer>
+</body>
+</html>

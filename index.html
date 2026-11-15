@@ -307,6 +307,9 @@
   }
 </style>
 <link rel="canonical" href="https://mastaba.fm/">
+<link rel="alternate" hreflang="ar" href="https://mastaba.fm/">
+<link rel="alternate" hreflang="en" href="https://mastaba.fm/en/">
+<link rel="alternate" hreflang="x-default" href="https://mastaba.fm/">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -327,6 +330,9 @@
   .hc-now{display:inline-flex;align-items:center;gap:10px;margin:22px 0 0;padding:10px 18px;border-radius:999px;background:var(--night2);border:1px solid var(--lamp);color:var(--stone);text-decoration:none;font-weight:700}
   .hc-now .k{color:var(--lamp);font-weight:500;font-size:15px}
   .hc-now:hover{background:var(--night3)}
+  .hc-now .st, .hc-one .streak{color:var(--lamp);font-weight:700;font-size:14px;min-width:0}
+  .hc-now{flex-wrap:wrap;justify-content:center} .hc-now .st{white-space:nowrap}
+  .hc-one .streak{font-size:16px;margin:0}
   .latest{background:var(--night2);padding-block:72px}
   .latest h2{margin-top:0}
   .hc-grid{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);align-items:start}
@@ -412,7 +418,7 @@
   @media (max-width:719px){.sh-links{display:none}.sh-mob{display:flex}html.menu-js .sh-menu{display:inline-flex}}
   @media (min-width:720px){.sh-panel{display:none!important}}
 </style>
-<header class="sitehead home"><div class="wrap sh-bar"><a class="sh-brand" href="/"><svg class="bench-ico" viewBox="0 0 120 90" fill="#E8A33D" aria-hidden="true"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></svg><span>المصطبة</span></a><nav class="sh-links" aria-label="الموقع"><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav><div class="sh-mob"><a class="sh-chart" href="/chart/2026-11-15/">التشارت</a><button class="sh-menu" type="button" aria-expanded="false" aria-controls="sh-panel" aria-label="القائمة">☰</button></div></div><nav class="sh-panel" id="sh-panel" aria-label="القائمة" hidden><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav></header>
+<header class="sitehead home"><div class="wrap sh-bar"><a class="sh-brand" href="/"><svg class="bench-ico" viewBox="0 0 120 90" fill="#E8A33D" aria-hidden="true"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></svg><span lang="ar">المصطبة</span></a><nav class="sh-links" aria-label="الموقع"><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/en/" lang="en" hreflang="en">English</a></nav><div class="sh-mob"><a class="sh-chart" href="/chart/2026-11-15/">التشارت</a><button class="sh-menu" type="button" aria-expanded="false" aria-controls="sh-panel" aria-label="القائمة">☰</button></div></div><nav class="sh-panel" id="sh-panel" aria-label="القائمة" hidden><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/en/" lang="en" hreflang="en">English</a></nav></header>
 <script>
 (function(){
   var d = document.documentElement;
@@ -432,6 +438,20 @@
   b.addEventListener('click', function(e){ e.stopPropagation(); set(p.hidden); });
   document.addEventListener('click', function(e){ if (!p.hidden && !p.contains(e.target)) set(false); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') set(false); });
+})();
+(function(){
+  // a [data-fit1] line (the رقم ١ streak) shrinks, down to data-fit1 px,
+  // before it wraps to a second line
+  function lines(e){ var r = document.createRange(), t = {}; r.selectNodeContents(e);
+    [].forEach.call(r.getClientRects(), function(q){ if (q.width > .1) t[Math.round(q.top)] = 1; });
+    return Object.keys(t).length; }
+  function fit(){ document.querySelectorAll('[data-fit1]').forEach(function(e){
+    e.style.fontSize = '';
+    var s = parseFloat(getComputedStyle(e).fontSize), m = +e.dataset.fit1;
+    while (lines(e) > 1 && s > m) { s -= .5; e.style.fontSize = s + 'px'; } }); }
+  document.addEventListener('DOMContentLoaded', function(){
+    (document.fonts && document.fonts.ready || Promise.resolve()).then(fit); });
+  window.addEventListener('resize', fit);
 })();
 </script>
 

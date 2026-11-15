@@ -7,6 +7,9 @@
 <meta name="description" content="أكتر ٢٠ بودكاست عربي على يوتيوب، أسبوع ٢٣ - ٢٩ أكتوبر ٢٠٢٦. رقم ١: السبت الممتاز.">
 <meta name="theme-color" content="#1B1A2E">
 <link rel="canonical" href="https://mastaba.fm/chart/2026-11-01/">
+<link rel="alternate" hreflang="ar" href="https://mastaba.fm/chart/2026-11-01/">
+<link rel="alternate" hreflang="en" href="https://mastaba.fm/en/chart/2026-11-01/">
+<link rel="alternate" hreflang="x-default" href="https://mastaba.fm/chart/2026-11-01/">
 <meta property="og:title" content="المصطبة · الأسبوع رقم ١ · أسبوع ٢٣ - ٢٩ أكتوبر ٢٠٢٦">
 <meta property="og:description" content="أكتر ٢٠ بودكاست عربي على يوتيوب، أسبوع ٢٣ - ٢٩ أكتوبر ٢٠٢٦. رقم ١: السبت الممتاز.">
 <meta property="og:type" content="website">
@@ -72,7 +75,7 @@
   .doc .rule{color:var(--lamp);font-weight:800}
   .doc .tags{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 14px;padding:0;list-style:none}
   .doc .tags li{background:var(--night2);border:1px solid var(--night3);border-radius:999px;padding:4px 14px}
-  .doc .up{color:#7FD1B9}.doc .down{color:#EF8A74}
+  .doc .up{color:#7FD1B9}.doc .down{color:#EF8A74}.doc .tags .same{color:rgba(242,230,207,.55)}.doc .tags .streak{color:var(--lamp)}
   .doc .cta{display:inline-block;background:var(--lamp);color:var(--night);font-weight:800;text-decoration:none;border-radius:999px;padding:12px 26px;min-height:44px}
   .doc .log li{color:var(--mist)} .doc .log b{color:var(--stone)}
 
@@ -85,6 +88,7 @@
   .chart-list .mv.same{color:rgba(242,230,207,.55)}
   .chart-list .mvi{display:inline-block;width:40px;text-align:center}
   .chart-list li.lead .rank{color:var(--lamp)}
+  .chart-list .wk.streak{color:var(--lamp);font-weight:700}
   .chart-list .pic{width:52px;height:52px;flex:none;border-radius:50%;object-fit:cover;background:var(--night2)}
   .chart-list .pic.wide{width:80px;height:45px;border-radius:8px}
   .chart-list .pic.none{display:inline-block}
@@ -290,7 +294,7 @@
   @media (max-width:719px){.sh-links{display:none}.sh-mob{display:flex}html.menu-js .sh-menu{display:inline-flex}}
   @media (min-width:720px){.sh-panel{display:none!important}}
 </style>
-<header class="sitehead"><div class="wrap sh-bar"><a class="sh-brand" href="/"><svg class="bench-ico" viewBox="0 0 120 90" fill="#E8A33D" aria-hidden="true"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></svg><span>المصطبة</span></a><nav class="sh-links" aria-label="الموقع"><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav><div class="sh-mob"><a class="sh-chart" href="/chart/2026-11-15/">التشارت</a><button class="sh-menu" type="button" aria-expanded="false" aria-controls="sh-panel" aria-label="القائمة">☰</button></div></div><nav class="sh-panel" id="sh-panel" aria-label="القائمة" hidden><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav></header>
+<header class="sitehead"><div class="wrap sh-bar"><a class="sh-brand" href="/"><svg class="bench-ico" viewBox="0 0 120 90" fill="#E8A33D" aria-hidden="true"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></svg><span lang="ar">المصطبة</span></a><nav class="sh-links" aria-label="الموقع"><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/en/chart/2026-11-01/" lang="en" hreflang="en">English</a></nav><div class="sh-mob"><a class="sh-chart" href="/chart/2026-11-15/">التشارت</a><button class="sh-menu" type="button" aria-expanded="false" aria-controls="sh-panel" aria-label="القائمة">☰</button></div></div><nav class="sh-panel" id="sh-panel" aria-label="القائمة" hidden><a href="/charts/">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/en/chart/2026-11-01/" lang="en" hreflang="en">English</a></nav></header>
 <script>
 (function(){
   var d = document.documentElement;
@@ -310,6 +314,20 @@
   b.addEventListener('click', function(e){ e.stopPropagation(); set(p.hidden); });
   document.addEventListener('click', function(e){ if (!p.hidden && !p.contains(e.target)) set(false); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') set(false); });
+})();
+(function(){
+  // a [data-fit1] line (the رقم ١ streak) shrinks, down to data-fit1 px,
+  // before it wraps to a second line
+  function lines(e){ var r = document.createRange(), t = {}; r.selectNodeContents(e);
+    [].forEach.call(r.getClientRects(), function(q){ if (q.width > .1) t[Math.round(q.top)] = 1; });
+    return Object.keys(t).length; }
+  function fit(){ document.querySelectorAll('[data-fit1]').forEach(function(e){
+    e.style.fontSize = '';
+    var s = parseFloat(getComputedStyle(e).fontSize), m = +e.dataset.fit1;
+    while (lines(e) > 1 && s > m) { s -= .5; e.style.fontSize = s + 'px'; } }); }
+  document.addEventListener('DOMContentLoaded', function(){
+    (document.fonts && document.fonts.ready || Promise.resolve()).then(fit); });
+  window.addEventListener('resize', fit);
 })();
 </script>
 <main class="doc chart">
