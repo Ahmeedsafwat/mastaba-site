@@ -80,8 +80,11 @@
   .chart-list{list-style:none;padding:0;margin:6px 0 0}
   .chart-list li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--night3)}
   .chart-list .rank{width:40px;flex:none;text-align:center;font-weight:900;font-size:26px;line-height:1}
-  .chart-list .mv{width:56px;flex:none;text-align:center;font-weight:700;font-size:14px;color:var(--mist)}
+  .chart-list .mv{width:56px;flex:none;text-align:start;white-space:nowrap;font-weight:700;font-size:14px;color:var(--mist)}
   .chart-list .mv.up{color:var(--up)} .chart-list .mv.down{color:var(--down)} .chart-list .mv.new{color:var(--lamp)}
+  .chart-list .mv.same{color:rgba(242,230,207,.55)}
+  .chart-list .mvi{display:inline-block;width:40px;text-align:center}
+  .chart-list li.lead .rank{color:var(--lamp)}
   .chart-list .pic{width:52px;height:52px;flex:none;border-radius:50%;object-fit:cover;background:var(--night2)}
   .chart-list .pic.wide{width:80px;height:45px;border-radius:8px}
   .chart-list .pic.none{display:inline-block}
@@ -132,6 +135,8 @@
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="bench" viewBox="0 0 120 90"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></symbol></svg>
 <style>
+  /* shared by every page (the header goes on every page): movement colours */
+  :root{--up:#7FD1B9;--down:#EF8A74}
   html{scroll-padding-top:76px}
   .sitehead{position:sticky;top:0;z-index:30;background:rgba(27,26,46,.96);border-bottom:1px solid var(--night3);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
   .sh-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
@@ -154,7 +159,7 @@
   @media (max-width:719px){.sh-links{display:none}.sh-mob{display:flex}html.menu-js .sh-menu{display:inline-flex}}
   @media (min-width:720px){.sh-panel{display:none!important}}
 </style>
-<header class="sitehead"><div class="wrap sh-bar"><a class="sh-brand" href="/"><svg class="bench-ico" viewBox="0 0 120 90" fill="#E8A33D" aria-hidden="true"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></svg><span>المصطبة</span></a><nav class="sh-links" aria-label="الموقع"><a href="/charts/" aria-current="page">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav><div class="sh-mob"><a class="sh-chart" href="/chart/2026-11-08/">التشارت</a><button class="sh-menu" type="button" aria-expanded="false" aria-controls="sh-panel" aria-label="القائمة">☰</button></div></div><nav class="sh-panel" id="sh-panel" aria-label="القائمة" hidden><a href="/charts/" aria-current="page">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav></header>
+<header class="sitehead"><div class="wrap sh-bar"><a class="sh-brand" href="/"><svg class="bench-ico" viewBox="0 0 120 90" fill="#E8A33D" aria-hidden="true"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></svg><span>المصطبة</span></a><nav class="sh-links" aria-label="الموقع"><a href="/charts/" aria-current="page">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav><div class="sh-mob"><a class="sh-chart" href="/chart/2026-11-15/">التشارت</a><button class="sh-menu" type="button" aria-expanded="false" aria-controls="sh-panel" aria-label="القائمة">☰</button></div></div><nav class="sh-panel" id="sh-panel" aria-label="القائمة" hidden><a href="/charts/" aria-current="page">التشارتات</a><a href="/#how">إزاي بنعد</a><a href="/methodology.html">القواعد</a><a href="/#podcasters">للبودكاستات</a><a href="/#about" lang="en">English</a></nav></header>
 <script>
 (function(){
   var d = document.documentElement;
@@ -177,7 +182,7 @@
 })();
 </script>
 <main class="doc chart">
-<h1>كل التشارتات</h1><ol class="charts-index"><li><a href="/chart/2026-11-08/">الأسبوع رقم ٢</a><span>أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦ · رقم ١: <bdi>مع كامل احتياطي!</bdi></span></li><li><a href="/chart/2026-11-01/">الأسبوع رقم ١</a><span>أسبوع ٢٣ - ٢٩ أكتوبر ٢٠٢٦ · رقم ١: <bdi>السبت الممتاز</bdi></span></li></ol>
+<h1>كل التشارتات</h1><ol class="charts-index"><li><a href="/chart/2026-11-15/">الأسبوع رقم ٣</a><span>أسبوع ٦ - ١٢ نوفمبر ٢٠٢٦ · رقم ١: <bdi>مع كامل احتياطي!</bdi></span></li><li><a href="/chart/2026-11-08/">الأسبوع رقم ٢</a><span>أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦ · رقم ١: <bdi>مع كامل احتياطي!</bdi></span></li><li><a href="/chart/2026-11-01/">الأسبوع رقم ١</a><span>أسبوع ٢٣ - ٢٩ أكتوبر ٢٠٢٦ · رقم ١: <bdi>السبت الممتاز</bdi></span></li></ol>
 </main>
 <footer>
   <div class="wrap foot">
