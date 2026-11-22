@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>All charts · Mastaba</title>
-<meta name="description" content="Every Mastaba chart of Arabic podcasts on YouTube, newest first.">
+<meta name="description" content="Every Mastaba chart of Arabic podcasts on YouTube, by month.">
 <meta name="theme-color" content="#1B1A2E">
 <link rel="canonical" href="https://mastaba.fm/en/charts/">
 <link rel="alternate" hreflang="ar" href="https://mastaba.fm/charts/">
 <link rel="alternate" hreflang="en" href="https://mastaba.fm/en/charts/">
 <link rel="alternate" hreflang="x-default" href="https://mastaba.fm/charts/">
 <meta property="og:title" content="All charts · Mastaba">
-<meta property="og:description" content="Every Mastaba chart of Arabic podcasts on YouTube, newest first.">
+<meta property="og:description" content="Every Mastaba chart of Arabic podcasts on YouTube, by month.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://mastaba.fm/en/charts/">
@@ -118,9 +118,40 @@
   /* /charts/ is a short list: the footer follows it, no stacked gap */
   .doc.chart:has(.charts-index){padding-bottom:0}
   .doc.chart:has(.charts-index)+footer{margin-top:32px}
-  .charts-index li{padding:14px 0;border-bottom:1px solid var(--night3)}
+  .charts-index li{padding:12px 0;border-bottom:1px solid var(--night3);line-height:1.6}
+  .charts-index li:last-child{border-bottom:none}
   .charts-index a{font-weight:800;text-decoration:none}
-  .charts-index span{display:block;color:var(--mist);font-size:15px}
+  .charts-index .w{color:var(--mist);font-size:15px}
+  /* the archive: the latest chart, then month by month (<details>, no script) */
+  .doc.chart:has(.archive){padding-bottom:0}
+  .doc.chart:has(.archive)+footer{margin-top:32px}
+  .arch-latest{display:grid;gap:4px;margin:18px 0 26px;padding:18px 20px;border-radius:18px;
+    background:var(--night2);border:1px solid var(--night3);color:var(--stone);text-decoration:none}
+  .arch-latest:hover{border-color:var(--lamp)}
+  .arch-latest .k{color:var(--mist);font-size:14px;font-weight:700}
+  .arch-latest .t{font-size:22px;font-weight:800}
+  .arch-latest .d{color:var(--mist);font-size:15px}
+  .arch-latest .one b{color:var(--lamp);font-weight:800}
+  .arch-year{font-size:20px;font-weight:800;margin:26px 0 6px;color:var(--stone)}
+  .arch-month{border-top:1px solid var(--night3)}
+  .arch-month:last-child{border-bottom:1px solid var(--night3)}
+  .arch-month summary{display:flex;align-items:center;gap:10px;min-height:48px;cursor:pointer;
+    list-style:none;font-weight:800;font-size:18px}
+  .arch-month summary::-webkit-details-marker{display:none}
+  .arch-month summary:focus-visible{outline:2px solid var(--lamp);outline-offset:2px}
+  .arch-month .cnt{color:var(--mist);font-weight:400;font-size:15px}
+  .arch-month[open] .cnt{display:none}
+  /* the chevron at the end of the row: left in RTL, right in /en/ */
+  .arch-month .chev{margin-inline-start:auto;width:10px;height:10px;flex:none;
+    border-right:2px solid var(--mist);border-bottom:2px solid var(--mist);
+    transform:rotate(135deg);transition:transform .15s}
+  html[lang=en] .arch-month .chev{transform:rotate(-45deg)}
+  .arch-month[open] .chev,html[lang=en] .arch-month[open] .chev{transform:rotate(45deg)}
+  .arch-month .charts-index{margin:0 0 10px}
+  /* only رقم ١ is gold on this page: the chart links are stone */
+  .archive .charts-index a{color:var(--stone)}
+  .archive .charts-index a:hover{color:var(--lamp)}
+  @media (max-width:600px){.doc.chart:has(.archive){padding-inline:16px}}
 </style>
 <style>
   html[lang=en] .hc-list .who{text-align:left}
@@ -156,6 +187,8 @@
 <style>
   /* shared by every page (the header goes on every page): movement colours */
   :root{--up:#7FD1B9;--down:#EF8A74}
+  /* the separator next to an Arabic number: a "·" there reads as ٠ */
+  .bar{color:var(--stone);opacity:.5;margin:0 .3em;font-weight:400}
   html{scroll-padding-top:76px}
   .sitehead{position:sticky;top:0;z-index:30;background:rgba(27,26,46,.96);border-bottom:1px solid var(--night3);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
   .sh-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
@@ -215,7 +248,7 @@
 })();
 </script>
 <main class="doc chart">
-<h1>All charts</h1><ol class="charts-index"><li><a href="/en/chart/2026-11-15/">Week 3</a><span>Week of 6–12 November 2026 · No. 1: <bdi>مع كامل احتياطي!</bdi></span></li><li><a href="/en/chart/2026-11-08/">Week 2</a><span>Week of 30 October – 5 November 2026 · No. 1: <bdi>مع كامل احتياطي!</bdi></span></li><li><a href="/en/chart/2026-11-01/">Week 1</a><span>Week of 23–29 October 2026 · No. 1: <bdi>السبت الممتاز</bdi></span></li></ol>
+<h1>All charts</h1><a class="arch-latest" href="/en/chart/2026-11-15/"><span class="k">Latest chart</span><span class="t">Week 3</span><span class="d">Week of 6–12 November 2026</span><span class="one"><b>No. 1</b> <bdi>مع كامل احتياطي!</bdi></span></a><div class="archive"><details class="arch-month" open><summary><span class="m">November 2026</span><span class="cnt">(2 charts)</span><span class="chev" aria-hidden="true"></span></summary><ol class="charts-index"><li><a href="/en/chart/2026-11-15/">Week 3</a><span class="w"> · 6–12 November · No. 1: <bdi>مع كامل احتياطي!</bdi></span></li><li><a href="/en/chart/2026-11-08/">Week 2</a><span class="w"> · 30 October – 5 November · No. 1: <bdi>مع كامل احتياطي!</bdi></span></li></ol></details><details class="arch-month"><summary><span class="m">October 2026</span><span class="cnt">(1 chart)</span><span class="chev" aria-hidden="true"></span></summary><ol class="charts-index"><li><a href="/en/chart/2026-11-01/">Week 1</a><span class="w"> · 23–29 October · No. 1: <bdi>السبت الممتاز</bdi></span></li></ol></details></div>
 </main>
 <footer>
   <div class="wrap foot">

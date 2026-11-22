@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>تشارت المصطبة رقم ٢ · أكتر ٢٠ بودكاست عربي · أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦</title>
+<title>تشارت المصطبة رقم ٢ | أكتر ٢٠ بودكاست عربي · أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦</title>
 <meta name="description" content="أكتر ٢٠ بودكاست عربي على يوتيوب، أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦. رقم ١: مع كامل احتياطي!.">
 <meta name="theme-color" content="#1B1A2E">
 <link rel="canonical" href="https://mastaba.fm/chart/2026-11-08/">
 <link rel="alternate" hreflang="ar" href="https://mastaba.fm/chart/2026-11-08/">
 <link rel="alternate" hreflang="en" href="https://mastaba.fm/en/chart/2026-11-08/">
 <link rel="alternate" hreflang="x-default" href="https://mastaba.fm/chart/2026-11-08/">
-<meta property="og:title" content="تشارت المصطبة رقم ٢ · أكتر ٢٠ بودكاست عربي · أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦">
+<meta property="og:title" content="تشارت المصطبة رقم ٢ | أكتر ٢٠ بودكاست عربي · أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦">
 <meta property="og:description" content="أكتر ٢٠ بودكاست عربي على يوتيوب، أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦. رقم ١: مع كامل احتياطي!.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_EG">
@@ -118,9 +118,40 @@
   /* /charts/ is a short list: the footer follows it, no stacked gap */
   .doc.chart:has(.charts-index){padding-bottom:0}
   .doc.chart:has(.charts-index)+footer{margin-top:32px}
-  .charts-index li{padding:14px 0;border-bottom:1px solid var(--night3)}
+  .charts-index li{padding:12px 0;border-bottom:1px solid var(--night3);line-height:1.6}
+  .charts-index li:last-child{border-bottom:none}
   .charts-index a{font-weight:800;text-decoration:none}
-  .charts-index span{display:block;color:var(--mist);font-size:15px}
+  .charts-index .w{color:var(--mist);font-size:15px}
+  /* the archive: the latest chart, then month by month (<details>, no script) */
+  .doc.chart:has(.archive){padding-bottom:0}
+  .doc.chart:has(.archive)+footer{margin-top:32px}
+  .arch-latest{display:grid;gap:4px;margin:18px 0 26px;padding:18px 20px;border-radius:18px;
+    background:var(--night2);border:1px solid var(--night3);color:var(--stone);text-decoration:none}
+  .arch-latest:hover{border-color:var(--lamp)}
+  .arch-latest .k{color:var(--mist);font-size:14px;font-weight:700}
+  .arch-latest .t{font-size:22px;font-weight:800}
+  .arch-latest .d{color:var(--mist);font-size:15px}
+  .arch-latest .one b{color:var(--lamp);font-weight:800}
+  .arch-year{font-size:20px;font-weight:800;margin:26px 0 6px;color:var(--stone)}
+  .arch-month{border-top:1px solid var(--night3)}
+  .arch-month:last-child{border-bottom:1px solid var(--night3)}
+  .arch-month summary{display:flex;align-items:center;gap:10px;min-height:48px;cursor:pointer;
+    list-style:none;font-weight:800;font-size:18px}
+  .arch-month summary::-webkit-details-marker{display:none}
+  .arch-month summary:focus-visible{outline:2px solid var(--lamp);outline-offset:2px}
+  .arch-month .cnt{color:var(--mist);font-weight:400;font-size:15px}
+  .arch-month[open] .cnt{display:none}
+  /* the chevron at the end of the row: left in RTL, right in /en/ */
+  .arch-month .chev{margin-inline-start:auto;width:10px;height:10px;flex:none;
+    border-right:2px solid var(--mist);border-bottom:2px solid var(--mist);
+    transform:rotate(135deg);transition:transform .15s}
+  html[lang=en] .arch-month .chev{transform:rotate(-45deg)}
+  .arch-month[open] .chev,html[lang=en] .arch-month[open] .chev{transform:rotate(45deg)}
+  .arch-month .charts-index{margin:0 0 10px}
+  /* only رقم ١ is gold on this page: the chart links are stone */
+  .archive .charts-index a{color:var(--stone)}
+  .archive .charts-index a:hover{color:var(--lamp)}
+  @media (max-width:600px){.doc.chart:has(.archive){padding-inline:16px}}
 </style>
 <script type="application/ld+json">
 {
@@ -145,7 +176,7 @@
 {
  "@context": "https://schema.org",
  "@type": "ItemList",
- "name": "تشارت المصطبة رقم ٢ · أكتر ٢٠ بودكاست عربي · أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦",
+ "name": "تشارت المصطبة رقم ٢ | أكتر ٢٠ بودكاست عربي · أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦",
  "itemListOrder": "https://schema.org/ItemListOrderAscending",
  "numberOfItems": 20,
  "itemListElement": [
@@ -278,6 +309,8 @@
 <style>
   /* shared by every page (the header goes on every page): movement colours */
   :root{--up:#7FD1B9;--down:#EF8A74}
+  /* the separator next to an Arabic number: a "·" there reads as ٠ */
+  .bar{color:var(--stone);opacity:.5;margin:0 .3em;font-weight:400}
   html{scroll-padding-top:76px}
   .sitehead{position:sticky;top:0;z-index:30;background:rgba(27,26,46,.96);border-bottom:1px solid var(--night3);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
   .sh-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
@@ -339,7 +372,7 @@
 <main class="doc chart">
 <nav class="pager top" aria-label="تشارتات تانية"><a href="/chart/2026-11-15/">← الأسبوع رقم ٣</a><a class="all" href="/charts/">كل التشارتات</a><a href="/chart/2026-11-01/">الأسبوع رقم ١ →</a></nav>
 <h1>الأسبوع رقم ٢</h1>
-<p class="updated">أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦ · اتنشر ٨ نوفمبر ٢٠٢٦</p>
+<p class="updated">أسبوع ٣٠ أكتوبر - ٥ نوفمبر ٢٠٢٦ <span class="bar" aria-hidden="true">|</span> اتنشر ٨ نوفمبر ٢٠٢٦</p>
 <p class="lead">أكتر ٢٠ بودكاست بالمشاهدات اللي كسبتها حلقاتهم على يوتيوب في الأسبوع ده.</p>
 <h2>أكتر ٢٠</h2>
 <ol class="chart-list"><li class="lead"><span class="rank">١</span><span class="mv up" title="طالع"><span class="mvi">▲ ٣</span></span><img class="pic" src="https://yt3.ggpht.com/cjH_GJF90fKGItKjYZopJ4B1aBeb7E5uV4mnjjTNBNBq7PWdDvw5jkxrFuUcZ-uf4b6UH8ae1Q=s800-c-k-c0x00ffffff-no-rj" alt="مع كامل احتياطي!" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@m3kamele7tiaty" rel="noopener"><bdi>مع كامل احتياطي!</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">٢</span><span class="mv down" title="نازل"><span class="mvi">▼ ١</span></span><img class="pic" src="https://yt3.ggpht.com/avXojlXIjbm8g8LTLcXn84-3b1pa3EpP8ufpZE3t41UZ8l7KEhVUWy7JQn0uTiAsTPX4VCMO=s800-c-k-c0x00ffffff-no-rj" alt="السبت الممتاز" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@Mogzz" rel="noopener"><bdi>السبت الممتاز</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">٣</span><span class="mv up" title="طالع"><span class="mvi">▲ ١١</span></span><img class="pic wide" src="https://i.ytimg.com/vi/CKGoJAuUbRw/maxresdefault.jpg" alt="احكي طب" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/playlist?list=PLSHqfPzvTB-12p8DUK_ySGGvK5iq-F3PQ" rel="noopener"><bdi>احكي طب</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">٤</span><span class="mv down" title="نازل"><span class="mvi">▼ ١</span></span><img class="pic" src="https://yt3.ggpht.com/rN8PMyd6Uxa5ZR3akIMrAwAecJkrx5wCSHP5Z9IzbbdrHiIauMSJrvYUE34y39KbpCcedkCK=s800-c-k-c0x00ffffff-no-rj" alt="إنعكاس" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@podcastin3ikas" rel="noopener"><bdi>إنعكاس</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">٥</span><span class="mv up" title="طالع"><span class="mvi">▲ ١٢</span></span><img class="pic" src="https://yt3.ggpht.com/mn5WrxPR18-2J6G3UcKqXQDMUUWdGVlKluqGmPbwcj-rBbTqT6z9Q_7PON7aNRrt2WVQcaWk=s800-c-k-c0x00ffffff-no-rj" alt="المراجعة النهائية" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@HadyBassionyOfficial" rel="noopener"><bdi>المراجعة النهائية</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">٦</span><span class="mv up" title="طالع"><span class="mvi">▲ ١</span></span><img class="pic wide" src="https://i.ytimg.com/vi/o5_eh5MZk2s/maxresdefault.jpg" alt="قصتي" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/playlist?list=PLKSHOeKct275tHzCn9E4i1HTIWgyM4OLy" rel="noopener"><bdi>قصتي</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">٧</span><span class="mv down" title="نازل"><span class="mvi">▼ ٥</span></span><img class="pic wide" src="https://i.ytimg.com/vi/IcukOFVF4FU/maxresdefault.jpg" alt="ABtalks" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/channel/UCUgpEOv92-iovYJWZi7tT6A" rel="noopener"><bdi>ABtalks</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">٨</span><span class="mv up" title="طالع"><span class="mvi">▲ ٣</span></span><img class="pic wide" src="https://i.ytimg.com/vi/FQjQ9YLaYks/maxresdefault.jpg" alt="بودكاست بترولي" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/channel/UC8vdjzu_0QMQlG9qNT5D_AQ" rel="noopener"><bdi>بودكاست بترولي</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">٩</span><span class="mv down" title="نازل"><span class="mvi">▼ ٤</span></span><img class="pic" src="https://yt3.ggpht.com/0-Zfkk-eQom9oa07PUtWemXngKsS9FprWdXMamMJJY5m0PRA0XGkoD0l0MGWV-rzOEjwcaLmYQ=s800-c-k-c0x00ffffff-no-rj" alt="بودكاست بدون ورق" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@BidonWaraq" rel="noopener"><bdi>بودكاست بدون ورق</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">١٠</span><span class="mv down" title="نازل"><span class="mvi">▼ ٤</span></span><img class="pic wide" src="https://i.ytimg.com/vi/o6z-UqQu2fs/maxresdefault.jpg" alt="نقرا الفاتحة؟" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@InTheBlackHole" rel="noopener"><bdi>نقرا الفاتحة؟</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">١١</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic" src="https://yt3.ggpht.com/UGcuE6niVr5GTJ6W_bqKltzDd2WYI041p5bXufQSionkuquqpE1_w22ZmfMmhFvyjTBe1YKi9A=s800-c-k-c0x00ffffff-no-rj" alt="فاهم بودكاست" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@Fahem.Podcast" rel="noopener"><bdi>فاهم بودكاست</bdi></a><span class="wk">قاعد أسبوع</span></span></li><li><span class="rank">١٢</span><span class="mv down" title="نازل"><span class="mvi">▼ ٣</span></span><img class="pic" src="https://yt3.ggpht.com/L5ai2rI98RA5afze-H0MklgloONBAwKCZb16CkB3qKJdxCZLDH5BvNylptCbUVsFiKKYw5-ex0Q=s800-c-k-c0x00ffffff-no-rj" alt="نوركاست" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@NOORCAST-DEEN" rel="noopener"><bdi>نوركاست</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">١٣</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/wvnOmtP_e80/maxresdefault.jpg" alt="بودكاست جناية" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/channel/UC4DXKosClX-lZirpQsIOjnQ" rel="noopener"><bdi>بودكاست جناية</bdi></a><span class="wk">قاعد أسبوع</span></span></li><li><span class="rank">١٤</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic" src="https://yt3.ggpht.com/I8BJjlOUqLmgz8vrA-9Z5DPKVFDwWazOD-MamsP8INON9hsQ1Q2uMwrx82ugz77kli8d-c6cKQ=s800-c-k-c0x00ffffff-no-rj" alt="بودكاست حوار" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@PodcastHewar" rel="noopener"><bdi>بودكاست حوار</bdi></a><span class="wk">قاعد أسبوع</span></span></li><li><span class="rank">١٥</span><span class="mv down" title="نازل"><span class="mvi">▼ ٢</span></span><img class="pic" src="https://yt3.ggpht.com/86etajNHHMoQ83eFD0-5twfecS5CUZUouhv7yfu7h4WZzjeMc1JdJDwXQZtxGjz-Xe1M01t6=s800-c-k-c0x00ffffff-no-rj" alt="القضية مع هيثم" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@haithambori733" rel="noopener"><bdi>القضية مع هيثم</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">١٦</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/qCjfqyUA4NQ/maxresdefault.jpg" alt="الحاوي مع وليد بريك" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/playlist?list=PLjxNQQYpfriLR62BzTSVmCfKkEf7pQZ6j" rel="noopener"><bdi>الحاوي مع وليد بريك</bdi></a><span class="wk">قاعد أسبوع</span></span></li><li><span class="rank">١٧</span><span class="mv up" title="طالع"><span class="mvi">▲ ١</span></span><img class="pic" src="https://yt3.ggpht.com/whvfQ-uRx0_f4EEEBzTOE9Pg8PvLuRRrw7lPmzAw7pQGLBiORQIEBACv5dK72K0sJq162rNRkg=s800-c-k-c0x00ffffff-no-rj" alt="بودكاست عوافي" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/@jamstudiosa" rel="noopener"><bdi>بودكاست عوافي</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">١٨</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/bOr-QcW3VfQ/maxresdefault.jpg" alt="بودكاست عقلية" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/playlist?list=PLJ59_Y9WjgxpqdeRWZ6iMarZw-psh2T6j" rel="noopener"><bdi>بودكاست عقلية</bdi></a><span class="wk">قاعد أسبوع</span></span></li><li><span class="rank">١٩</span><span class="mv up" title="طالع"><span class="mvi">▲ ١</span></span><img class="pic wide" src="https://i.ytimg.com/vi/xL1bCOCDJdY/maxresdefault.jpg" alt="منّا وفينا" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/playlist?list=PLIo6i1THVZ3jwU2z09-Y0_e4-zNevS74l" rel="noopener"><bdi>منّا وفينا</bdi></a><span class="wk">قاعد أسبوعين</span></span></li><li><span class="rank">٢٠</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/Q4ChPcNZG3s/sddefault.jpg" alt="The Viral Room" loading="lazy" referrerpolicy="no-referrer"><span class="who"><a href="https://www.youtube.com/playlist?list=PLWThSI6buEag" rel="noopener"><bdi>The Viral Room</bdi></a><span class="wk">قاعد أسبوع</span></span></li></ol>
