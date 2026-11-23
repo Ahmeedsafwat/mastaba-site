@@ -70,6 +70,52 @@
   .doc .up{color:#7FD1B9}.doc .down{color:#EF8A74}.doc .tags .same{color:rgba(242,230,207,.55)}.doc .tags .streak{color:var(--lamp)}
   .doc .cta{display:inline-block;background:var(--lamp);color:var(--night);font-weight:800;text-decoration:none;border-radius:999px;padding:12px 26px;min-height:44px}
   .doc .log li{color:var(--mist)} .doc .log b{color:var(--stone)}
+
+  /* moved from the home page: the glossary and the two diagrams, scoped so
+     they never touch the chart pages that share this stylesheet */
+  .glossary .vocab{display:grid;gap:14px;grid-template-columns:minmax(0,1fr);margin:14px 0 8px}
+  .glossary .term{background:var(--night2);border:1px solid var(--night3);border-radius:20px;padding:22px 22px 20px}
+  .glossary .term .tok{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;line-height:1.35;margin-bottom:6px}
+  .glossary .term p{margin:0;color:var(--mist);font-size:15.5px;line-height:1.75}
+  .glossary .term.feature{background:var(--lamp);border-color:var(--lamp);color:var(--night);display:flex;align-items:center;gap:22px}
+  .glossary .term.feature .bench-ico{width:68px;height:51px}
+  .glossary .term.feature .tok{font-size:clamp(24px,5.2vw,30px);font-weight:900}
+  .glossary .term.feature p{color:#2E2616;font-weight:500}
+  .glossary .up{color:var(--up)} .glossary .down{color:var(--down)}
+  .glossary .tok .arrow{width:16px;height:13px}
+  .glossary .new{font-size:13px;font-weight:800;color:var(--lamp);border:1.5px solid var(--lamp);border-radius:5px;padding:1px 6px;line-height:1.55}
+  @media (min-width:640px){.glossary .vocab{grid-template-columns:repeat(2,minmax(0,1fr))}.glossary .term.feature{grid-column:span 2}}
+  .mviz .viz{margin:14px 0 22px;background:var(--night2);border-radius:16px;padding:18px 16px 14px}
+  .mviz .viz-cap{font-size:12.5px;color:var(--mist);margin:10px 0 0;line-height:1.6}
+  .mviz .win{position:relative;height:74px;margin-top:26px}
+  .mviz .win-line{position:absolute;inset-inline:0;top:34px;height:2px;background:repeating-linear-gradient(to left,var(--night3) 0 6px,transparent 6px 11px)}
+  .mviz .win-in{position:absolute;inset-inline-start:0;width:75%;top:22px;height:26px;border-radius:13px;background:rgba(232,163,61,.14);border:1.5px solid var(--lamp)}
+  .mviz .win i{position:absolute;top:28px;width:14px;height:14px;border-radius:50%;background:var(--lamp);inset-inline-start:var(--p);margin-inline-start:-7px}
+  .mviz .win i.old{background:transparent;border:2px dashed var(--mist)}
+  .mviz .win .lbl{position:absolute;top:-2px;font-size:12px;font-weight:700;color:var(--stone);line-height:1.4;white-space:nowrap}
+  .mviz .win .lbl.today{inset-inline-start:0}
+  .mviz .win .lbl.edge{inset-inline-start:75%;transform:translateX(50%)}
+  html[lang=en] .mviz .win .lbl.edge{transform:translateX(-50%)}
+  .mviz .win .lbl.older{inset-inline-end:0;color:var(--mist);font-weight:500}
+  .mviz .win .tick{position:absolute;inset-inline-start:75%;top:17px;width:2px;height:36px;background:var(--lamp);margin-inline-start:-1px}
+  .mviz .legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--mist);line-height:1.5}
+  .mviz .legend span{display:inline-flex;align-items:center;gap:7px}
+  .mviz .legend i{width:11px;height:11px;border-radius:50%;background:var(--lamp);display:inline-block}
+  .mviz .legend i.old{background:transparent;border:2px dashed var(--mist)}
+  .mviz .bars{display:grid;gap:16px}
+  .mviz .bars .who{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;font-weight:700;margin-bottom:6px}
+  .mviz .bars .who em{font-style:normal;display:inline-flex;align-items:center;gap:5px}
+  .mviz .bars .who em.up{color:var(--up)}
+  .mviz .bars .who em svg{width:11px;height:9px}
+  .mviz .bar{position:relative;height:12px;border-radius:6px;background:var(--night3);margin-bottom:5px}
+  .mviz .bar b{position:absolute;inset-block:0;inset-inline-start:0;border-radius:6px;width:var(--w)}
+  .mviz .bar.norm b{background:var(--mist);opacity:.55}
+  .mviz .bar.week b{background:var(--lamp)}
+  .mviz .bar.week.hot b{background:var(--up)}
+  .mviz .bars .k{display:flex;gap:16px;font-size:12px;color:var(--mist)}
+  .mviz .bars .k span{display:inline-flex;align-items:center;gap:6px}
+  .mviz .bars .k i{width:14px;height:6px;border-radius:3px;display:inline-block;background:var(--mist);opacity:.55}
+  .mviz .bars .k i.w{background:var(--lamp);opacity:1}
 </style>
 <link rel="canonical" href="https://mastaba.fm/methodology.html">
 <link rel="alternate" hreflang="ar" href="https://mastaba.fm/methodology.html">
@@ -99,7 +145,7 @@
 <meta name="twitter:image" content="https://mastaba.fm/chart/2026-11-22/cover.png">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="bench" viewBox="0 0 120 90"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="bench" viewBox="0 0 120 90"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></symbol><symbol id="tri-up" viewBox="0 0 18 14"><path d="M9 0 18 14H0Z"/></symbol><symbol id="tri-down" viewBox="0 0 18 14"><path d="M0 0h18L9 14Z"/></symbol></svg>
 <style>
   /* shared by every page (the header goes on every page): movement colours */
   :root{--up:#7FD1B9;--down:#EF8A74}
@@ -168,7 +214,7 @@
 
 <h1>إزاي بنعدّ؟</h1>
 <p class="updated">آخر تحديث: ٢٣ أكتوبر ٢٠٢٦</p>
-<p class="lead">المصطبة تشارت أسبوعي للبودكاست العربي على يوتيوب. هنا كل القواعد اللي بنرتّب بيها، من غير أسرار. لو قاعدة اتغيرت، هنكتب هنا إيه اللي اتغير وإمتى.</p>
+<p class="lead">المصطبة تشارت أسبوعي للبودكاست العربي على يوتيوب. هنا كل القواعد اللي بنرتّب بيها، من غير أسرار. لو قاعدة اتغيرت، هنكتب هنا إيه اللي اتغير وإمتى، قبل ما نطبّقها.</p>
 
 <h2>الفكرة في سطر</h2>
 <div class="box">
@@ -177,6 +223,7 @@
 
 <h2>منين بنجيب الأرقام؟</h2>
 <p>من أرقام يوتيوب العامة بس: عدد المشاهدات والإعجابات والتعليقات اللي أي حد يقدر يشوفها تحت الفيديو. بنقراها كل يوم عن طريق الـ API الرسمي بتاع يوتيوب. مش بنستخدم أي بيانات خاصة، ومش بنطلب من حد يدخل بحسابه.</p>
+<p>يوتيوب بيوريك رقم النهارده بس، وإحنا بنسجّل الرقم كل يوم عشان نحسب الأسبوع. وبنتابع أكتر من ٣٠٠ بودكاست.</p>
 <p>الترتيب مبني على <b>المشاهدات</b>. الإعجابات والتعليقات بنستخدمها بس في فحص الجودة (شوف تحت).</p>
 
 <h2>أسبوع التشارت</h2>
@@ -191,7 +238,7 @@
 <ul class="list">
 <li><b>حوار</b> بين اتنين أو أكتر، بمقدم ثابت. المحاضرات والمونولوج والقراءة والسرد مش بيدخلوا.</li>
 <li>منشور على <b>يوتيوب</b>، بحلقات كاملة.</li>
-<li>نزّل <b>٣ حلقات كاملة على الأقل في آخر ٩٠ يوم</b>.</li>
+<li>نزّل <b>٣ حلقات كاملة على الأقل في آخر ٩٠ يوم</b>، يعني البرنامج لسه شغال.</li>
 </ul>
 <p>البودكاست اللي بينشر حلقاته الكاملة على منصات صوتية بس مش هيظهر عندنا، وده مقصود: إحنا بنعدّ يوتيوب بس، وبنقول كده بوضوح.</p>
 
@@ -202,6 +249,22 @@
 <li>الحلقة اللي نزلت في نص الأسبوع بتتحسب من الصفر.</li>
 <li>البث المباشر بيتحسب لو كان حلقة حوار من البودكاست وخلص.</li>
 </ul>
+<p>الحلقة اللي تعدّي ٩٠ يوم بتخرج من الحساب، فممكن برنامج ينزل في الترتيب حتى لو أرقامه ما قلّتش.</p>
+<div class="mviz">
+<div class="viz" role="img" aria-label="رسم توضيحي: الحلقات اللي نزلت في آخر ٩٠ يوم بس هي اللي بتتحسب">
+<div class="win" aria-hidden="true">
+<span class="lbl today">النهارده</span>
+<span class="lbl edge">٩٠ يوم</span>
+<span class="lbl older">أقدم</span>
+<div class="win-line"></div>
+<div class="win-in"></div>
+<span class="tick"></span>
+<i style="--p:5%"></i><i style="--p:19%"></i><i style="--p:33%"></i><i style="--p:50%"></i><i style="--p:66%"></i>
+<i class="old" style="--p:85%"></i><i class="old" style="--p:95%"></i>
+</div>
+<div class="legend"><span><i></i>حلقة مشاهداتها بتتحسب</span><span><i class="old"></i>أقدم من ٩٠ يوم: مش محسوبة</span></div>
+</div>
+</div>
 
 <h2>إيه اللي مش بيتحسب؟</h2>
 <ul class="list">
@@ -238,6 +301,42 @@
 <li>قاعد كام أسبوع</li>
 <li class="streak">🔥 أسابيع متتالية في رقم ١</li>
 </ul>
+<p>في الصاعدون بنقارن كل برنامج <b>بنفسه</b>: الأسبوع ده قصاد المعتاد بتاعه. برنامج صغير عمل أحسن أسبوع ليه ممكن يسبق برنامج كبير أسبوعه عادي. أكتر ٢٠ مش كده، هو بيعد المشاهدات زي ما هي.</p>
+<div class="mviz">
+<div class="viz" role="img" aria-label="رسم توضيحي: برنامج صغير عمل ٣ أضعاف العادي، وبرنامج كبير عمل أسبوع عادي">
+<div class="bars" aria-hidden="true">
+<div>
+<div class="who"><span>برنامج صغير</span><em class="up"><svg fill="currentColor"><use href="#tri-up"/></svg>٣ أضعاف العادي</em></div>
+<div class="bar norm"><b style="--w:18%"></b></div>
+<div class="bar week hot"><b style="--w:54%"></b></div>
+</div>
+<div>
+<div class="who"><span>برنامج كبير</span><em style="color:var(--mist)">أسبوع عادي</em></div>
+<div class="bar norm"><b style="--w:88%"></b></div>
+<div class="bar week"><b style="--w:90%"></b></div>
+</div>
+<div class="k"><span><i></i>العادي بتاعه</span><span><i class="w"></i>الأسبوع ده</span></div>
+</div>
+<p class="viz-cap">في أكتر ٢٠ الكبير هيبقى فوق. في الصاعدون الصغير.</p>
+</div>
+</div>
+
+<h2 id="words">الكلام اللي هتشوفه</h2>
+<p>«على المصطبة» يعني في التشارت. والباقي كده:</p>
+<div class="glossary">
+<div class="vocab">
+<div class="term feature">
+<svg class="bench-ico" fill="#1B1A2E" aria-hidden="true"><use href="#bench"/></svg>
+<div><div class="tok">رقم ١ على المصطبة</div><p>البرنامج اللي مشاهداته زادت أكتر من أي برنامج تاني الأسبوع ده.</p></div>
+</div>
+<div class="term"><div class="tok">على المصطبة</div><p>في التشارت الأسبوع ده.</p></div>
+<div class="term"><div class="tok"><span class="new">جديد</span> أول مرة على المصطبة</div><p>أول أسبوع للبرنامج في التشارت.</p></div>
+<div class="term"><div class="tok">قاعد ٥ أسابيع</div><p>بقاله ٥ أسابيع في التشارت.</p></div>
+<div class="term"><div class="tok up"><svg class="arrow" fill="currentColor" aria-hidden="true"><use href="#tri-up"/></svg>طالع ٣</div><p>طلع ٣ مراكز عن الأسبوع اللي فات.</p></div>
+<div class="term"><div class="tok down"><svg class="arrow" fill="currentColor" aria-hidden="true"><use href="#tri-down"/></svg>نازل ٢</div><p>نزل مركزين عن الأسبوع اللي فات.</p></div>
+<div class="term risers"><div class="tok">الصاعدون</div><p>البرامج اللي عملت أحسن من العادي بتاعها بكتير، حتى لو برامج صغيرة.</p></div>
+</div>
+</div>
 
 <h2>الفلوس والترتيب</h2>
 <div class="box">

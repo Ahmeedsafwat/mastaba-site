@@ -70,6 +70,52 @@
   .doc .up{color:#7FD1B9}.doc .down{color:#EF8A74}.doc .tags .same{color:rgba(242,230,207,.55)}.doc .tags .streak{color:var(--lamp)}
   .doc .cta{display:inline-block;background:var(--lamp);color:var(--night);font-weight:800;text-decoration:none;border-radius:999px;padding:12px 26px;min-height:44px}
   .doc .log li{color:var(--mist)} .doc .log b{color:var(--stone)}
+
+  /* moved from the home page: the glossary and the two diagrams, scoped so
+     they never touch the chart pages that share this stylesheet */
+  .glossary .vocab{display:grid;gap:14px;grid-template-columns:minmax(0,1fr);margin:14px 0 8px}
+  .glossary .term{background:var(--night2);border:1px solid var(--night3);border-radius:20px;padding:22px 22px 20px}
+  .glossary .term .tok{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;line-height:1.35;margin-bottom:6px}
+  .glossary .term p{margin:0;color:var(--mist);font-size:15.5px;line-height:1.75}
+  .glossary .term.feature{background:var(--lamp);border-color:var(--lamp);color:var(--night);display:flex;align-items:center;gap:22px}
+  .glossary .term.feature .bench-ico{width:68px;height:51px}
+  .glossary .term.feature .tok{font-size:clamp(24px,5.2vw,30px);font-weight:900}
+  .glossary .term.feature p{color:#2E2616;font-weight:500}
+  .glossary .up{color:var(--up)} .glossary .down{color:var(--down)}
+  .glossary .tok .arrow{width:16px;height:13px}
+  .glossary .new{font-size:13px;font-weight:800;color:var(--lamp);border:1.5px solid var(--lamp);border-radius:5px;padding:1px 6px;line-height:1.55}
+  @media (min-width:640px){.glossary .vocab{grid-template-columns:repeat(2,minmax(0,1fr))}.glossary .term.feature{grid-column:span 2}}
+  .mviz .viz{margin:14px 0 22px;background:var(--night2);border-radius:16px;padding:18px 16px 14px}
+  .mviz .viz-cap{font-size:12.5px;color:var(--mist);margin:10px 0 0;line-height:1.6}
+  .mviz .win{position:relative;height:74px;margin-top:26px}
+  .mviz .win-line{position:absolute;inset-inline:0;top:34px;height:2px;background:repeating-linear-gradient(to left,var(--night3) 0 6px,transparent 6px 11px)}
+  .mviz .win-in{position:absolute;inset-inline-start:0;width:75%;top:22px;height:26px;border-radius:13px;background:rgba(232,163,61,.14);border:1.5px solid var(--lamp)}
+  .mviz .win i{position:absolute;top:28px;width:14px;height:14px;border-radius:50%;background:var(--lamp);inset-inline-start:var(--p);margin-inline-start:-7px}
+  .mviz .win i.old{background:transparent;border:2px dashed var(--mist)}
+  .mviz .win .lbl{position:absolute;top:-2px;font-size:12px;font-weight:700;color:var(--stone);line-height:1.4;white-space:nowrap}
+  .mviz .win .lbl.today{inset-inline-start:0}
+  .mviz .win .lbl.edge{inset-inline-start:75%;transform:translateX(50%)}
+  html[lang=en] .mviz .win .lbl.edge{transform:translateX(-50%)}
+  .mviz .win .lbl.older{inset-inline-end:0;color:var(--mist);font-weight:500}
+  .mviz .win .tick{position:absolute;inset-inline-start:75%;top:17px;width:2px;height:36px;background:var(--lamp);margin-inline-start:-1px}
+  .mviz .legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--mist);line-height:1.5}
+  .mviz .legend span{display:inline-flex;align-items:center;gap:7px}
+  .mviz .legend i{width:11px;height:11px;border-radius:50%;background:var(--lamp);display:inline-block}
+  .mviz .legend i.old{background:transparent;border:2px dashed var(--mist)}
+  .mviz .bars{display:grid;gap:16px}
+  .mviz .bars .who{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;font-weight:700;margin-bottom:6px}
+  .mviz .bars .who em{font-style:normal;display:inline-flex;align-items:center;gap:5px}
+  .mviz .bars .who em.up{color:var(--up)}
+  .mviz .bars .who em svg{width:11px;height:9px}
+  .mviz .bar{position:relative;height:12px;border-radius:6px;background:var(--night3);margin-bottom:5px}
+  .mviz .bar b{position:absolute;inset-block:0;inset-inline-start:0;border-radius:6px;width:var(--w)}
+  .mviz .bar.norm b{background:var(--mist);opacity:.55}
+  .mviz .bar.week b{background:var(--lamp)}
+  .mviz .bar.week.hot b{background:var(--up)}
+  .mviz .bars .k{display:flex;gap:16px;font-size:12px;color:var(--mist)}
+  .mviz .bars .k span{display:inline-flex;align-items:center;gap:6px}
+  .mviz .bars .k i{width:14px;height:6px;border-radius:3px;display:inline-block;background:var(--mist);opacity:.55}
+  .mviz .bars .k i.w{background:var(--lamp);opacity:1}
 </style>
 <meta property="og:title" content="How we count · Mastaba">
 <meta property="og:description" content="The rules of the Mastaba chart: how we rank Arabic podcasts every week from public YouTube numbers.">
@@ -112,7 +158,7 @@
 <meta name="twitter:image" content="https://mastaba.fm/chart/2026-11-22/cover.png">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="bench" viewBox="0 0 120 90"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="bench" viewBox="0 0 120 90"><circle cx="30" cy="26" r="11"/><circle cx="60" cy="26" r="11"/><circle cx="90" cy="26" r="11"/><rect x="6" y="46" width="108" height="12" rx="3"/><rect x="18" y="58" width="10" height="24"/><rect x="92" y="58" width="10" height="24"/></symbol><symbol id="tri-up" viewBox="0 0 18 14"><path d="M9 0 18 14H0Z"/></symbol><symbol id="tri-down" viewBox="0 0 18 14"><path d="M0 0h18L9 14Z"/></symbol></svg>
 <style>
   /* shared by every page (the header goes on every page): movement colours */
   :root{--up:#7FD1B9;--down:#EF8A74}
@@ -179,7 +225,7 @@
 <main class="doc">
 <h1>How do we count?</h1>
 <p class="updated">Last updated: 8 November 2026</p>
-<p class="lead">Mastaba (المصطبة) is a weekly chart of Arabic podcasts on YouTube. These are all the rules we rank by, with no secrets. If a rule changes, we'll write here what changed and when.</p>
+<p class="lead">Mastaba (المصطبة) is a weekly chart of Arabic podcasts on YouTube. These are all the rules we rank by, with no secrets. If a rule changes, we'll write here what changed and when, before we apply it.</p>
 
 <h2>The idea in one line</h2>
 <div class="box">
@@ -188,6 +234,7 @@
 
 <h2>Where do the numbers come from?</h2>
 <p>Only from YouTube's public numbers: the view, like and comment counts anyone can see under a video. We read them every day through YouTube's official API. We don't use any private data, and we never ask anyone to sign in.</p>
+<p>YouTube only shows you today's number, so we record it every day to work out the week. We follow more than 300 podcasts.</p>
 <p>The ranking is built on <b>views</b>. Likes and comments are used only in the quality check (see below).</p>
 
 <h2>The chart week</h2>
@@ -202,7 +249,7 @@
 <ul class="list">
 <li>A <b>conversation</b> between two or more people, with a consistent host. Lectures, monologues, readings and narration don't qualify.</li>
 <li>Published on <b>YouTube</b>, with full episodes.</li>
-<li>At least <b>3 full episodes in the last 90 days</b>.</li>
+<li>At least <b>3 full episodes in the last 90 days</b>, so the show is still running.</li>
 </ul>
 <p>A podcast that publishes its full episodes only on audio platforms won't appear here, and that's deliberate: we count YouTube only, and we say so plainly.</p>
 
@@ -213,6 +260,22 @@
 <li>An episode published mid-week counts from zero.</li>
 <li>A live stream counts if it was a conversation episode of the podcast and it has ended.</li>
 </ul>
+<p>An episode older than 90 days drops out of the count, so a show can fall in the ranking even if its numbers didn't go down.</p>
+<div class="mviz">
+<div class="viz" role="img" aria-label="Diagram: only episodes published in the last 90 days are counted">
+<div class="win" aria-hidden="true">
+<span class="lbl today">Today</span>
+<span class="lbl edge">90 days</span>
+<span class="lbl older">Older</span>
+<div class="win-line"></div>
+<div class="win-in"></div>
+<span class="tick"></span>
+<i style="--p:5%"></i><i style="--p:19%"></i><i style="--p:33%"></i><i style="--p:50%"></i><i style="--p:66%"></i>
+<i class="old" style="--p:85%"></i><i class="old" style="--p:95%"></i>
+</div>
+<div class="legend"><span><i></i>An episode whose views count</span><span><i class="old"></i>Older than 90 days: not counted</span></div>
+</div>
+</div>
 
 <h2>What doesn't count?</h2>
 <ul class="list">
@@ -249,6 +312,42 @@
 <li>Weeks on chart</li>
 <li class="streak">🔥 consecutive weeks at No. 1</li>
 </ul>
+<p>In Rising we compare every show <b>with itself</b>: this week against its usual. A small show having its best week can come ahead of a big show having an ordinary one. The Top 20 is different: it counts the views as they are.</p>
+<div class="mviz">
+<div class="viz" role="img" aria-label="Diagram: a small show did 3 times its usual, a big show had an ordinary week">
+<div class="bars" aria-hidden="true">
+<div>
+<div class="who"><span>Small show</span><em class="up"><svg fill="currentColor"><use href="#tri-up"/></svg>3× its usual</em></div>
+<div class="bar norm"><b style="--w:18%"></b></div>
+<div class="bar week hot"><b style="--w:54%"></b></div>
+</div>
+<div>
+<div class="who"><span>Big show</span><em style="color:var(--mist)">An ordinary week</em></div>
+<div class="bar norm"><b style="--w:88%"></b></div>
+<div class="bar week"><b style="--w:90%"></b></div>
+</div>
+<div class="k"><span><i></i>Its usual</span><span><i class="w"></i>This week</span></div>
+</div>
+<p class="viz-cap">In the Top 20 the big show comes out on top. In Rising, the small one.</p>
+</div>
+</div>
+
+<h2 id="words">The words you'll see</h2>
+<p>"On the bench" (<span lang="ar">على المصطبة</span>) means on the chart. And the rest:</p>
+<div class="glossary">
+<div class="vocab">
+<div class="term feature">
+<svg class="bench-ico" fill="#1B1A2E" aria-hidden="true"><use href="#bench"/></svg>
+<div><div class="tok">No. 1 on the chart</div><p>The show whose views grew more than any other show's this week.</p></div>
+</div>
+<div class="term"><div class="tok">On the chart</div><p>In this week's chart.</p></div>
+<div class="term"><div class="tok"><span class="new">NEW</span> First time on the chart</div><p>The show's first week on the chart.</p></div>
+<div class="term"><div class="tok">5 weeks on chart</div><p>It has been on the chart for 5 weeks.</p></div>
+<div class="term"><div class="tok up"><svg class="arrow" fill="currentColor" aria-hidden="true"><use href="#tri-up"/></svg>Up 3</div><p>Up 3 places from last week.</p></div>
+<div class="term"><div class="tok down"><svg class="arrow" fill="currentColor" aria-hidden="true"><use href="#tri-down"/></svg>Down 2</div><p>Down 2 places from last week.</p></div>
+<div class="term risers"><div class="tok">Rising</div><p>Shows that did far better than their usual, even small ones.</p></div>
+</div>
+</div>
 
 <h2>Money and the ranking</h2>
 <div class="box">

@@ -158,6 +158,10 @@
   .s-foot{text-align:center;font-size:3.4cqw;color:var(--mist);line-height:1.5}
   .s-foot .mono{color:var(--lamp)}
 
+  .how-short .short{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:12px;max-width:760px}
+  .how-short .short li{display:flex;flex-direction:column;gap:2px;padding:14px 18px;border-radius:16px;background:var(--night);border:1px solid var(--night3)}
+  .how-short .short b{font-weight:800;color:var(--lamp);font-size:17px;line-height:1.5}
+  .how-short .short span{color:var(--stone);font-size:16px;line-height:1.7}
   /* ---------- vocabulary ---------- */
   .vocab{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
   .term{background:var(--night2);border:1px solid var(--night3);border-radius:20px;padding:22px 22px 20px}
@@ -365,6 +369,13 @@
   .hc-one .sec{display:block;font-family:var(--sans);font-size:16px;color:var(--mist)}
   .hc-one .mv{color:var(--lamp);font-weight:700}
   .hc-list{list-style:none;padding:0;margin:0}
+  /* the whole row is the show's link: one <a> per row, stretched over it */
+  .chart-list li, .hc-list li{position:relative;min-height:44px}
+  .chart-list .row-link::after, .hc-list .row-link::after{content:"";position:absolute;inset:0;border-radius:10px}
+  .chart-list .row-link:focus-visible, .hc-list .row-link:focus-visible{outline:none}
+  .chart-list .row-link:focus-visible::after, .hc-list .row-link:focus-visible::after{outline:2px solid var(--lamp);outline-offset:-2px}
+  .chart-list li:has(.row-link:hover), .hc-list li:has(.row-link:hover){background:rgba(242,230,207,.04)}
+  .chart-list li:has(.row-link:hover) .row-link, .hc-list li:has(.row-link:hover) .row-link{color:var(--lamp)}
   .hc-list li{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--night3)}
   .hc-list .rank{width:30px;flex:none;text-align:center;font-family:var(--kufi);font-weight:700;font-size:22px;line-height:1}
   .hc-list li.lead .rank{color:var(--lamp)}
@@ -487,105 +498,18 @@
 
 <main id="main">
 
-  <section class="latest" aria-labelledby="latest-h"><div class="wrap"><h2 id="latest-h">تشارت المصطبة رقم&nbsp;٤</h2><p class="intro">أسبوع ١٣ - ١٩ نوفمبر ٢٠٢٦ <span class="bar" aria-hidden="true">|</span> اتنشر ٢٢ نوفمبر ٢٠٢٦.</p><div class="hc-grid"><article class="hc-card hc-one"><span class="k">رقم ١ الأسبوع ده</span><img class="pic big" src="https://yt3.ggpht.com/cjH_GJF90fKGItKjYZopJ4B1aBeb7E5uV4mnjjTNBNBq7PWdDvw5jkxrFuUcZ-uf4b6UH8ae1Q=s800-c-k-c0x00ffffff-no-rj" alt="مع كامل احتياطي!" loading="lazy" referrerpolicy="no-referrer"><p class="n"><a href="https://www.youtube.com/@m3kamele7tiaty" rel="noopener"><bdi>مع كامل احتياطي!</bdi></a></p><p class="streak" data-fit1="13">الأسبوع التالت على التوالي 🔥</p></article><article class="hc-card hc-top"><h3>أكتر ٢٠ <span class="bar" aria-hidden="true">|</span> من ١ لـ ١٠</h3><ol class="hc-list"><li class="lead"><span class="rank">١</span><span class="mv same" title="ثابت في مكانه"><span class="mvi">–</span></span><img class="pic" src="https://yt3.ggpht.com/cjH_GJF90fKGItKjYZopJ4B1aBeb7E5uV4mnjjTNBNBq7PWdDvw5jkxrFuUcZ-uf4b6UH8ae1Q=s800-c-k-c0x00ffffff-no-rj" alt="مع كامل احتياطي!" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@m3kamele7tiaty" rel="noopener"><bdi>مع كامل احتياطي!</bdi></a></span></li><li><span class="rank">٢</span><span class="mv same" title="ثابت في مكانه"><span class="mvi">–</span></span><img class="pic" src="https://yt3.ggpht.com/avXojlXIjbm8g8LTLcXn84-3b1pa3EpP8ufpZE3t41UZ8l7KEhVUWy7JQn0uTiAsTPX4VCMO=s800-c-k-c0x00ffffff-no-rj" alt="السبت الممتاز" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@Mogzz" rel="noopener"><bdi>السبت الممتاز</bdi></a></span></li><li><span class="rank">٣</span><span class="mv up" title="طالع"><span class="mvi">▲ ١٤</span></span><img class="pic" src="https://yt3.ggpht.com/DBinaMPfoyOc4M526iWnLs4iPGhfEOna3z78iYaLFePX5-5z8kCnL7gAKO027g4zkLe-qDBwqOs=s800-c-k-c0x00ffffff-no-rj" alt="تخيل" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@Takhayaal" rel="noopener"><bdi>تخيل</bdi></a></span></li><li><span class="rank">٤</span><span class="mv same" title="ثابت في مكانه"><span class="mvi">–</span></span><img class="pic" src="https://yt3.ggpht.com/rN8PMyd6Uxa5ZR3akIMrAwAecJkrx5wCSHP5Z9IzbbdrHiIauMSJrvYUE34y39KbpCcedkCK=s800-c-k-c0x00ffffff-no-rj" alt="إنعكاس" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@podcastin3ikas" rel="noopener"><bdi>إنعكاس</bdi></a></span></li><li><span class="rank">٥</span><span class="mv up" title="طالع"><span class="mvi">▲ ٢</span></span><img class="pic wide" src="https://i.ytimg.com/vi/wFSPC2qDE3M/maxresdefault.jpg" alt="بودكاست بترولي" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/channel/UC8vdjzu_0QMQlG9qNT5D_AQ" rel="noopener"><bdi>بودكاست بترولي</bdi></a></span></li><li><span class="rank">٦</span><span class="mv down" title="نازل"><span class="mvi">▼ ٣</span></span><img class="pic wide" src="https://i.ytimg.com/vi/CKGoJAuUbRw/maxresdefault.jpg" alt="احكي طب" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/playlist?list=PLSHqfPzvTB-12p8DUK_ySGGvK5iq-F3PQ" rel="noopener"><bdi>احكي طب</bdi></a></span></li><li><span class="rank">٧</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/crx0JFkJVn4/maxresdefault.jpg" alt="المناظرة" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@ArabCastAE" rel="noopener"><bdi>المناظرة</bdi></a></span></li><li><span class="rank">٨</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic" src="https://yt3.ggpht.com/Ygpc0TbDKz4d8xLNFfOX-DLjCn7CLQU4Z_5eL2CwDGK2--38wWt1DIfBOZW9mGY-slND1xpI8co=s800-c-k-c0x00ffffff-no-rj" alt="الاشقيه مع موسى والكريتي" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@alashqeaa" rel="noopener"><bdi>الاشقيه مع موسى والكريتي</bdi></a></span></li><li><span class="rank">٩</span><span class="mv down" title="نازل"><span class="mvi">▼ ٣</span></span><img class="pic wide" src="https://i.ytimg.com/vi/o5_eh5MZk2s/maxresdefault.jpg" alt="قصتي" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/playlist?list=PLKSHOeKct275tHzCn9E4i1HTIWgyM4OLy" rel="noopener"><bdi>قصتي</bdi></a></span></li><li><span class="rank">١٠</span><span class="mv up" title="طالع"><span class="mvi">▲ ١٠</span></span><img class="pic wide" src="https://i.ytimg.com/vi/xL1bCOCDJdY/maxresdefault.jpg" alt="منّا وفينا" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/playlist?list=PLIo6i1THVZ3jwU2z09-Y0_e4-zNevS74l" rel="noopener"><bdi>منّا وفينا</bdi></a></span></li></ol><a class="more" href="/chart/2026-11-22/">الـ٢٠ كاملين ←</a></article><article class="hc-card hc-rise"><h3>الصاعدون</h3><p class="sub">أسبوعهم أعلى بكتير من معدلهم</p><ol class="hc-list"><li><span class="rank">١</span><img class="pic wide" src="https://i.ytimg.com/vi/ITSyi9-2Ig0/maxresdefault.jpg" alt="معتدل" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/playlist?list=PLhFlguAHRrsM29LnpYPEuv9UNHw4QfkqH" rel="noopener"><bdi>معتدل</bdi></a></span><span class="ratio">×٥٫٩</span></li><li><span class="rank">٢</span><img class="pic wide" src="https://i.ytimg.com/vi/P0hEviCMcJM/maxresdefault.jpg" alt="الصاغة بودكاست" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/playlist?list=PLmEKWLFSGjcDY0gGH-DNb0gs7Au7XyjrO" rel="noopener"><bdi>الصاغة بودكاست</bdi></a></span><span class="ratio">×٥٫٨</span></li><li><span class="rank">٣</span><img class="pic" src="https://yt3.ggpht.com/_1p1lAUaH-R6_otjf7HThQeEItjf9Fh7HYo_KT8btrD2PAWmrsXyER0JzE1t_lkjW3ngnvFL=s800-c-k-c0x00ffffff-no-rj" alt="بودكاست البوصلة" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@ismailhammichetalks" rel="noopener"><bdi>بودكاست البوصلة</bdi></a></span><span class="ratio">×٣٫٧</span></li><li><span class="rank">٤</span><img class="pic wide" src="https://i.ytimg.com/vi/od6h65hDyRw/maxresdefault.jpg" alt="بودكاست سوريا كاست" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/channel/UCAzh6ULvUWTp_q6JJZW6zVQ" rel="noopener"><bdi>بودكاست سوريا كاست</bdi></a></span><span class="ratio">×٣٫٠</span></li><li><span class="rank">٥</span><img class="pic" src="https://yt3.ggpht.com/qzAbSTy1ELm9OXH1qA7E1ndeqSH5ukhm_d64YanH5CKoLX71VNn7LPGSxf8HkdhTEff2E0O_1w=s800-c-k-c0x00ffffff-no-rj" alt="TOUIL TALKS" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="ltr"><a href="https://www.youtube.com/@TouilTalks" rel="noopener"><bdi>TOUIL TALKS</bdi></a></span><span class="ratio">×٢٫٧</span></li></ol><a class="more" href="/chart/2026-11-22/">الصاعدون كاملين ←</a></article><article class="hc-card hc-ep"><h3>حلقة الأسبوع</h3><a class="ep-thumb" href="https://www.youtube.com/watch?v=zvFtGdZ-vHY" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://i.ytimg.com/vi/zvFtGdZ-vHY/maxresdefault.jpg" alt="الزئبق | محمد إيشا | مع كامل احتياطي" loading="lazy" referrerpolicy="no-referrer"></a><a class="t" href="https://www.youtube.com/watch?v=zvFtGdZ-vHY" rel="noopener"><bdi>الزئبق | محمد إيشا | مع كامل احتياطي</bdi></a><p class="from">من برنامج <bdi>مع كامل احتياطي!</bdi></p></article></div><div class="hc-links"><a class="btn primary" href="/chart/2026-11-22/">التشارت كامل</a><a class="btn ghost" href="/charts/">كل التشارتات</a></div></div></section>
+  <section class="latest" aria-labelledby="latest-h"><div class="wrap"><h2 id="latest-h">تشارت المصطبة رقم&nbsp;٤</h2><p class="intro">أسبوع ١٣ - ١٩ نوفمبر ٢٠٢٦ <span class="bar" aria-hidden="true">|</span> اتنشر ٢٢ نوفمبر ٢٠٢٦.</p><div class="hc-grid"><article class="hc-card hc-one"><span class="k">رقم ١ الأسبوع ده</span><img class="pic big" src="https://yt3.ggpht.com/cjH_GJF90fKGItKjYZopJ4B1aBeb7E5uV4mnjjTNBNBq7PWdDvw5jkxrFuUcZ-uf4b6UH8ae1Q=s800-c-k-c0x00ffffff-no-rj" alt="مع كامل احتياطي!" loading="lazy" referrerpolicy="no-referrer"><p class="n"><a href="/podcast/m3kamele7tiaty/"><bdi>مع كامل احتياطي!</bdi></a></p><p class="streak" data-fit1="13">الأسبوع التالت على التوالي 🔥</p></article><article class="hc-card hc-top"><h3>أكتر ٢٠ <span class="bar" aria-hidden="true">|</span> من ١ لـ ١٠</h3><ol class="hc-list"><li class="lead"><span class="rank">١</span><span class="mv same" title="ثابت في مكانه"><span class="mvi">–</span></span><img class="pic" src="https://yt3.ggpht.com/cjH_GJF90fKGItKjYZopJ4B1aBeb7E5uV4mnjjTNBNBq7PWdDvw5jkxrFuUcZ-uf4b6UH8ae1Q=s800-c-k-c0x00ffffff-no-rj" alt="مع كامل احتياطي!" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/m3kamele7tiaty/"><bdi>مع كامل احتياطي!</bdi></a></span></li><li><span class="rank">٢</span><span class="mv same" title="ثابت في مكانه"><span class="mvi">–</span></span><img class="pic" src="https://yt3.ggpht.com/avXojlXIjbm8g8LTLcXn84-3b1pa3EpP8ufpZE3t41UZ8l7KEhVUWy7JQn0uTiAsTPX4VCMO=s800-c-k-c0x00ffffff-no-rj" alt="السبت الممتاز" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/p-afe8f77e/"><bdi>السبت الممتاز</bdi></a></span></li><li><span class="rank">٣</span><span class="mv up" title="طالع"><span class="mvi">▲ ١٤</span></span><img class="pic" src="https://yt3.ggpht.com/DBinaMPfoyOc4M526iWnLs4iPGhfEOna3z78iYaLFePX5-5z8kCnL7gAKO027g4zkLe-qDBwqOs=s800-c-k-c0x00ffffff-no-rj" alt="تخيل" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/takhayaal/"><bdi>تخيل</bdi></a></span></li><li><span class="rank">٤</span><span class="mv same" title="ثابت في مكانه"><span class="mvi">–</span></span><img class="pic" src="https://yt3.ggpht.com/rN8PMyd6Uxa5ZR3akIMrAwAecJkrx5wCSHP5Z9IzbbdrHiIauMSJrvYUE34y39KbpCcedkCK=s800-c-k-c0x00ffffff-no-rj" alt="إنعكاس" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/podcastin3ikas/"><bdi>إنعكاس</bdi></a></span></li><li><span class="rank">٥</span><span class="mv up" title="طالع"><span class="mvi">▲ ٢</span></span><img class="pic wide" src="https://i.ytimg.com/vi/wFSPC2qDE3M/maxresdefault.jpg" alt="بودكاست بترولي" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/p-ff7e5d3b/"><bdi>بودكاست بترولي</bdi></a></span></li><li><span class="rank">٦</span><span class="mv down" title="نازل"><span class="mvi">▼ ٣</span></span><img class="pic wide" src="https://i.ytimg.com/vi/CKGoJAuUbRw/maxresdefault.jpg" alt="احكي طب" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/p-5dbf2baa/"><bdi>احكي طب</bdi></a></span></li><li><span class="rank">٧</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic wide" src="https://i.ytimg.com/vi/crx0JFkJVn4/maxresdefault.jpg" alt="المناظرة" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/p-850e3743/"><bdi>المناظرة</bdi></a></span></li><li><span class="rank">٨</span><span class="mv new" title="أول مرة على المصطبة">جديد</span><img class="pic" src="https://yt3.ggpht.com/Ygpc0TbDKz4d8xLNFfOX-DLjCn7CLQU4Z_5eL2CwDGK2--38wWt1DIfBOZW9mGY-slND1xpI8co=s800-c-k-c0x00ffffff-no-rj" alt="الاشقيه مع موسى والكريتي" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/alashqeaa/"><bdi>الاشقيه مع موسى والكريتي</bdi></a></span></li><li><span class="rank">٩</span><span class="mv down" title="نازل"><span class="mvi">▼ ٣</span></span><img class="pic wide" src="https://i.ytimg.com/vi/o5_eh5MZk2s/maxresdefault.jpg" alt="قصتي" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/p-ca3ec1da/"><bdi>قصتي</bdi></a></span></li><li><span class="rank">١٠</span><span class="mv up" title="طالع"><span class="mvi">▲ ١٠</span></span><img class="pic wide" src="https://i.ytimg.com/vi/xL1bCOCDJdY/maxresdefault.jpg" alt="منّا وفينا" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a class="row-link" href="/podcast/p-4c27a9a5/"><bdi>منّا وفينا</bdi></a></span></li></ol><a class="more" href="/chart/2026-11-22/">الـ٢٠ كاملين ←</a></article><article class="hc-card hc-rise"><h3>الصاعدون</h3><p class="sub">أسبوعهم أعلى بكتير من معدلهم</p><ol class="hc-list"><li><span class="rank">١</span><img class="pic wide" src="https://i.ytimg.com/vi/ITSyi9-2Ig0/maxresdefault.jpg" alt="معتدل" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/playlist?list=PLhFlguAHRrsM29LnpYPEuv9UNHw4QfkqH" rel="noopener"><bdi>معتدل</bdi></a></span><span class="ratio">×٥٫٩</span></li><li><span class="rank">٢</span><img class="pic wide" src="https://i.ytimg.com/vi/P0hEviCMcJM/maxresdefault.jpg" alt="الصاغة بودكاست" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/playlist?list=PLmEKWLFSGjcDY0gGH-DNb0gs7Au7XyjrO" rel="noopener"><bdi>الصاغة بودكاست</bdi></a></span><span class="ratio">×٥٫٨</span></li><li><span class="rank">٣</span><img class="pic" src="https://yt3.ggpht.com/_1p1lAUaH-R6_otjf7HThQeEItjf9Fh7HYo_KT8btrD2PAWmrsXyER0JzE1t_lkjW3ngnvFL=s800-c-k-c0x00ffffff-no-rj" alt="بودكاست البوصلة" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/@ismailhammichetalks" rel="noopener"><bdi>بودكاست البوصلة</bdi></a></span><span class="ratio">×٣٫٧</span></li><li><span class="rank">٤</span><img class="pic wide" src="https://i.ytimg.com/vi/od6h65hDyRw/maxresdefault.jpg" alt="بودكاست سوريا كاست" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="rtl"><a href="https://www.youtube.com/channel/UCAzh6ULvUWTp_q6JJZW6zVQ" rel="noopener"><bdi>بودكاست سوريا كاست</bdi></a></span><span class="ratio">×٣٫٠</span></li><li><span class="rank">٥</span><img class="pic" src="https://yt3.ggpht.com/qzAbSTy1ELm9OXH1qA7E1ndeqSH5ukhm_d64YanH5CKoLX71VNn7LPGSxf8HkdhTEff2E0O_1w=s800-c-k-c0x00ffffff-no-rj" alt="TOUIL TALKS" loading="lazy" referrerpolicy="no-referrer"><span class="who" dir="ltr"><a href="https://www.youtube.com/@TouilTalks" rel="noopener"><bdi>TOUIL TALKS</bdi></a></span><span class="ratio">×٢٫٧</span></li></ol><a class="more" href="/chart/2026-11-22/">الصاعدون كاملين ←</a></article><article class="hc-card hc-ep"><h3>حلقة الأسبوع</h3><a class="ep-thumb" href="https://www.youtube.com/watch?v=zvFtGdZ-vHY" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://i.ytimg.com/vi/zvFtGdZ-vHY/maxresdefault.jpg" alt="الزئبق | محمد إيشا | مع كامل احتياطي" loading="lazy" referrerpolicy="no-referrer"></a><a class="t" href="https://www.youtube.com/watch?v=zvFtGdZ-vHY" rel="noopener"><bdi>الزئبق | محمد إيشا | مع كامل احتياطي</bdi></a><p class="from">من برنامج <a href="/podcast/m3kamele7tiaty/"><bdi>مع كامل احتياطي!</bdi></a></p></article></div><div class="hc-links"><a class="btn primary" href="/chart/2026-11-22/">التشارت كامل</a><a class="btn ghost" href="/charts/">كل التشارتات</a></div></div></section>
 
-  <!-- ===== vocabulary ===== -->
-  <section aria-labelledby="vocab-h">
-    <div class="wrap">
-      <h2 id="vocab-h">الكلام اللي هتشوفه</h2>
-      <p class="intro">«على المصطبة» يعني في التشارت. والباقي كده:</p>
-      <div class="vocab">
-        <div class="term feature rv">
-          <svg class="bench-ico" fill="#1B1A2E" aria-hidden="true"><use href="#bench"/></svg>
-          <div><div class="tok">رقم ١ على المصطبة</div><p>البرنامج اللي مشاهداته زادت أكتر من أي برنامج تاني الأسبوع ده.</p></div>
-        </div>
-        <div class="term rv"><div class="tok">على المصطبة</div><p>في التشارت الأسبوع ده.</p></div>
-        <div class="term rv"><div class="tok"><span class="new">جديد</span> أول مرة على المصطبة</div><p>أول أسبوع للبرنامج في التشارت.</p></div>
-        <div class="term rv"><div class="tok">قاعد ٥ أسابيع</div><p>بقاله ٥ أسابيع في التشارت.</p></div>
-        <div class="term rv"><div class="tok up"><svg class="arrow" fill="currentColor" aria-hidden="true"><use href="#tri-up"/></svg>طالع ٣</div><p>طلع ٣ مراكز عن الأسبوع اللي فات.</p></div>
-        <div class="term rv"><div class="tok down"><svg class="arrow" fill="currentColor" aria-hidden="true"><use href="#tri-down"/></svg>نازل ٢</div><p>نزل مركزين عن الأسبوع اللي فات.</p></div>
-        <div class="term risers rv"><div class="tok">الصاعدون</div><p>البرامج اللي عملت أحسن من العادي بتاعها بكتير، حتى لو برامج صغيرة.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== how we count ===== -->
-  <section class="how" id="how" aria-labelledby="how-h">
+  <!-- ===== how we count, in short: the full rules and the glossary are on methodology.html ===== -->
+  <section class="how-short" id="how" aria-labelledby="how-h">
     <div class="wrap">
       <h2 id="how-h">إزاي بنعد</h2>
-      <p class="intro">المشاهدات من يوتيوب، والترتيب إحنا اللي بنحسبه. ودي كل القواعد.</p>
-
-      <div class="facts rv">
-        <div><b>+٣٠٠</b><span>بودكاست بنتابعه</span></div>
-        <div><b>كل يوم</b><span>بنسجّل الأرقام</span></div>
-        <div><b>٩٠ يوم</b><span>عمر الحلقات اللي بنحسبها</span></div>
-        <div><b>٠</b><span>ترتيب مدفوع</span></div>
-      </div>
-
-      <ol class="steps">
-        <li class="rv"><span class="n" aria-hidden="true">١</span><div><h3>كل يوم</h3><p>بنسجّل المشاهدات والإعجابات والتعليقات لكل حلقة. يوتيوب بيوريك رقم النهارده بس، وإحنا بنسجّل الرقم كل يوم عشان نحسب الأسبوع.</p></div></li>
-        <li class="rv"><span class="n" aria-hidden="true">٢</span><div><h3>آخر الأسبوع</h3><p>بنحسب كل حلقة زادت كام مشاهدة في الأسبوع.</p></div></li>
-        <li class="rv"><span class="n" aria-hidden="true">٣</span><div><h3>الترتيب</h3><p>بنطلّع من الأرقام دي لوحتين: أكتر ٢٠ والصاعدون.</p></div></li>
-      </ol>
-
-      <div class="boards">
-        <article class="board rv">
-          <h3>أكتر ٢٠ <span class="pill">مين زاد أكتر</span></h3>
-          <p>بنرتّب البرامج حسب <strong>المشاهدات اللي زادت الأسبوع ده</strong> على حلقاتها الكاملة (٢٠ دقيقة وأكتر) <strong>اللي نزلت في آخر ٩٠ يوم</strong>. الكليبات مش بتتحسب.</p>
-          <p>الحلقة اللي تعدّي ٩٠ يوم بتخرج من الحساب، فممكن برنامج ينزل في الترتيب حتى لو أرقامه ما قلّتش.</p>
-          <div class="viz" role="img" aria-label="رسم توضيحي: الحلقات اللي نزلت في آخر ٩٠ يوم بس هي اللي بتتحسب">
-            <div class="win" aria-hidden="true">
-              <span class="lbl today">النهارده</span>
-              <span class="lbl edge">٩٠ يوم</span>
-              <span class="lbl older">أقدم</span>
-              <div class="win-line"></div>
-              <div class="win-in"></div>
-              <span class="tick"></span>
-              <i style="--p:5%"></i><i style="--p:19%"></i><i style="--p:33%"></i><i style="--p:50%"></i><i style="--p:66%"></i>
-              <i class="old" style="--p:85%"></i><i class="old" style="--p:95%"></i>
-            </div>
-            <div class="legend"><span><i></i>حلقة مشاهداتها بتتحسب</span><span><i class="old"></i>أقدم من ٩٠ يوم: مش محسوبة</span></div>
-          </div>
-        </article>
-
-        <article class="board rv">
-          <h3>الصاعدون <span class="pill">مقارنة بنفسه</span></h3>
-          <p>هنا بنقارن كل برنامج <strong>بنفسه</strong>: الأسبوع ده قصاد المعتاد بتاعه. برنامج صغير عمل أحسن أسبوع ليه ممكن يسبق برنامج كبير أسبوعه عادي.</p>
-          <p>أكتر ٢٠ مش كده، هو بيعد المشاهدات زي ما هي.</p>
-          <div class="viz" role="img" aria-label="رسم توضيحي: برنامج صغير عمل ٣ أضعاف العادي، وبرنامج كبير عمل أسبوع عادي">
-            <div class="bars" aria-hidden="true">
-              <div>
-                <div class="who"><span>برنامج صغير</span><em class="up"><svg fill="currentColor"><use href="#tri-up"/></svg>٣ أضعاف العادي</em></div>
-                <div class="bar norm"><b style="--w:18%"></b></div>
-                <div class="bar week hot"><b style="--w:54%"></b></div>
-              </div>
-              <div>
-                <div class="who"><span>برنامج كبير</span><em style="color:var(--mist)">أسبوع عادي</em></div>
-                <div class="bar norm"><b style="--w:88%"></b></div>
-                <div class="bar week"><b style="--w:90%"></b></div>
-              </div>
-              <div class="k"><span><i></i>العادي بتاعه</span><span><i class="w"></i>الأسبوع ده</span></div>
-            </div>
-            <p class="viz-cap">في أكتر ٢٠ الكبير هيبقى فوق. في الصاعدون الصغير.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="rules-grid">
-        <div>
-          <h3>مين يدخل التشارت</h3>
-          <ul class="checks">
-            <li class="rv"><span class="ck" aria-hidden="true"><svg><use href="#check"/></svg></span><div><b>حوار بين اتنين أو أكتر</b><span>مش شخص واحد بيتكلم لوحده.</span></div></li>
-            <li class="rv"><span class="ck" aria-hidden="true"><svg><use href="#check"/></svg></span><div><b>الحلقة ٢٠ دقيقة أو أكتر</b><span>الحلقة الكاملة بس، مش الكليبات.</span></div></li>
-            <li class="rv"><span class="ck" aria-hidden="true"><svg><use href="#check"/></svg></span><div><b>٣ حلقات على الأقل في آخر ٩٠ يوم</b><span>يعني البرنامج لسه شغال.</span></div></li>
-          </ul>
-        </div>
-        <div class="promises">
-          <div class="promise big rv"><b>مفيش ترتيب مدفوع</b><p>محدش يقدر يدفع عشان يدخل التشارت أو يطلع لفوق.</p></div>
-          <div class="promise rv"><b>بنقول اللي بنعده بس</b><p>إحنا بنعد مشاهدات يوتيوب، ومش بنقول مين الأكتر سماعًا. البرنامج اللي مش منزّل حلقاته الكاملة على يوتيوب مش هيظهر في التشارت.</p></div>
-          <div class="promise rv"><b>لو غيّرنا قاعدة هنقول</b><p>هنكتب التغيير في <a href="methodology.html">صفحة القواعد</a> قبل ما نطبّقه.</p></div>
-        </div>
-      </div>
+      <ul class="short">
+        <li><b>بنعد إيه</b><span>المشاهدات اللي كسبتها الحلقات الكاملة على يوتيوب في الأسبوع، من الحلقات اللي نزلت في آخر ٩٠ يوم.</span></li>
+        <li><b>مين يدخل</b><span>حوار بين اتنين أو أكتر، الحلقة ٢٠ دقيقة أو أكتر، و٣ حلقات على الأقل في آخر ٩٠ يوم.</span></li>
+        <li><b>مفيش ترتيب مدفوع</b><span>محدش يقدر يدفع عشان يدخل التشارت أو يطلع لفوق.</span></li>
+      </ul>
+      <a class="btn primary" href="methodology.html">القواعد كاملة</a>
     </div>
   </section>
 
